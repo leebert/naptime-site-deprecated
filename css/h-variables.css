@@ -1,0 +1,43 @@
+:root {
+    --color-txt-dark: #1c386a;
+    --color-txt-light: #ffffff;
+    --color-txt-gray: #8c8c8c;
+    --color-txt-link: #3b86b2;
+    --color-txt-positive: #41A839;
+    --color-txt-link-hover: #3aaaed;
+    --color-txt-link-active: #15579a;
+    --color-button-default: var(--color-txt-dark);
+    --color-button-hover: #3d7495; 
+    --color-button-pressed: #15579a; 
+    --color-button-disabled: #c6c6c6; 
+    --color-border: var(--color-button-disabled);
+    --color-background: #dce0e9; 
+    --color-crosshair: #00FFFF;
+    --color-timeline-column: #F4F4F4;
+    --color-timeline-alt-column: #EBEBEB;
+    --color-timeline-alt-row: #F4F4F4;
+    --color-timeline-kf-human: #FD2A9C;
+    --color-timeline-kf-ml: #FD2A9C25;
+    --color-timeline-kf-fill: #FF55DA33;
+
+    --padding: 8px;
+    --resize-indicator-width: 8px;
+    --resize-indicator-border-width: 3px;
+    --left-panel-default-width: 344px;
+    --task-panel-default-width: 144px;
+    --option-panel-width: 0;
+    --option-panel-max-width: 192px;
+    --timeline-rows: 6;
+    --timeline-columns: 60;
+    --bb-pointSize: 6px;
+
+    --layout-tab-panel-pixel-width: var(--left-panel-default-width);
+    --layout-entity-panel-pixel-width: var(--left-panel-default-width);
+    --layout-timeline-percent-height: 70%;
+    --layout-resizer-pixel-height: var(--resize-indicator-default-width);
+    --layout-tab-resizer-pixel-width: var(--resize-indicator-default-width);
+    --layout-entity-resizer-pixel-width: var(--resize-indicator-default-width);
+    --cursor-tab-panel: w-resize;
+    --crosshair-default-opacity: 70%;
+    --crosshair-active-opacity: 100%;
+  }
