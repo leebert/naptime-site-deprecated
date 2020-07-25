@@ -8,6 +8,10 @@ a.link--button:link, a.link--button:visited {
     color: var(--color-default-dark);
 }
 
+h1 {
+    color: var(--color-default-dark);
+}
+
 html, body {
     color: var(--color-default-dark);
     background-color: var(--color-default-light);

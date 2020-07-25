@@ -1,13 +1,23 @@
-html, body {
-    background-color: var(--color-one-background-light);
-    font-family: 'Work Sans', sans-serif;
+/* a.link--button:active {
+    background-color: var(--color-one-button-background-selected);
+    color: var(--color-default-light);
+    filter: brightness(75%);
+} */
+
+a.link--button:link.link--selected, a.link--button:visited.link--selected, a.link--button:hover.link--selected, a.link--button:active.link--selected {
+    background-color: var(--color-one-button-selected-background-light);
 }
 
-.logo {
-    cursor: pointer;
-    width: 30px;
+html, body {
+    background-color: var(--color-one-text-accent);
+    background-image: none;
 }
 
 .logo-fill {
     fill: var(--color-default-light);
+}
+
+main {
+    background-color: transparent;
+    background-image: var(--color-one-background-light);
 }

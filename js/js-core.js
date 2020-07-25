@@ -1,7 +1,7 @@
 var js_c_defaultText = "👋 I'm Lee. I direct initiatives <br> and ship products for";
 var js_c_hoverText = "👀 I'm Lee. I direct initiatives <br> and ship products for";
-var js_c_defaultText_Small = "👋 I'm Lee. I direct initiatives and ship products for";
-var js_c_hoverText_Small = "👀 I'm Lee. I direct initiatives and ship products for";
+var js_c_defaultText_NoBreak = "👋 I'm Lee. I direct initiatives and ship products for";
+var js_c_hoverText_NoBreak = "👀 I'm Lee. I direct initiatives and ship products for";
 var js_c_textInterval;
 var js_c_smallBreakPoint = 670;
 
@@ -103,21 +103,35 @@ function js_c_handleArticleEnter(event) {
     clearInterval(js_c_textInterval);
     document.getElementById("js-header-copy").innerHTML = js_c_getTitleText(true);
     if (document.body.clientWidth <= js_c_smallBreakPoint) { return; }
+    if (localStorage.getItem("layout") == "one") {
+        document.getElementById("c-ui-controls").style.visibility = "hidden";
+        var shim = document.getElementById("c-transition-shim");
+        shim.style.right = "-60%";
+        shim.style.transform = "skewX(-6deg)";
+    }
     if (event.target.id.includes("one")) {
         document.getElementById("js-description-one").style.visibility = "visible";
+        if (localStorage.getItem("layout") == "one") {
+            document.getElementById("js-description-one").style.top = event.target.getBoundingClientRect().top;
+        }
     }
     else if (event.target.id.includes("two")) {
         document.getElementById("js-description-two").style.visibility = "visible";
-
+        if (localStorage.getItem("layout") == "one") {
+            document.getElementById("js-description-two").style.top = event.target.getBoundingClientRect().top;
+        }
     }
     else if (event.target.id.includes("three")) {
         document.getElementById("js-description-three").style.visibility = "visible";
+        if (localStorage.getItem("layout") == "one") {
+            document.getElementById("js-description-three").style.top = event.target.getBoundingClientRect().top;
+        }
 
     }
 }
 
 function js_c_handleArticleLeave(event) {
-    js_c_textInterval = setInterval(function(){ document.getElementById("js-header-copy").innerHTML = js_c_getTitleText(false); }, 750);
+    js_c_textInterval = setInterval(js_c_ArticleLeaveHandler, 500);
     if (document.body.clientWidth <= js_c_smallBreakPoint) { return; }
     if (event.target.id.includes("one")) {
         document.getElementById("js-description-one").style.visibility = "hidden";
@@ -132,9 +146,19 @@ function js_c_handleArticleLeave(event) {
     }   
 }
 
+function js_c_ArticleLeaveHandler() {
+    document.getElementById("js-header-copy").innerHTML = js_c_getTitleText(false);
+    if (localStorage.getItem("layout") == "one") {
+        document.getElementById("c-ui-controls").style.visibility = "visible";
+        var shim = document.getElementById("c-transition-shim");
+        shim.style.right = "-100%";
+        shim.style.transform = "skewX(0deg)";
+    }
+}
+
 function js_c_getTitleText(isHovering) {
     if (document.body.clientWidth <= js_c_smallBreakPoint) {
-        return isHovering ? js_c_hoverText_Small : js_c_defaultText_Small;
+        return isHovering ? js_c_hoverText_NoBreak : js_c_defaultText_NoBreak;
     }
     else {
         return isHovering ? js_c_hoverText : js_c_defaultText;

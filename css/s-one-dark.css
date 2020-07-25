@@ -1,5 +1,10 @@
+a.link--button:link.link--selected, a.link--button:visited.link--selected, a.link--button:hover.link--selected, a.link--button:active.link--selected {
+    background-color: var(--color-one-button-selected-background-dark);
+}
+
 html, body {
-    background-image: var(--color-one-background-dark);
+    background-color: transparent;
+    background-image: var(--color-one-background-light);
     font-family: 'Work Sans', sans-serif;
 }
 
@@ -10,4 +15,9 @@ html, body {
 
 .logo-fill {
     fill: var(--color-default-light);
+}
+
+main {
+    background-color: var(--color-one-background-dark);
+    background-image: none;
 }

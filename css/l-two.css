@@ -5,7 +5,7 @@ aside {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     position: absolute;
-    right: calc(var(--padding) * 10);
+    right: calc(var(--padding) * 5);
     top: calc(var(--padding) * 7);
     width: 146px;
 }
@@ -32,6 +32,12 @@ header {
     margin-top: calc(var(--padding) * 6);
 }
 
+html, body {
+    /* background-color: lightpink !important; */
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     /* background-color: hotpink; */
     display: grid;
@@ -45,7 +51,6 @@ main {
 
 .c-description {
     /* background-color: khaki; */
-    color: var(--color-two-text-accent);
     display: flex;
     flex-direction: column;
     font-size: var(--text-two-copy-size);
@@ -71,12 +76,6 @@ main {
         margin-left: calc(var(--padding) * 10);
         margin-top: calc(var(--padding) * -6);
         position: unset;
-    }
-
-    html, body {
-        /* background-color: lightpink !important; */
-        display: flex;
-        flex-direction: column;
     }
 
     main {
@@ -115,5 +114,9 @@ main {
 
     footer {
         margin-left: calc(var(--padding) * 4);
+    }
+
+    .c-description {
+        margin-bottom: calc(var(--padding) * 4);
     }
 }

@@ -1,3 +1,101 @@
+a {
+    font-size: var(--text-one-link-secondary-size);
+    font-weight: 400;
+}
+
+a, a:visited {
+    color: var(--color-default-light);
+}
+
+a:hover, a:active {
+    color: black;
+}
+
+a.large {
+    font-size: var(--text-one-link-primary-size); 
+    font-weight: 600;
+    margin-bottom: calc(var(--padding) * 5);
+}
+
+a.large:last-child {
+    margin-bottom: 0;
+}
+
+a.large:hover, a.large:active {
+    color: var(--color-one-text-accent);
+    filter: saturate(250%);
+}
+
+a.link--button:link, a.link--button:visited {
+    color: var(--color-default-light);
+    background-color: var(--color-one-button-default-background);
+    padding: calc(var(--padding) * 0.75) calc(var(--padding) * 2);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.link--button:hover {
+    background-color: var(--color-one-button-hover-background);
+}
+
+a.link--button:link.link--selected {
+    border: solid 1px var(--color-default-light);
+}
+
+#js-one {
+    border-radius: calc(var(--padding) * 2) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5);
+}
+
+#js-two {
+    border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 2) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5);
+}
+
+#js-light {
+    border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 2);
+}
+
+#js-dark {
+    border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 2) calc(var(--padding) * 0.5);
+}
+
 html, body {
-    user-select: none;
+    color: var(--color-one-text-accent);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+}
+
+h1 {
+    color: var(--color-default-light);
+    font-size: var(--text-one-header-size);
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+}
+
+h4 {
+    color: var(--color-one-text-accent);
+    font-size: var(--text-one-subheader-size);
+    font-weight: 600;
+    margin: 0 0 calc(var(--padding) * 0.5) 0 ;
+}
+
+.logo {
+    cursor: pointer;
+    grid-column: 1 / span 3;
+    padding-bottom: calc(var(--padding) * 4);
+    margin: auto;
+    width: 80px;
+}
+
+#c-transition-shim {
+    background-color: black;
+    height: 100%;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    width: 100%;
+    transition: right 0.2s, transform 0.3s;
+    transition-timing-function: ease-in-out;
+    z-index: 0;
 }

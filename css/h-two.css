@@ -41,6 +41,7 @@ a.link--button:link.link--selected, a.link--button:visited.link--selected, a.lin
 }
 
 html, body {
+    color: var(--color-two-text-accent);
     font-family: 'Nunito', sans-serif;
 }
 
@@ -51,6 +52,7 @@ h1 {
 }
 
 h4 {
+    color: var(--color-two-text-accent);
     font-size: var(--text-two-subheader-size);
     font-weight: 600;
     margin: 0 0 calc(var(--padding) * 0.5) 0 ;
@@ -59,6 +61,10 @@ h4 {
 .logo {
     cursor: pointer;
     width: 30px;
+}
+
+#c-transition-shim {
+    visibility: hidden;
 }
 
 @media only screen and (max-width: 1024px) {
