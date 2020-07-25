@@ -60,3 +60,37 @@ h4 {
     cursor: pointer;
     width: 30px;
 }
+
+@media only screen and (max-width: 1024px) {
+    h1 {
+        font-size: calc(var(--text-two-header-size) * 0.75);
+    }
+
+    a.large {
+        font-size: calc(var(--text-two-link-primary-size) * 0.75); 
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    h1 {
+        font-size: calc(var(--text-two-header-size) * 0.5);
+    }
+
+    a.large {
+        font-size: calc(var(--text-two-link-primary-size) * 0.5); 
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    a.large {
+        margin-bottom: 0;
+    }
+
+    h4 {
+        font-size: calc(var(--text-two-subheader-size) * 0.9);
+    }
+
+    html, body {
+        font-weight: 300;
+    }
+}

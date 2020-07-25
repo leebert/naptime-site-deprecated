@@ -1,6 +1,9 @@
 var js_c_defaultText = "👋 I'm Lee. I direct initiatives <br> and ship products for";
 var js_c_hoverText = "👀 I'm Lee. I direct initiatives <br> and ship products for";
+var js_c_defaultText_Small = "👋 I'm Lee. I direct initiatives and ship products for";
+var js_c_hoverText_Small = "👀 I'm Lee. I direct initiatives and ship products for";
 var js_c_textInterval;
+var js_c_smallBreakPoint = 670;
 
 window.addEventListener('load', js_c_load);
 
@@ -10,6 +13,7 @@ function js_c_load() {
 
     js_c_initUI();
     js_c_updateStyleSheets();
+    js_c_getTitleText(false);
 
     document.getElementById("js-one").addEventListener("click", js_c_handleLayout);
     document.getElementById("js-two").addEventListener("click", js_c_handleLayout);
@@ -97,6 +101,8 @@ function js_c_handleLogo(event) {
 
 function js_c_handleArticleEnter(event) {
     clearInterval(js_c_textInterval);
+    document.getElementById("js-header-copy").innerHTML = js_c_getTitleText(true);
+    if (document.body.clientWidth <= js_c_smallBreakPoint) { return; }
     if (event.target.id.includes("one")) {
         document.getElementById("js-description-one").style.visibility = "visible";
     }
@@ -108,10 +114,11 @@ function js_c_handleArticleEnter(event) {
         document.getElementById("js-description-three").style.visibility = "visible";
 
     }
-    document.getElementById("js-header-copy").innerHTML = js_c_hoverText;
 }
 
 function js_c_handleArticleLeave(event) {
+    js_c_textInterval = setInterval(function(){ document.getElementById("js-header-copy").innerHTML = js_c_getTitleText(false); }, 750);
+    if (document.body.clientWidth <= js_c_smallBreakPoint) { return; }
     if (event.target.id.includes("one")) {
         document.getElementById("js-description-one").style.visibility = "hidden";
     }
@@ -123,5 +130,13 @@ function js_c_handleArticleLeave(event) {
         document.getElementById("js-description-three").style.visibility = "hidden";
 
     }   
-    js_c_textInterval = setInterval(function(){ document.getElementById("js-header-copy").innerHTML = js_c_defaultText; }, 750);
+}
+
+function js_c_getTitleText(isHovering) {
+    if (document.body.clientWidth <= js_c_smallBreakPoint) {
+        return isHovering ? js_c_hoverText_Small : js_c_defaultText_Small;
+    }
+    else {
+        return isHovering ? js_c_hoverText : js_c_defaultText;
+    }
 }

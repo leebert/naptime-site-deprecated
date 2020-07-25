@@ -1,2 +1,2 @@
 # naptime-site
- Portfolio Site for Lee Brenner
+ Lee Brenner's portfolio site and exploratory playground.
