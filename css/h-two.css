@@ -1,0 +1,62 @@
+a {
+    font-size: var(--text-two-link-secondary-size);
+}
+
+a:hover, a:active {
+    color: var(--color-two-text-accent);
+}
+
+a.large {
+    font-size: var(--text-two-link-primary-size); 
+    font-weight: 600;
+    margin-bottom: calc(var(--padding) * 3);
+}
+
+a.large:last-child {
+    margin-bottom: 0;
+}
+
+a.link--button:link, a.link--button:visited {
+    padding: calc(var(--padding) * 0.5) calc(var(--padding) * 2);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.link--button:hover {
+    background-color: var(--color-two-button-background-selected);
+    color: var(--color-default-light);
+    filter: brightness(150%);
+}
+
+a.link--button:active {
+    background-color: var(--color-two-button-background-selected);
+    color: var(--color-default-light);
+    filter: brightness(75%);
+}
+
+a.link--button:link.link--selected, a.link--button:visited.link--selected, a.link--button:hover.link--selected, a.link--button:active.link--selected {
+    background-color: var(--color-two-button-background-selected);
+    color: var(--color-default-light);
+}
+
+html, body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    font-size: var(--text-two-header-size);
+    font-weight: 300;
+    margin: 0;
+}
+
+h4 {
+    font-size: var(--text-two-subheader-size);
+    font-weight: 600;
+    margin: 0 0 calc(var(--padding) * 0.5) 0 ;
+}
+
+.logo {
+    cursor: pointer;
+    width: 30px;
+}

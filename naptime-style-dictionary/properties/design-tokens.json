@@ -1,0 +1,322 @@
+{
+    "style": {
+        "color": {
+            "default-light": {
+                "type": "SOLID",
+                "value": "#ffffff"
+            },
+            "default-dark": {
+                "type": "SOLID",
+                "value": "#333333"
+            },
+            "one-text-accent": {
+                "type": "SOLID",
+                "value": "#ff6a85"
+            },
+            "one-background-light": {
+                "type": "SOLID",
+                "value": "#ed6981"
+            },
+            "one-background-dark": {
+                "type": "GRADIENT_RADIAL",
+                "stop-1": {
+                    "value": "#ed6981"
+                },
+                "stop-2": {
+                    "value": "#1f4854"
+                },
+                "transform-1": {
+                    "stop-1": {
+                        "value": "1.00000"
+                    },
+                    "stop-2": {
+                        "value": "1.00000"
+                    },
+                    "stop-3": {
+                        "value": "1.00000"
+                    }
+                },
+                "transform-2": {
+                    "stop-1": {
+                        "value": "0.34045"
+                    },
+                    "stop-2": {
+                        "value": "0.34045"
+                    },
+                    "stop-3": {
+                        "value": "0.34045"
+                    }
+                }
+            },
+            "one-button-default-background": {
+                "type": "SOLID",
+                "value": "#ffffff"
+            },
+            "one-button-selected-background-dark": {
+                "type": "SOLID",
+                "value": "#a25d71"
+            },
+            "one-button-selected-background-light": {
+                "type": "SOLID",
+                "value": "#1f4855"
+            },
+            "two-text-accent": {
+                "type": "SOLID",
+                "value": "#0084ff"
+            },
+            "two-background-light": {
+                "type": "SOLID",
+                "value": "#ffffff"
+            },
+            "two-background-dark": {
+                "type": "SOLID",
+                "value": "#333333"
+            },
+            "two-button-background-selected": {
+                "type": "SOLID",
+                "value": "#0084ff"
+            }
+        },
+        "typography": {
+            "one-header": {
+                "fontName": {
+                    "value": "Work Sans-Light"
+                },
+                "size": {
+                    "value": 44
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "none"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "-",
+                    "unit": "AUTO"
+                }
+            },
+            "one-subheader": {
+                "fontName": {
+                    "value": "Work Sans-Bold"
+                },
+                "size": {
+                    "value": 24
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "none"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "-",
+                    "unit": "AUTO"
+                }
+            },
+            "one-copy": {
+                "fontName": {
+                    "value": "Work Sans-Regular"
+                },
+                "size": {
+                    "value": 24
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "none"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "-",
+                    "unit": "AUTO"
+                }
+            },
+            "one-link-primary": {
+                "fontName": {
+                    "value": "Work Sans-SemiBold"
+                },
+                "size": {
+                    "value": 72
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "none"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "96",
+                    "unit": "PIXELS"
+                }
+            },
+            "one-link-secondary": {
+                "fontName": {
+                    "value": "Work Sans-Medium"
+                },
+                "size": {
+                    "value": 16
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "underline"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "-",
+                    "unit": "AUTO"
+                }
+            },
+            "two-header": {
+                "fontName": {
+                    "value": "Nunito-Light"
+                },
+                "size": {
+                    "value": 56
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "none"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "-",
+                    "unit": "AUTO"
+                }
+            },
+            "two-subheader": {
+                "fontName": {
+                    "value": "Work Sans-Bold"
+                },
+                "size": {
+                    "value": 24
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "none"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "-",
+                    "unit": "AUTO"
+                }
+            },
+            "two-copy": {
+                "fontName": {
+                    "value": "Work Sans-Regular"
+                },
+                "size": {
+                    "value": 24
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "none"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "-",
+                    "unit": "AUTO"
+                }
+            },
+            "two-link-primary": {
+                "fontName": {
+                    "value": "Nunito-SemiBold"
+                },
+                "size": {
+                    "value": 80
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "none"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "96",
+                    "unit": "PIXELS"
+                }
+            },
+            "two-link-secondary": {
+                "fontName": {
+                    "value": "Nunito-Bold"
+                },
+                "size": {
+                    "value": 16
+                },
+                "transform": {
+                    "value": "none"
+                },
+                "decoration": {
+                    "value": "underline"
+                },
+                "letterSpacing": {
+                    "value": 0,
+                    "unit": "PERCENT"
+                },
+                "lineHeight": {
+                    "value": "-",
+                    "unit": "AUTO"
+                }
+            }
+        },
+        "effect": {
+            "default-shadow": {
+                "type": {
+                    "value": "DROP_SHADOW"
+                },
+                "radius": {
+                    "value": 112
+                },
+                "color": {
+                    "value": "#00000075"
+                },
+                "offset-x": {
+                    "value": 0
+                },
+                "offset-y": {
+                    "value": 24
+                }
+            }
+        }
+    }
+}

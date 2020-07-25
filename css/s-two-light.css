@@ -1,0 +1,18 @@
+a, a:visited {
+    color: var(--color-default-dark);
+}
+
+a.link--button:link, a.link--button:visited {
+    background-color: var(--color-default-light);
+    border: solid 2px var(--color-default-dark);
+    color: var(--color-default-dark);
+}
+
+html, body {
+    color: var(--color-default-dark);
+    background-color: var(--color-default-light);
+}
+
+.logo-fill {
+    fill: var(--color-default-dark);
+}

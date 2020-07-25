@@ -1,0 +1,50 @@
+/**
+ * Do not edit directly
+ * Generated on Thu, 23 Jul 2020 17:37:21 GMT
+ */
+
+:root {
+  font-size: 62.5%;
+
+  --color-default-light: #ffffff;
+  --color-default-dark: #333333;
+
+  --color-one-text-accent: #ff6a85;
+  --color-one-background-light: #ed6981;
+  --color-one-background-dark: radial-gradient(156.69% 156.69% at 50% 156.69%, #ED6981 0%, #1F4855 100%);
+  --color-one-button-default-background: #ffffff;
+  --color-one-button-selected-background-dark: #a25d71;
+  --color-one-button-selected-background-light: #1f4855;
+
+  --color-two-text-accent: #0084ff;
+  --color-two-background-light: #ffffff;
+  --color-two-background-dark: #333333;
+  --color-two-button-background-selected: #0084ff;
+
+  --text-one-header-font-name: "Work Sans-Light";
+  --text-one-header-size: 4.4rem;
+  --text-one-subheader-font-name: "Work Sans-SemiBold";
+  --text-one-subheader-size: 2.4rem;
+  --text-one-copy-font-name: "Work Sans-Regular";
+  --text-one-copy-size: 2.4rem;
+  --text-one-link-primary-font-name: "Work Sans-SemiBold";
+  --text-one-link-primary-size: 7.2rem;
+  --text-one-link-primary-line-height: 9.6rem;
+  --text-one-link-secondary-font-name: "Work Sans-SemiBold";
+  --text-one-link-secondary-size: 1.6rem;
+
+  --text-two-header-font-name: "Nunito-Light";
+  --text-two-header-size: 5.6rem;
+  --text-two-subheader-font-name: "Nunito-SemiBold";
+  --text-two-subheader-size: 2.0rem;
+  --text-two-copy-font-name: "Nunito-Regular";
+  --text-two-copy-size: 1.6rem;
+  --text-two-link-primary-font-name: "Nunito-SemiBold";
+  --text-two-link-primary-size: 8.0rem;
+  --text-two-link-secondary-font-name: "Nunito-SemiBold";
+  --text-two-link-secondary-size: 1.6rem;
+
+  --effect-default-shadow: 0px 24px 112px rgba(0, 0, 0, 0.46);
+
+  --padding: 8px;
+}

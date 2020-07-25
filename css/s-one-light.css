@@ -1,0 +1,13 @@
+html, body {
+    background-color: var(--color-one-background-light);
+    font-family: 'Work Sans', sans-serif;
+}
+
+.logo {
+    cursor: pointer;
+    width: 30px;
+}
+
+.logo-fill {
+    fill: var(--color-default-light);
+}
