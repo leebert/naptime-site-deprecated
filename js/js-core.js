@@ -1,10 +1,11 @@
 var js_c_defaultText = "👋 I'm Lee. I direct initiatives <br> and ship products for";
 var js_c_hoverText = "👀 I'm Lee. I direct initiatives <br> and ship products for";
-var js_c_defaultText_NoBreak = "👋 I'm Lee. I direct initiatives and ship products for";
-var js_c_hoverText_NoBreak = "👀 I'm Lee. I direct initiatives and ship products for";
+var js_c_defaultText_NoBreak = "👋 I'm Lee. <br> I direct initiatives and ship products for";
+var js_c_hoverText_NoBreak = "👀 I'm Lee. <br> I direct initiatives and ship products for";
 var js_c_textInterval;
 var js_c_resizeInterval;
 var js_c_smallBreakPoint = 670;
+var js_c_mediumBreakPoint = 840;
 var affectedArticle = "one";
 
 window.addEventListener('load', js_c_load);
@@ -15,7 +16,8 @@ function js_c_load() {
 
     js_c_initUI();
     js_c_updateStyleSheets();
-    js_c_getTitleText(false);
+    js_c_setTitleText(false);
+    js_c_resizeInterval = setInterval(function() { js_c_handleResize(); }, 150);
 
     document.getElementById("js-one").addEventListener("click", js_c_handleLayout);
     document.getElementById("js-two").addEventListener("click", js_c_handleLayout);
@@ -29,22 +31,32 @@ function js_c_load() {
     document.getElementById("js-article-two").addEventListener("mouseleave", js_c_handleArticleLeave);
     document.getElementById("js-article-three").addEventListener("mouseleave", js_c_handleArticleLeave);
     window.addEventListener("resize", js_c_handleResize);
-    js_c_resizeInterval = setInterval(function() { js_c_handleResize(); }, 500);
+
+    document.getElementById("js-description-one").style.opacity = "0";
+    document.getElementById("js-description-two").style.opacity = "0";
+    document.getElementById("js-description-three").style.opacity = "0";
 }
 
 function js_c_handleResize(event) {
     clearInterval(js_c_resizeInterval);
-    console.log("window: " + window.innerHeight + "body: " + document.getElementsByTagName("BODY")[0].getBoundingClientRect().height);
     if (localStorage.getItem("layout") == "one") { 
         var tallest = Math.max(window.innerHeight, document.getElementsByTagName("BODY")[0].getBoundingClientRect().height);
         document.getElementById("c-transition-shim").style.height = tallest + "px";
         document.getElementById("c-effects-container").style.height = tallest + "px";
+        document.getElementById("c-transition-shim").style.right = "-150%";
+    }
+    document.getElementsByTagName("BODY")[0].style.height = tallest + "px";
+    if (document.body.clientWidth <= js_c_smallBreakPoint) {
+        document.getElementById("js-description-one").style.opacity = "1";
+        document.getElementById("js-description-two").style.opacity = "1";
+        document.getElementById("js-description-three").style.opacity = "1";
     }
     else {
-        document.getElementById("c-transition-shim").style.height = 0;
-        document.getElementById("c-effects-container").style.height = 0;
+        document.getElementById("js-description-one").style.opacity = "0";
+        document.getElementById("js-description-two").style.opacity = "0";
+        document.getElementById("js-description-three").style.opacity = "0";
     }
-    document.getElementById("c-transition-shim").style.right = "-150%";
+    js_c_setTitleText(false);
 }
 
 function js_c_handleLayout(event) {
@@ -61,9 +73,11 @@ function js_c_handleLayout(event) {
         document.getElementById("js-one").style.pointerEvents = "auto";
         document.getElementById("js-two").style.pointerEvents = "none";
         localStorage.setItem("layout", "two");
+        document.getElementById("c-transition-shim").style.height = 0;
+        document.getElementById("c-effects-container").style.height = 0;
     }
     js_c_updateStyleSheets();
-    js_c_resizeInterval = setInterval(function() { js_c_handleResize(); }, 500);
+    js_c_resizeInterval = setInterval(function() { js_c_handleResize(); }, 150);
 }
 
 function js_c_handleStyling(event) {
@@ -121,32 +135,41 @@ function js_c_handleLogo(event) {
 
 function js_c_handleArticleEnter(event) {
     clearInterval(js_c_textInterval);
-    document.getElementById("js-header-copy").innerHTML = js_c_getTitleText(true);
+    js_c_setTitleText(true);
     if (document.body.clientWidth <= js_c_smallBreakPoint) { return; }
     if (localStorage.getItem("layout") == "one") {
-        document.getElementById("c-ui-controls").style.visibility = "hidden";
+        document.getElementById("c-ui-controls").style.opacity = "0";
         var shim = document.getElementById("c-transition-shim");
-        shim.style.right = "-105%";
+        var offsetAmount = -105;
         var skewAmount = -24;
         if (event.target.id.includes("two")) {
-            skewAmount = -40;
+            skewAmount = -32;
         }
         else if (event.target.id.includes("three")) {
-            skewAmount = -56;
+            skewAmount = -40;
         }
+        offsetAmount = offsetAmount + (document.body.clientWidth <= js_c_mediumBreakPoint ? 15 : 0);
+        shim.style.right = offsetAmount + "%";
         shim.style.transform = "skewX(" + skewAmount + "deg)";
     }
     var topOffset = event.target.getBoundingClientRect().top + 16 + window.pageYOffset;
     var leftOffset = event.target.getBoundingClientRect().right + 32;
+    var offsetEnhancer = 0;
     affectedArticle = "one";
     if (event.target.id.includes("two")) {
         affectedArticle = "two";
+        offsetEnhancer = -32;
     }
     else if (event.target.id.includes("three")) {
         affectedArticle = "three";
+        offsetEnhancer = -96;
     }
-    document.getElementById("js-description-" + affectedArticle).style.visibility = "visible";
+    document.getElementById("js-description-" + affectedArticle).style.opacity = "1";
     if (localStorage.getItem("layout") == "one") {
+        if (document.body.clientWidth <= js_c_mediumBreakPoint) {
+            topOffset = event.target.getBoundingClientRect().top + event.target.getBoundingClientRect().height + 16 + window.pageYOffset;
+            leftOffset = event.target.getBoundingClientRect().left + (event.target.getBoundingClientRect().width * 0.5) + offsetEnhancer;
+        }
         document.getElementById("js-description-" + affectedArticle).style.top = topOffset;
         document.getElementById("js-description-" + affectedArticle).style.left = leftOffset;
     }
@@ -156,33 +179,33 @@ function js_c_handleArticleLeave(event) {
     js_c_textInterval = setInterval(js_c_ArticleLeaveHandler, 300);
     if (document.body.clientWidth <= js_c_smallBreakPoint) { return; }
     if (event.target.id.includes("one")) {
-        document.getElementById("js-description-one").style.visibility = "hidden";
+        document.getElementById("js-description-one").style.opacity = "0";
     }
     else if (event.target.id.includes("two")) {
-        document.getElementById("js-description-two").style.visibility = "hidden";
+        document.getElementById("js-description-two").style.opacity = "0";
 
     }
     else if (event.target.id.includes("three")) {
-        document.getElementById("js-description-three").style.visibility = "hidden";
+        document.getElementById("js-description-three").style.opacity = "0";
 
     }   
 }
 
 function js_c_ArticleLeaveHandler() {
-    document.getElementById("js-header-copy").innerHTML = js_c_getTitleText(false);
+    js_c_setTitleText(false);
     if (localStorage.getItem("layout") == "one") {
-        document.getElementById("c-ui-controls").style.visibility = "visible";
+        document.getElementById("c-ui-controls").style.opacity = "1";
         var shim = document.getElementById("c-transition-shim");
         shim.style.right = "-150%";
         shim.style.transform = "skewX(0deg)";
     }
 }
 
-function js_c_getTitleText(isHovering) {
+function js_c_setTitleText(isHovering) {
     if (document.body.clientWidth <= js_c_smallBreakPoint) {
-        return isHovering ? js_c_hoverText_NoBreak : js_c_defaultText_NoBreak;
+        document.getElementById("js-header-copy").innerHTML = isHovering ? js_c_hoverText_NoBreak : js_c_defaultText_NoBreak;
     }
     else {
-        return isHovering ? js_c_hoverText : js_c_defaultText;
+        document.getElementById("js-header-copy").innerHTML = isHovering ? js_c_hoverText : js_c_defaultText;
     }
 }

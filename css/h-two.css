@@ -108,6 +108,7 @@ h4 {
 
 @media only screen and (max-width: 670px) {
     a.large {
+        font-size: calc(var(--text-two-link-primary-size) * 0.45); 
         margin-bottom: 0;
     }
 

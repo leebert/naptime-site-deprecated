@@ -55,7 +55,8 @@ main {
     flex-direction: column;
     font-size: var(--text-two-copy-size);
     margin-top: calc(var(--padding) * 1);
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
     width: 70%;
 }
 
@@ -73,6 +74,7 @@ main {
     aside {
         display: flex;
         flex-direction: row;
+        margin-bottom: calc(var(--padding) * 3);
         margin-left: calc(var(--padding) * 10);
         margin-top: calc(var(--padding) * -6);
         position: unset;
@@ -89,7 +91,8 @@ main {
     .c-description {
         margin-bottom: var(--padding);
         margin-top: 0;
-        visibility: visible !important;
+        opacity: 1;
+        transition: none;
     }
 
     footer {
@@ -118,5 +121,7 @@ main {
 
     .c-description {
         margin-bottom: calc(var(--padding) * 4);
+        opacity: 1;
+        transition: none;
     }
 }

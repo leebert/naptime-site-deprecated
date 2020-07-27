@@ -19,3 +19,9 @@ main {
     background-color: var(--color-one-background-dark);
     background-image: none;
 }
+
+@media only screen and (max-width: 840px) {
+    a.link--button:link.link--selected, a.link--button:visited.link--selected, a.link--button:hover.link--selected, a.link--button:active.link--selected {
+        background-color: var(--color-one-button-selected-background-light);
+    }
+}

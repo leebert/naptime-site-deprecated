@@ -110,3 +110,62 @@ h4 {
     transition-timing-function: ease-in-out;
     width: 150%;
 }
+
+#c-ui-controls {
+    opacity: 1;
+    transition: opacity 0.25s;
+}
+
+@media only screen and (max-width: 1020px) {
+    a.large {
+        font-size: calc(var(--text-one-link-primary-size) * 0.8); 
+    }
+
+    h1 {
+        font-size: calc(var(--text-one-header-size) * 0.8);
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    #js-one {
+        border-radius: calc(var(--padding) * 2) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 2);
+    }
+    
+    #js-two {
+        border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5);
+    }
+    
+    #js-light {
+        border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5);
+    }
+    
+    #js-dark {
+        border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 2) calc(var(--padding) * 2) calc(var(--padding) * 0.5);
+    }
+
+    a.large {
+        font-size: calc(var(--text-one-link-primary-size) * 0.7); 
+    }
+
+    h1 {
+        font-size: calc(var(--text-one-header-size) * 0.7);
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    a.large {
+        font-size: calc(var(--text-one-link-primary-size) * 0.45); 
+        margin-left: calc(var(--padding) * 3);
+        margin-bottom: calc(var(--padding) * 1);
+        text-align: left;
+    }
+
+    h1 {
+        text-align: left;
+    }
+    
+    h4 {
+        color: var(--color-default-light);
+        font-size: calc(var(--text-one-subheader-size) * 0.85);
+    }
+}
