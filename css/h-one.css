@@ -88,14 +88,25 @@ h4 {
     width: 80px;
 }
 
+#c-effects-container {
+    background-color: transparent;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+
 #c-transition-shim {
     background-color: black;
-    height: 100%;
+    height: 0;
     position: absolute;
-    right: -100%;
+    pointer-events: none;
+    right: -150%;
     top: 0;
-    width: 100%;
     transition: right 0.2s, transform 0.3s;
     transition-timing-function: ease-in-out;
-    z-index: 0;
+    width: 150%;
 }

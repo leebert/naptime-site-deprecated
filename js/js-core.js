@@ -3,7 +3,9 @@ var js_c_hoverText = "👀 I'm Lee. I direct initiatives <br> and ship products 
 var js_c_defaultText_NoBreak = "👋 I'm Lee. I direct initiatives and ship products for";
 var js_c_hoverText_NoBreak = "👀 I'm Lee. I direct initiatives and ship products for";
 var js_c_textInterval;
+var js_c_resizeInterval;
 var js_c_smallBreakPoint = 670;
+var affectedArticle = "one";
 
 window.addEventListener('load', js_c_load);
 
@@ -26,6 +28,23 @@ function js_c_load() {
     document.getElementById("js-article-one").addEventListener("mouseleave", js_c_handleArticleLeave);
     document.getElementById("js-article-two").addEventListener("mouseleave", js_c_handleArticleLeave);
     document.getElementById("js-article-three").addEventListener("mouseleave", js_c_handleArticleLeave);
+    window.addEventListener("resize", js_c_handleResize);
+    js_c_resizeInterval = setInterval(function() { js_c_handleResize(); }, 500);
+}
+
+function js_c_handleResize(event) {
+    clearInterval(js_c_resizeInterval);
+    console.log("window: " + window.innerHeight + "body: " + document.getElementsByTagName("BODY")[0].getBoundingClientRect().height);
+    if (localStorage.getItem("layout") == "one") { 
+        var tallest = Math.max(window.innerHeight, document.getElementsByTagName("BODY")[0].getBoundingClientRect().height);
+        document.getElementById("c-transition-shim").style.height = tallest + "px";
+        document.getElementById("c-effects-container").style.height = tallest + "px";
+    }
+    else {
+        document.getElementById("c-transition-shim").style.height = 0;
+        document.getElementById("c-effects-container").style.height = 0;
+    }
+    document.getElementById("c-transition-shim").style.right = "-150%";
 }
 
 function js_c_handleLayout(event) {
@@ -43,7 +62,8 @@ function js_c_handleLayout(event) {
         document.getElementById("js-two").style.pointerEvents = "none";
         localStorage.setItem("layout", "two");
     }
-    js_c_updateStyleSheets()
+    js_c_updateStyleSheets();
+    js_c_resizeInterval = setInterval(function() { js_c_handleResize(); }, 500);
 }
 
 function js_c_handleStyling(event) {
@@ -106,32 +126,34 @@ function js_c_handleArticleEnter(event) {
     if (localStorage.getItem("layout") == "one") {
         document.getElementById("c-ui-controls").style.visibility = "hidden";
         var shim = document.getElementById("c-transition-shim");
-        shim.style.right = "-60%";
-        shim.style.transform = "skewX(-6deg)";
-    }
-    if (event.target.id.includes("one")) {
-        document.getElementById("js-description-one").style.visibility = "visible";
-        if (localStorage.getItem("layout") == "one") {
-            document.getElementById("js-description-one").style.top = event.target.getBoundingClientRect().top;
+        shim.style.right = "-105%";
+        var skewAmount = -24;
+        if (event.target.id.includes("two")) {
+            skewAmount = -40;
         }
-    }
-    else if (event.target.id.includes("two")) {
-        document.getElementById("js-description-two").style.visibility = "visible";
-        if (localStorage.getItem("layout") == "one") {
-            document.getElementById("js-description-two").style.top = event.target.getBoundingClientRect().top;
+        else if (event.target.id.includes("three")) {
+            skewAmount = -56;
         }
+        shim.style.transform = "skewX(" + skewAmount + "deg)";
+    }
+    var topOffset = event.target.getBoundingClientRect().top + 16 + window.pageYOffset;
+    var leftOffset = event.target.getBoundingClientRect().right + 32;
+    affectedArticle = "one";
+    if (event.target.id.includes("two")) {
+        affectedArticle = "two";
     }
     else if (event.target.id.includes("three")) {
-        document.getElementById("js-description-three").style.visibility = "visible";
-        if (localStorage.getItem("layout") == "one") {
-            document.getElementById("js-description-three").style.top = event.target.getBoundingClientRect().top;
-        }
-
+        affectedArticle = "three";
+    }
+    document.getElementById("js-description-" + affectedArticle).style.visibility = "visible";
+    if (localStorage.getItem("layout") == "one") {
+        document.getElementById("js-description-" + affectedArticle).style.top = topOffset;
+        document.getElementById("js-description-" + affectedArticle).style.left = leftOffset;
     }
 }
 
 function js_c_handleArticleLeave(event) {
-    js_c_textInterval = setInterval(js_c_ArticleLeaveHandler, 500);
+    js_c_textInterval = setInterval(js_c_ArticleLeaveHandler, 300);
     if (document.body.clientWidth <= js_c_smallBreakPoint) { return; }
     if (event.target.id.includes("one")) {
         document.getElementById("js-description-one").style.visibility = "hidden";
@@ -151,7 +173,7 @@ function js_c_ArticleLeaveHandler() {
     if (localStorage.getItem("layout") == "one") {
         document.getElementById("c-ui-controls").style.visibility = "visible";
         var shim = document.getElementById("c-transition-shim");
-        shim.style.right = "-100%";
+        shim.style.right = "-150%";
         shim.style.transform = "skewX(0deg)";
     }
 }

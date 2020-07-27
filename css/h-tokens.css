@@ -9,7 +9,7 @@
   --color-default-light: #ffffff;
   --color-default-dark: #333333;
 
-  --color-one-text-accent: #ff6a85;
+  --color-one-text-accent: #E06C81;
   --color-one-background-light: radial-gradient(156.69% 156.69% at 50% 156.69%, #ED6981 0%, #1F4855 100%);
   --color-one-background-dark: #333333;
   --color-one-button-default-background: #ffffff44;
@@ -25,9 +25,9 @@
   --text-one-header-font-name: "Work Sans-Light";
   --text-one-header-size: 4.0rem;
   --text-one-subheader-font-name: "Work Sans-SemiBold";
-  --text-one-subheader-size: 2.4rem;
+  --text-one-subheader-size: 2.0rem;
   --text-one-copy-font-name: "Work Sans-Regular";
-  --text-one-copy-size: 2.0rem;
+  --text-one-copy-size: 1.6rem;
   --text-one-link-primary-font-name: "Work Sans-SemiBold";
   --text-one-link-primary-size: 6.6rem;
   --text-one-link-primary-line-height: 9.6rem;

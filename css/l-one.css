@@ -17,9 +17,9 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
     justify-content: center;
-    padding-bottom: calc(var(--padding) * 5);
-    width: 20%;
-    z-index: 98;
+    margin-bottom: calc(var(--padding) * 5);
+    width: 25rem;
+    /* z-index: 98; */
 }
 
 .footer__item {
@@ -29,17 +29,15 @@ footer {
 header {
     /* background-color: greenyellow; */
     margin-top: calc(var(--padding) * 6);
-    width: 65%;
-    z-index: 99;
+    width: 55rem;
+    /* z-index: 99; */
 }
 
 html, body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
-    overflow: hidden;
 }
 
 main {
@@ -52,19 +50,26 @@ main {
     grid-template-rows: 1fr 1fr 1fr;
     margin-bottom: calc(var(--padding) * 4);
     margin-top: calc(var(--padding) * 5);
-    padding: calc(var(--padding) * 5);
-    width: 40%;
-    z-index: 100;
+    padding: calc(var(--padding) * 5) calc(var(--padding) * 5) calc(var(--padding) * 2) calc(var(--padding) * 5);
+    width: 55rem;
+    /* z-index: 100; */
 }
 
 .c-description {
     /* background-color: khaki; */
     display: flex;
+    filter: saturate(250%);
     flex-direction: column;
     font-size: var(--text-one-copy-size);
     visibility: hidden;
     position: absolute;
-    right: calc(var(--padding) * 5);
-    top: calc(var(--padding) * 25);
-    width: 22%;
+    left: 0;
+    top: 0;
+    width: 28%;
 }
+
+/* @media only screen and (max-width: 1240px) {
+    .main {
+        transition: transform 2s ease-in-out;
+    }
+} */

@@ -3,9 +3,7 @@ a.link--button:link.link--selected, a.link--button:visited.link--selected, a.lin
 }
 
 html, body {
-    background-color: transparent;
     background-image: var(--color-one-background-light);
-    font-family: 'Work Sans', sans-serif;
 }
 
 .logo {
