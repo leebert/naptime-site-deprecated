@@ -113,10 +113,11 @@ h4 {
     }
 
     h4 {
-        font-size: calc(var(--text-two-subheader-size) * 0.9);
+        font-size: calc(var(--text-two-subheader-size) * 0.8);
     }
 
     html, body {
+        font-size: calc(var(--text-two-copy-size) * 0.8);
         font-weight: 300;
     }
 }

@@ -30,11 +30,35 @@ function js_c_load() {
     document.getElementById("js-article-one").addEventListener("mouseleave", js_c_handleArticleLeave);
     document.getElementById("js-article-two").addEventListener("mouseleave", js_c_handleArticleLeave);
     document.getElementById("js-article-three").addEventListener("mouseleave", js_c_handleArticleLeave);
+    document.getElementById("js-article-one").addEventListener("click", js_c_handleArticleClick, false);
+    document.getElementById("js-article-two").addEventListener("click", js_c_handleArticleClick, false);
+    document.getElementById("js-article-three").addEventListener("click", js_c_handleArticleClick, false);
     window.addEventListener("resize", js_c_handleResize);
 
     document.getElementById("js-description-one").style.opacity = "0";
     document.getElementById("js-description-two").style.opacity = "0";
     document.getElementById("js-description-three").style.opacity = "0";
+}
+
+function js_c_handleArticleClick(event) {
+    var theLink = "file:///Users/leebert/Documents/Code/Naptime/naptime-site/cs-one.html"
+    var description = document.getElementById("js-description-one");
+    if (event.target.id.includes("two")) {
+        // theLink = "cs-two.html"
+        description = document.getElementById("js-description-two");
+    }
+    else if (event.target.id.includes("three")){
+        // theLink = "cs-three.html"
+        description = document.getElementById("js-description-three");
+    }
+    description.style.opacity = "0";
+    event.target.style.opacity = 0;
+    document.getElementById("c-transition-shim").style.right = "0%";
+    document.getElementById("c-transition-shim").style.transform = "skewX(0deg)";
+    document.getElementById("js-description-one").style.opacity = "0";
+    document.getElementById("js-description-two").style.opacity = "0";
+    document.getElementById("js-description-three").style.opacity = "0";
+    setInterval(function() { window.location.replace(theLink); }, 250);
 }
 
 function js_c_handleResize(event) {

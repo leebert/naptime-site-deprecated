@@ -6,3 +6,15 @@
     height: 100%;
     width: 100%;
 }
+
+#c-target-transition-shim {
+    background-color: black;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: opacity 1.5s;
+}

@@ -3,6 +3,7 @@ var xPos = 0;
 window.addEventListener('load', js_ef_load);
 
 function js_ef_load() {
+    document.getElementById("c-target-transition-shim").style.opacity = 0;
     // var draw = SVG('c-effects-container');
     // var text = draw.text('Cooooooool 😎');
     // textPath = text.path('M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80');

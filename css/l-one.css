@@ -109,16 +109,20 @@ main {
     }
 
     header {
-        width: 75%;
+        margin-top: calc(var(--padding) * 4);
+        width: 90%;
     }
 
     main {
         border-radius: 0;
+        box-shadow: none;
         display: grid;
         gap: 0;
         grid-template-columns: auto;
         grid-template-rows: auto auto auto auto auto auto;
         justify-items: flex-start;
+        margin-top: calc(var(--padding) * 2);
+        margin-bottom: calc(var(--padding) * 1);
         width: 100%;
     }
 
