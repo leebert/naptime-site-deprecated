@@ -53,12 +53,12 @@ function js_c_handleArticleClick(event) {
     }
     description.style.opacity = "0";
     event.target.style.opacity = 0;
-    document.getElementById("c-transition-shim").style.right = "0%";
+    document.getElementById("c-transition-shim").style.right = "-50%";
     document.getElementById("c-transition-shim").style.transform = "skewX(0deg)";
     document.getElementById("js-description-one").style.opacity = "0";
     document.getElementById("js-description-two").style.opacity = "0";
     document.getElementById("js-description-three").style.opacity = "0";
-    setInterval(function() { window.location.replace(theLink); }, 250);
+    setTimeout(function() { window.location.replace(theLink); }, 250);
 }
 
 function js_c_handleResize(event) {
@@ -154,7 +154,7 @@ function js_c_updateStyleSheets() {
 }
 
 function js_c_handleLogo(event) {
-    alert("Coooooool !😎");
+    js_ef_toggleEgg(true);
 }
 
 function js_c_handleArticleEnter(event) {
@@ -176,8 +176,6 @@ function js_c_handleArticleEnter(event) {
         shim.style.right = offsetAmount + "%";
         shim.style.transform = "skewX(" + skewAmount + "deg)";
     }
-    var topOffset = event.target.getBoundingClientRect().top + 16 + window.pageYOffset;
-    var leftOffset = event.target.getBoundingClientRect().right + 32;
     var offsetEnhancer = 0;
     affectedArticle = "one";
     if (event.target.id.includes("two")) {
@@ -190,6 +188,8 @@ function js_c_handleArticleEnter(event) {
     }
     document.getElementById("js-description-" + affectedArticle).style.opacity = "1";
     if (localStorage.getItem("layout") == "one") {
+        var topOffset = event.target.getBoundingClientRect().top + 16 + window.pageYOffset;
+        var leftOffset = event.target.getBoundingClientRect().right + 32;
         if (document.body.clientWidth <= js_c_mediumBreakPoint) {
             topOffset = event.target.getBoundingClientRect().top + event.target.getBoundingClientRect().height + 16 + window.pageYOffset;
             leftOffset = event.target.getBoundingClientRect().left + (event.target.getBoundingClientRect().width * 0.5) + offsetEnhancer;
