@@ -19,26 +19,82 @@ var zDragColor = ["#3ECCF9", "#37B5DD", "#2D8FAE", "#1D5F73"];
 var zeeDepthOffset = -zLogoThickness - 2;
 var eggShowing = false;
 var zDogCanvas;
+var gridCanvas;
 var effectsCloser;
+var logoGrid = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+var gridColCount = 0;
+var gridRowCount = 0;
+var gridItemWidth = 0;
+var gridItemHeight = 0;
+var currentX = 0;
+var currentY = 0;
+var currentCol = -1;
+var currentRow = -1;
+var currentItemId = -1;
+var currentItemAngleRange = 90;
+var otherItemAngleRange = 10;
+var otherItemAngleScale = 0.95;
 
 window.addEventListener('load', js_ef_load);
 
 function js_ef_toggleEgg(shouldShow) {
     if (shouldShow == eggShowing) { return; }
-    if (shouldShow) {
-        eggShowing = true;
-        zDogCanvas.style.opacity = 1;
-        zDogCanvas.style.pointerEvents = "auto";
-        effectsCloser.style.opacity = 1;
-        effectsCloser.style.pointerEvents = "auto";
-        js_ef_Animate();
+
+    if (localStorage.getItem("layout") == "one") {  
+        if (shouldShow) {
+            js_ef_computeDynamicValues();
+            eggShowing = true;
+            zDogCanvas.style.opacity = 1;
+            zDogCanvas.style.pointerEvents = "auto";
+            effectsCloser.style.opacity = 1;
+            effectsCloser.style.pointerEvents = "auto";
+            js_ef_Animate();
+        }
+        else {
+            zDogCanvas.style.opacity = 0;
+            zDogCanvas.style.pointerEvents = "none";
+            effectsCloser.style.opacity = 0;
+            effectsCloser.style.pointerEvents = "none";
+            setTimeout(function() { eggShowing = false; }, 250);
+        }
     }
     else {
-        zDogCanvas.style.opacity = 0;
-        zDogCanvas.style.pointerEvents = "none";
-        effectsCloser.style.opacity = 0;
-        effectsCloser.style.pointerEvents = "none";
-        setTimeout(function() { eggShowing = false; }, 250);
+        if (shouldShow) {
+            js_ef_drawGridLogo();
+            js_ef_computeGridUpdates();
+            eggShowing = true;
+            gridCanvas.style.opacity = 1;
+            gridCanvas.style.pointerEvents = "auto";
+            effectsCloser.style.opacity = 1;
+            effectsCloser.style.pointerEvents = "auto";
+        }
+        else {
+            gridCanvas.style.opacity = 0;
+            gridCanvas.style.pointerEvents = "none";
+            effectsCloser.style.opacity = 0;
+            effectsCloser.style.pointerEvents = "none";
+            setTimeout(function() { 
+                eggShowing = false; 
+                js_ef_removeGridLogo();
+            }, 250);
+        }
     }
 }
 
@@ -47,12 +103,19 @@ function js_ef_load(event) {
     window.addEventListener("mousemove", js_ef_handleMouseMove);
     document.getElementById("js-close-effect").addEventListener("click", js_ef_handleClose);
 
-    zDogCanvas = document.getElementsByClassName("zdog-canvas")[0];
-    effectsCloser = document.getElementById("c-effects-close");
+    zDogCanvas = document.getElementsByClassName("c-zdog-canvas")[0];
     zDogCanvas.setAttribute("height", window.innerHeight);
     zDogCanvas.setAttribute("width", window.innerWidth);
-    js_ef_drawZdogLogo();
+    gridCanvas = document.getElementById("c-grid-canvas");
+    gridCanvas.style.height = window.innerHeight;
+    gridCanvas.style.width = window.innerWidth;
+    gridItemWidth = Math.ceil(window.innerWidth/logoGrid[0].length);
+    gridItemHeight = Math.ceil(window.innerHeight/logoGrid.length);
+    gridColCount = Math.ceil(window.innerWidth/gridItemWidth);
+    gridRowCount = Math.ceil(window.innerHeight/gridItemHeight);
+    effectsCloser = document.getElementById("c-effects-close");
 
+    js_ef_drawZdogLogo();
 }
 
 function js_ef_handleClose(event) {
@@ -60,11 +123,19 @@ function js_ef_handleClose(event) {
 }
 
 function js_ef_handleMouseMove(event) {
-    js_ef_computeDynamicValues(event.clientX, event.clientY);
+    currentX = event.clientX;
+    currentY = event.clientY;
+    if (!eggShowing) { return; }
+    if (localStorage.getItem("layout") == "one") {  
+        js_ef_computeDynamicValues();
+    }
+    else {
+        js_ef_computeGridUpdates();
+    }
 }
 
-function js_ef_computeDynamicValues(clientX, clientY) {
-    var thickness = Math.max(2, (clientX/window.innerWidth * zBaseLogoThickness));
+function js_ef_computeDynamicValues() {
+    var thickness = Math.max(2, (currentX/window.innerWidth * zBaseLogoThickness));
     for(var i = 0; i < zDefaultColor.length; i++) { 
         var zOffset = Math.max(i, (thickness * 1.05) * i);
         zDogLogoEye[i].stroke = thickness;
@@ -72,20 +143,26 @@ function js_ef_computeDynamicValues(clientX, clientY) {
         zDogLogoZee[i].stroke = thickness;
         zDogLogoZee[i].translate.z = -zOffset;
     }
-    var speed = Math.max(0.001, (clientY/window.innerHeight * zBaseRotSpeed));
+    var speed = Math.max(0.001, (currentY/window.innerHeight * zBaseRotSpeed));
     zRotSpeed = speed;
 }
 
 function js_ef_handleResize(event) {
     zDogCanvas.setAttribute("height", window.innerHeight);
     zDogCanvas.setAttribute("width", window.innerWidth);
+    gridCanvas.style.height = window.innerHeight;
+    gridCanvas.style.width = window.innerWidth;
+    gridItemWidth = Math.ceil(window.innerWidth/logoGrid[0].length);
+    gridItemHeight = Math.ceil(window.innerHeight/logoGrid.length);
+    gridColCount = Math.ceil(window.innerWidth/gridItemWidth);
+    gridRowCount = Math.ceil(window.innerHeight/gridItemHeight);
     js_ef_toggleEgg(false);
 }
 
 function js_ef_drawZdogLogo() {
     zDogLogoIllo = new Zdog.Illustration({
         // set canvas with selector
-        element: '.zdog-canvas',
+        element: '.c-zdog-canvas',
         zoom: zZoom,
         dragRotate: true,
       });
@@ -135,7 +212,6 @@ function js_ef_drawZdogLogo() {
       new Zdog.Dragger({
         startElement: zDogLogoIllo.element,
         onDragStart: function(pointer) { 
-            // console.log(pointer);
             zIsDragging = true;
             for(var i = 0; i < zDefaultColor.length; i++) { 
                 zDogLogoEye[i].color = zDragColor[i];
@@ -164,4 +240,91 @@ function js_ef_Animate() {
     zDogLogoIllo.updateRenderGraph();
     // animate next frame
     requestAnimationFrame( js_ef_Animate );
+}
+
+function js_ef_drawGridLogo() {
+    var id = 0;
+    for (var x = 0; x < gridRowCount; x++){
+        for (var y = 0; y < gridColCount; y++) {
+            var item = document.createElement("div");
+            item.id = id;
+            id++;
+            item.classList.add("c-grid-item");
+            item.style.width = gridItemWidth + "px";
+            item.style.height = gridItemHeight + "px";
+            item.style.left = (gridItemWidth * y) + "px";
+            item.style.top = (gridItemHeight * x) + "px";
+            if (logoGrid[x][y] == 1) {
+                item.style.backgroundColor = zDefaultColor[zDefaultColor.length-1];
+            }
+            else {
+                item.style.backgroundColor = zDragColor[zDragColor.length-1];
+            }
+            gridCanvas.appendChild(item);
+        }
+    }
+}
+
+function js_ef_removeGridLogo() {
+    while (gridCanvas.firstChild) {
+        gridCanvas.firstChild.remove();
+    }
+}
+
+function js_ef_computeGridUpdates() {
+    var row = Math.ceil(currentX/gridItemWidth) - 1;
+    var col = Math.ceil(currentY/gridItemHeight) - 1;
+
+    js_ef_affectCurrentItem(row, col);
+
+    if (col == currentCol && row == currentRow) { return; }
+
+    currentCol = col;
+    currentRow = row;
+    var id = 0;
+    for (var x = 0; x < gridRowCount; x++){
+        for (var y = 0; y < gridColCount; y++) {
+            let item = document.getElementById(id);
+            item.style.backgroundImage = "none";
+            item.style.zIndex = 0;
+            item.style.boxShadow = "none";
+            item.style.boxShadow.transition = "background-color 0.1s, transform 0.3s";
+            var a = currentCol - x;
+            var b = currentRow - y;
+            var d = Math.min(Math.ceil(Math.sqrt(a*a+b*b)), zDefaultColor.length-1); 
+            if (d == 0) { 
+                currentItemId = id; 
+                item.style.zIndex = 10000;
+                item.style.boxShadow = "0 0 40px 20px " + (logoGrid[x][y] == 1 ? zDefaultColor[0] : zDragColor[0]);
+                item.style.boxShadow.transition = "background-color 0s, transform 0";
+            }
+            var p = (d + 0.001)/((zDefaultColor.length-1) + 0.001);
+            var s = Zdog.lerp( 1, otherItemAngleScale, p);
+            var dl = (d * .025);
+            var c = zDragColor[d];
+            if (logoGrid[x][y] == 1) {
+                c = zDefaultColor[d];
+            }
+            item.style.transitionDelay = dl + "s";
+            item.style.backgroundColor = c;
+            var rd = zDefaultColor.length-1 - d;
+            item.style.transform = "rotateX(" + js_c_randomInteger(-rd * otherItemAngleRange, rd * otherItemAngleRange) + "deg) rotateY(" + js_c_randomInteger(-rd * otherItemAngleRange, rd * otherItemAngleRange) + "deg) scale(" + s + "," + s + ")";
+            id++;
+        }
+    }
+}
+
+function js_ef_affectCurrentItem(row, col) {
+    if (currentItemId != -1) {
+        var c1 = zDragColor[0];
+        if (logoGrid[col][row] == 1) {
+            var c1 = zDefaultColor[0];
+        }
+        var px = currentX%gridItemWidth/gridItemWidth;
+        var py = currentY%gridItemHeight/gridItemHeight;
+        var rx = Zdog.lerp(-currentItemAngleRange, currentItemAngleRange, px);
+        var ry = Zdog.lerp(-currentItemAngleRange, currentItemAngleRange, py);
+        document.getElementById(currentItemId).style.backgroundImage = "radial-gradient(farthest-side at " + px*100 + "% " + py*100 + "%,white," + c1 + ")";
+        document.getElementById(currentItemId).style.transform = "rotateX(" + ry + "deg) rotateY(" + rx + "deg) scale(1.05,1.05)";
+    }
 }

@@ -233,3 +233,7 @@ function js_c_setTitleText(isHovering) {
         document.getElementById("js-header-copy").innerHTML = isHovering ? js_c_hoverText : js_c_defaultText;
     }
 }
+
+function js_c_randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
