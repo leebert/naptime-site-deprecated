@@ -21,24 +21,24 @@ var eggShowing = false;
 var zDogCanvas;
 var gridCanvas;
 var effectsCloser;
-var logoGrid = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-                [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+var logoGrid = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+                [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 var gridColCount = 0;
 var gridRowCount = 0;
 var gridItemWidth = 0;
@@ -77,9 +77,10 @@ function js_ef_toggleEgg(shouldShow) {
     }
     else {
         if (shouldShow) {
+            eggShowing = true;
             js_ef_drawGridLogo();
             js_ef_computeGridUpdates();
-            eggShowing = true;
+            js_ef_cycleRando();
             gridCanvas.style.opacity = 1;
             gridCanvas.style.pointerEvents = "auto";
             effectsCloser.style.opacity = 1;
@@ -256,9 +257,11 @@ function js_ef_drawGridLogo() {
             item.style.top = (gridItemHeight * x) + "px";
             if (logoGrid[x][y] == 1) {
                 item.style.backgroundColor = zDefaultColor[zDefaultColor.length-1];
+                item.classList.add("fadeOne");
             }
             else {
                 item.style.backgroundColor = zDragColor[zDragColor.length-1];
+                item.classList.add("fadeTwo");
             }
             gridCanvas.appendChild(item);
         }
@@ -288,7 +291,7 @@ function js_ef_computeGridUpdates() {
             item.style.backgroundImage = "none";
             item.style.zIndex = 0;
             item.style.boxShadow = "none";
-            item.style.boxShadow.transition = "background-color 0.1s, transform 0.3s";
+            item.style.transition = "background-color 0.1s, transform 0.3s";
             var a = currentCol - x;
             var b = currentRow - y;
             var d = Math.min(Math.ceil(Math.sqrt(a*a+b*b)), zDefaultColor.length-1); 
@@ -296,7 +299,7 @@ function js_ef_computeGridUpdates() {
                 currentItemId = id; 
                 item.style.zIndex = 10000;
                 item.style.boxShadow = "0 0 40px 20px " + (logoGrid[x][y] == 1 ? zDefaultColor[0] : zDragColor[0]);
-                item.style.boxShadow.transition = "background-color 0s, transform 0";
+                item.style.transition = "background-color 0s, transform 0";
             }
             var p = (d + 0.001)/((zDefaultColor.length-1) + 0.001);
             var s = Zdog.lerp( 1, otherItemAngleScale, p);
@@ -327,4 +330,18 @@ function js_ef_affectCurrentItem(row, col) {
         document.getElementById(currentItemId).style.backgroundImage = "radial-gradient(farthest-side at " + px*100 + "% " + py*100 + "%,white," + c1 + ")";
         document.getElementById(currentItemId).style.transform = "rotateX(" + ry + "deg) rotateY(" + rx + "deg) scale(1.05,1.05)";
     }
+}
+
+function js_ef_cycleRando(){
+    var id = js_c_randomInteger(0, gridColCount*gridRowCount);
+    while (id == currentItemId) {
+        id = js_c_randomInteger(0, gridColCount*gridRowCount);
+    }
+    var element = document.getElementById(id);
+    if (element == null) { return; }
+    var animClass = element.classList.contains("fadeOne") ? "colorFadeOne" : "colorFadeTwo";
+    element.style.animation = animClass + " " + js_c_randomInteger(1, 10) + "s";
+    console.log("id-" + id + ", a-" + element.style.animation);
+    if (!eggShowing) { return; }
+    setTimeout(js_ef_cycleRando, js_c_randomInteger(250, 2000));
 }
