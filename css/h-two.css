@@ -77,13 +77,14 @@ h4 {
 #c-transition-shim {
     background-color: transparent;
     height: 0;
+    overflow: hidden;
     position: absolute;
     pointer-events: none;
     right: -150%;
     top: 0;
     transition: right 0.2s, transform 0.3s;
     transition-timing-function: ease-in-out;
-    width: 150%;
+    width: 0;
 }
 
 @media only screen and (max-width: 1024px) {
