@@ -53,8 +53,15 @@ function js_c_handleArticleClick(event) {
     }
     description.style.opacity = "0";
     event.target.style.opacity = 0;
-    document.getElementById("c-transition-shim").style.right = "-50%";
-    document.getElementById("c-transition-shim").style.transform = "skewX(0deg)";
+    if (localStorage.getItem("layout") == "one") { 
+        document.getElementById("c-transition-shim").style.right = "-50%";
+        document.getElementById("c-transition-shim").style.transform = "skewX(0deg)";
+    }
+    else {
+        document.getElementById("c-ui-controls").style.opacity = "0";
+        document.getElementById("c-transition-shim").style.opacity = "1";
+        document.getElementById("c-transition-shim").style.height = "100%";
+    }
     document.getElementById("js-description-one").style.opacity = "0";
     document.getElementById("js-description-two").style.opacity = "0";
     document.getElementById("js-description-three").style.opacity = "0";
@@ -63,10 +70,10 @@ function js_c_handleArticleClick(event) {
 
 function js_c_handleResize(event) {
     clearInterval(js_c_resizeInterval);
+    var tallest = Math.max(window.innerHeight, document.getElementsByTagName("BODY")[0].getBoundingClientRect().height);
+    document.getElementById("c-effects-container").style.height = tallest + "px";
     if (localStorage.getItem("layout") == "one") { 
-        var tallest = Math.max(window.innerHeight, document.getElementsByTagName("BODY")[0].getBoundingClientRect().height);
         document.getElementById("c-transition-shim").style.height = tallest + "px";
-        document.getElementById("c-effects-container").style.height = tallest + "px";
         document.getElementById("c-transition-shim").style.right = "-150%";
     }
     document.getElementsByTagName("BODY")[0].style.height = tallest + "px";
@@ -97,8 +104,6 @@ function js_c_handleLayout(event) {
         document.getElementById("js-one").style.pointerEvents = "auto";
         document.getElementById("js-two").style.pointerEvents = "none";
         localStorage.setItem("layout", "two");
-        document.getElementById("c-transition-shim").style.height = 0;
-        document.getElementById("c-effects-container").style.height = 0;
     }
     js_c_updateStyleSheets();
     js_c_resizeInterval = setInterval(function() { js_c_handleResize(); }, 150);
