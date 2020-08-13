@@ -20,3 +20,7 @@ html, body {
 .logo-fill {
     fill: var(--color-default-light);
 }
+
+.logo-fill:hover {
+    fill: var(--color-two-text-accent);
+}

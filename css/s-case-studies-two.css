@@ -1,0 +1,19 @@
+a:active, a:hover {
+    color: var(--color-two-text-accent);
+}
+
+.c-cs-nav a, .c-cs-nav a:active, .c-cs-nav a:hover, .c-cs-nav a:visited {
+    color: var(--color-two-text-accent);
+}
+
+.c-chevron {
+    fill: var(--color-two-text-accent);
+}
+
+#c-case-study-transition-shim {
+    background-color: white;
+}
+
+.h-logo:hover {
+    fill: var(--color-two-text-accent);
+}

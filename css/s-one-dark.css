@@ -15,6 +15,10 @@ html, body {
     fill: var(--color-default-light);
 }
 
+.logo-fill:hover {
+    fill: var(--color-one-text-accent);
+}
+
 main {
     background-color: var(--color-one-background-dark);
     background-image: none;

@@ -17,6 +17,10 @@ html, body {
     fill: var(--color-default-light);
 }
 
+.logo-fill:hover {
+    fill: var(--color-default-dark);
+}
+
 main {
     background-color: transparent;
     background-image: var(--color-one-background-light);

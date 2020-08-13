@@ -44,11 +44,11 @@ function js_c_handleArticleClick(event) {
     var theLink = "file:///Users/leebert/Documents/Code/Naptime/naptime-site/cs-one.html"
     var description = document.getElementById("js-description-one");
     if (event.target.id.includes("two")) {
-        // theLink = "cs-two.html"
+        theLink = "cs-two.html"
         description = document.getElementById("js-description-two");
     }
     else if (event.target.id.includes("three")){
-        // theLink = "cs-three.html"
+        theLink = "cs-three.html"
         description = document.getElementById("js-description-three");
     }
     description.style.opacity = "0";

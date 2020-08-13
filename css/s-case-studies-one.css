@@ -1,0 +1,23 @@
+a:active, a:hover {
+    color: var(--color-one-text-accent);
+    filter: saturate(250%);
+}
+
+.c-cs-nav a, .c-cs-nav a:active, .c-cs-nav a:hover, .c-cs-nav a:visited {
+    color: var(--color-one-text-accent);
+    filter: saturate(250%);
+}
+
+.c-chevron {
+    fill: var(--color-one-text-accent);
+    filter: saturate(250%);
+}
+
+#c-case-study-transition-shim {
+    background-color: black;
+}
+
+.h-logo:hover {
+    fill: var(--color-one-text-accent);
+    filter: saturate(250%);
+}
