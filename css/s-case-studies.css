@@ -60,13 +60,6 @@ p {
     background-color:peachpuff;
 }
 
-.c-cs-bigpicture-container {
-    background-color: palegoldenrod;
-    display: flex;
-    flex-direction: column;
-    height: calc(var(--padding) * 12);
-}
-
 .c-cs-footer {
     background-color: palevioletred;
     display: flex;
@@ -128,4 +121,36 @@ p {
     padding-right: calc(var(--padding) * 6);
 	position: relative;
     width: 50%;
+}
+
+/* Right Content - Big Picture */
+.c-cs-bigpicture {
+    display: flex;
+    flex-direction: column;
+    height: calc(var(--padding) * 12);
+}
+
+.c-cs-bigpicture_outcome {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: calc(var(--padding) * 4);
+}
+
+.c-cs-bigpicture_outcome__hero-number {
+    font-size: var(--text-one-link-primary-size);
+    font-weight: var(--font-weight-bold);
+}
+
+.c-cs-bigpicture_outcome__hero-descriptor {
+    font-size: var(--text-two-copy-size);
+    font-weight: var(--font-weight-thin);
+}
+
+.c-cs-bigpicture_outcome__title {
+    font-size: var(--text-two-article-pull-quote);
+    font-weight: var(--font-weight-extra);
+}
+
+.c-cs-bigpicture_outcome__description {
+    font-size: var(--text-two-link-secondary-size);
 }
