@@ -8,7 +8,7 @@ a:hover, a:active {
 
 a.large {
     font-size: var(--text-two-link-primary-size); 
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     margin-bottom: calc(var(--padding) * 3);
 }
 
@@ -42,19 +42,19 @@ a.link--button:link.link--selected, a.link--button:visited.link--selected, a.lin
 
 html, body {
     color: var(--color-two-text-accent);
-    font-family: 'Nunito', sans-serif;
+    font-family: var(--text-two-font-name), sans-serif;
 }
 
 h1 {
     font-size: var(--text-two-header-size);
-    font-weight: 300;
+    font-weight: var(--font-weight-thin);
     margin: 0;
 }
 
 h4 {
     color: var(--color-two-text-accent);
     font-size: var(--text-two-subheader-size);
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     margin: 0 0 calc(var(--padding) * 0.5) 0 ;
 }
 
@@ -122,6 +122,6 @@ h4 {
 
     html, body {
         font-size: calc(var(--text-two-copy-size) * 0.8);
-        font-weight: 300;
+        font-weight: var(--font-weight-thin);
     }
 }

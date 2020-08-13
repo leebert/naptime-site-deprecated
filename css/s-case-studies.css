@@ -1,4 +1,27 @@
-@import "h-tokens.css";
+a, a:visited {
+    color: var(--color-default-dark);
+    font-size: var(--text-two-link-secondary-size);
+    font-weight: var(--font-weight-regular);
+}
+
+a:active, a:hover {
+    color: var(--color-two-text-accent);
+}
+
+html, body {
+    color: var(--color-default-dark);
+    font-family: var(--text-two-font-name), sans-serif;
+}
+
+img {
+    padding-top: calc(var(--padding) * 5);
+    width: 100%;
+}
+
+p {
+    padding-top: calc(var(--padding) * 4);
+    margin: 0;
+}
 
 #c-case-study-transition-shim {
     background-color: black;
@@ -10,4 +33,99 @@
     top: 0;
     width: 100%;
     transition: opacity 1.5s;
+    z-index: 1000 !important;
+}
+
+.c-cs-article {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--text-two-copy-size);
+    padding-bottom: calc(var(--padding) * 5);
+}
+
+.c-cs-article-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: var(--text-two-header-size);
+    font-weight: var(--font-weight-thin);
+    height: calc(var(--padding) * 7);
+}
+
+.c-cs-article-header a {
+    margin-left: calc(var(--padding) * 2);
+}
+
+.c-cs-asidespacer {
+    background-color:peachpuff;
+}
+
+.c-cs-bigpicture-container {
+    background-color: palegoldenrod;
+    display: flex;
+    flex-direction: column;
+    height: calc(var(--padding) * 12);
+}
+
+.c-cs-footer {
+    background-color: palevioletred;
+    display: flex;
+    flex-direction: row;
+    height: calc(var(--padding) * 5);
+}
+
+.c-cs-learn-more {
+    display: flex;
+    flex-direction: row;
+    margin-left: calc(var(--padding) * 1);
+    transform: translateY(36px);
+}
+
+.c-cs-nav {
+    display: flex;
+    flex-direction: row;
+    height: calc(var(--padding) * 5);
+}
+
+.c-cs-nav a, .c-cs-nav a:active, .c-cs-nav a:hover, .c-cs-nav a:visited {
+    color: var(--color-two-text-accent);
+    font-size: var(--text-two-subheader-size);
+    font-weight: var(--font-weight-thin);
+    text-decoration: none;
+    width: 100%;
+}
+
+.c-chevron {
+    fill: var(--color-two-text-accent);
+}
+
+.h-first-p {
+    padding-top: calc(var(--padding) * 6);
+}
+.h-first-p::first-letter {
+    font-size: 225%;
+    font-weight: var(--font-weight-bold);
+}
+
+/* Source: https://miekd.com/articles/pull-quotes-with-html5-and-css/ */
+.h-has-pull-quote__right:before {
+	content: attr(data-pullquote);
+    float: right;
+    font-size: var(--text-two-article-pull-quote);
+    font-weight: var(--font-weight-extra);
+    padding-bottom: calc(var(--padding) * 2);
+	padding-left: calc(var(--padding) * 6);
+	position: relative;
+    width: 50%;
+}
+
+.h-has-pull-quote__left:before {
+	content: attr(data-pullquote);
+    float: left;
+    font-size: var(--text-two-article-pull-quote);
+    font-weight: var(--font-weight-extra);
+    padding-bottom: calc(var(--padding) * 2);
+    padding-right: calc(var(--padding) * 6);
+	position: relative;
+    width: 50%;
 }

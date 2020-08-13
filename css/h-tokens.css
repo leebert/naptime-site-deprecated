@@ -22,32 +22,30 @@
   --color-two-background-dark: #333333;
   --color-two-button-background-selected: #0084ff;
 
-  --text-one-header-font-name: "Work Sans-Light";
+  --text-one-font-name: "Work Sans";
   --text-one-header-size: 4.0rem;
-  --text-one-subheader-font-name: "Work Sans-SemiBold";
   --text-one-subheader-size: 2.0rem;
-  --text-one-copy-font-name: "Work Sans-Regular";
   --text-one-copy-size: 1.7rem;
-  --text-one-link-primary-font-name: "Work Sans-SemiBold";
   --text-one-link-primary-size: 6.6rem;
   --text-one-link-primary-line-height: 9.6rem;
-  --text-one-link-secondary-font-name: "Work Sans-SemiBold";
   --text-one-link-secondary-size: 1.6rem;
 
-  --text-two-header-font-name: "Nunito-Light";
+  --text-two-font-name: "Nunito";
   --text-two-header-size: 5.6rem;
-  --text-two-subheader-font-name: "Nunito-SemiBold";
   --text-two-subheader-size: 2.2rem;
-  --text-two-copy-font-name: "Nunito-Regular";
   --text-two-copy-size: 2.0rem;
-  --text-two-link-primary-font-name: "Nunito-SemiBold";
   --text-two-link-primary-size: 8.0rem;
-  --text-two-link-secondary-font-name: "Nunito-SemiBold";
   --text-two-link-secondary-size: 1.6rem;
+  --text-two-article-pull-quote: 2.4rem;
 
   --effect-default-shadow: 0px 24px 112px rgba(0, 0, 0, 0.46);
 
   --padding: 8px;
+
+  --font-weight-thin: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+  --font-weight-extra: 800;
 
   font-size: 62.5%;
 }
