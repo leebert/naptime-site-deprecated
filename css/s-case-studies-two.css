@@ -2,6 +2,10 @@ a:active, a:hover {
     color: var(--color-two-text-accent);
 }
 
+html, body {
+    font-family: var(--text-two-font-name), sans-serif;
+}
+
 .c-cs-nav a, .c-cs-nav a:active, .c-cs-nav a:hover, .c-cs-nav a:visited {
     color: var(--color-two-text-accent);
 }
@@ -16,4 +20,20 @@ a:active, a:hover {
 
 .h-logo:hover {
     fill: var(--color-two-text-accent);
+}
+
+.h-has-pull-quote__right:before {
+    font-weight: var(--font-weight-extra);
+}
+
+.h-has-pull-quote__left:before {
+    font-weight: var(--font-weight-extra);
+}
+
+.c-cs-bigpicture_outcome__hero-number {
+    font-weight: var(--font-weight-extra);
+}
+
+.c-cs-bigpicture_outcome__title {
+    font-weight: var(--font-weight-extra);
 }

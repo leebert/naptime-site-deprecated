@@ -3,6 +3,10 @@ a:active, a:hover {
     filter: saturate(250%);
 }
 
+html, body {
+    font-family: var(--text-one-font-name), sans-serif;
+}
+
 .c-cs-nav a, .c-cs-nav a:active, .c-cs-nav a:hover, .c-cs-nav a:visited {
     color: var(--color-one-text-accent);
     filter: saturate(250%);
@@ -20,4 +24,20 @@ a:active, a:hover {
 .h-logo:hover {
     fill: var(--color-one-text-accent);
     filter: saturate(250%);
+}
+
+.h-has-pull-quote__right:before {
+    font-weight: var(--font-weight-bold);
+}
+
+.h-has-pull-quote__left:before {
+    font-weight: var(--font-weight-bold);
+}
+
+.c-cs-bigpicture_outcome__hero-number {
+    font-weight: var(--font-weight-bold);
+}
+
+.c-cs-bigpicture_outcome__title {
+    font-weight: var(--font-weight-bold);
 }

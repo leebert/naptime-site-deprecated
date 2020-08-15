@@ -15,11 +15,23 @@ function js_cs_load() {
 }
 
 function js_cs_handleResize(event) {
-    console.log(j_cs_bigpicture.childNodes.length);
-    var h = window.innerHeight;
-    var bp = j_cs_bigpicture.getBoundingClientRect();
-    var ft = j_cs_footer.getBoundingClientRect();
-    var actual = h - bp.top * 1.35 - bp.height - ft.height;
-    var smallest = bp.height + ft.height - bp.top * 1.35;
-    j_cs_spacer.style.height = actual < smallest ? "0" : actual + "px";
+    if (window.innerWidth <= 670) {
+        j_cs_spacer.style.height = "0px";
+        document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-nav")[0]);
+        document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-article-header")[0]);
+        document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-bigpicture")[0]);
+        document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-article")[0]);
+        document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-footer")[0]);
+    }
+    else {
+        var h = window.innerHeight;
+        var bp = j_cs_bigpicture.getBoundingClientRect();
+        var ft = j_cs_footer.getBoundingClientRect();
+        var actual = h - bp.top * 1.35 - bp.height - ft.height;
+        var smallest = bp.height + ft.height - bp.top * 1.35;
+        j_cs_spacer.style.height = actual < smallest ? "0" : actual + "px";
+        document.getElementsByTagName("SECTION")[0].appendChild(document.getElementsByClassName("c-cs-bigpicture")[0]);
+        document.getElementsByTagName("SECTION")[0].appendChild(document.getElementsByClassName("c-cs-asidespacer")[0]);
+        document.getElementsByTagName("SECTION")[0].appendChild(document.getElementsByClassName("c-cs-footer")[0]);
+    }
 }

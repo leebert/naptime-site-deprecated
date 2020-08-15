@@ -41,7 +41,7 @@ function js_c_load() {
 }
 
 function js_c_handleArticleClick(event) {
-    var theLink = "file:///Users/leebert/Documents/Code/Naptime/naptime-site/cs-one.html"
+    var theLink = "cs-one.html"
     var description = document.getElementById("js-description-one");
     if (event.target.id.includes("two")) {
         theLink = "cs-two.html"

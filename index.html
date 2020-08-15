@@ -13,6 +13,37 @@
         <link rel="stylesheet" href="css/h-normalize.css">
         <link rel="stylesheet" href="css/h-tokens.css">
         <link rel="stylesheet" href="css/c-effects.css">
+        <!-- <script>
+            //pre-load the correct style
+            if (localStorage.getItem("layout") == null) {
+                localStorage.setItem("layout", "one");
+                localStorage.setItem("styling", "light");
+            }
+
+            var head = document.getElementsByTagName('HEAD')[0];
+
+            var link1 = document.createElement('link');
+            link1.rel = 'stylesheet';  
+            link1.type = 'text/css'; 
+            link1.id = 'layout-css';
+            link1.href = 'css/l-' + localStorage.getItem('layout') + '.css';  
+            head.appendChild(link1);
+
+            var link2 = document.createElement('link');
+            link2.rel = 'stylesheet';  
+            link2.type = 'text/css'; 
+            link2.id = 'styling-css';
+            link2.href = 'css/s-' + localStorage.getItem('layout') + '-' + localStorage.getItem('styling') + '.css';  
+            head.appendChild(link2);
+
+            var link3 = document.createElement('link');
+            link3.rel = 'stylesheet';  
+            link3.type = 'text/css'; 
+            link3.id = 'basics-css';
+            link3.href = 'css/h-' + localStorage.getItem('layout') + '.css';  
+            head.appendChild(link3);
+
+        </script> -->
         <link id="layout-css" rel="stylesheet" href="css/l-two.css">
         <link id="styling-css" rel="stylesheet" href="css/s-two-light.css">
         <link id="basics-css" rel="stylesheet" href="css/h-two.css">

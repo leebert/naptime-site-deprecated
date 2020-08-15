@@ -14,9 +14,32 @@ section {
     display: flex;
     flex-direction: column;
     position: fixed;
-    margin-right: calc(var(--padding) * 13);
+    margin-right: calc(var(--padding) * 12);
     margin-top: calc(var(--padding) * 12);
     right: 0;
     top: 0;
     width: calc(var(--padding) * 32);
+}
+
+@media only screen and (max-width: 1024 px) {
+    main {
+        margin-left: calc(var(--padding) * 5);
+        margin-right: calc(var(--padding) * 42);
+    }
+
+    section {
+        margin-right: calc(var(--padding) * 5);
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    main {
+        margin-bottom: calc(var(--padding) * 5);
+        margin-left: calc(var(--padding) * 5);
+        margin-right: calc(var(--padding) * 5);
+    }
+
+    section {
+        pointer-events: none;
+    }
 }
