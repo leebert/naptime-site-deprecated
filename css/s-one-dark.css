@@ -11,11 +11,11 @@ html, body {
     width: 30px;
 }
 
-.logo-fill {
+.logo--fill {
     fill: var(--color-default-light);
 }
 
-.logo-fill:hover {
+.logo--fill:hover {
     fill: var(--color-one-text-accent);
 }
 

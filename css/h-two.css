@@ -63,7 +63,7 @@ h4 {
     width: 30px;
 }
 
-#c-effects-container {
+#c-effects-overlay {
     align-items: center;
     background-color: transparent;
     display: flex;
@@ -76,7 +76,7 @@ h4 {
     z-index: 0;
 }
 
-#c-transition-shim {
+#c-effects-overlay__shim {
     background-color: white;
     border-bottom: 1px solid var(--color-default-dark);
     border-top: 1px solid var(--color-default-dark);

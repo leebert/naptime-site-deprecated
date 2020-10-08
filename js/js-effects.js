@@ -102,7 +102,7 @@ function js_ef_toggleEgg(shouldShow) {
 function js_ef_load(event) {
     window.addEventListener("resize", js_ef_handleResize);
     window.addEventListener("mousemove", js_ef_handleMouseMove);
-    document.getElementById("js-close-effect").addEventListener("click", js_ef_handleClose);
+    document.getElementById("js_c-effects-close-container__link").addEventListener("click", js_ef_handleClose);
 
     zDogCanvas = document.getElementsByClassName("c-zdog-canvas")[0];
     zDogCanvas.setAttribute("height", window.innerHeight);
@@ -114,7 +114,7 @@ function js_ef_load(event) {
     gridItemHeight = Math.ceil(window.innerHeight/logoGrid.length);
     gridColCount = Math.ceil(window.innerWidth/gridItemWidth);
     gridRowCount = Math.ceil(window.innerHeight/gridItemHeight);
-    effectsCloser = document.getElementById("c-effects-close");
+    effectsCloser = document.getElementById("c-effects-close-container");
 
     js_ef_drawZdogLogo();
 }
@@ -250,7 +250,7 @@ function js_ef_drawGridLogo() {
             var item = document.createElement("div");
             item.id = id;
             id++;
-            item.classList.add("c-grid-item");
+            item.classList.add("c-grid-canvas__item");
             item.style.width = gridItemWidth + "px";
             item.style.height = gridItemHeight + "px";
             item.style.left = (gridItemWidth * y) + "px";

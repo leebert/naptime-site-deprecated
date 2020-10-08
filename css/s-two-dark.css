@@ -17,10 +17,10 @@ html, body {
     background-color: var(--color-default-dark);
 }
 
-.logo-fill {
+.logo--fill {
     fill: var(--color-default-light);
 }
 
-.logo-fill:hover {
+.logo--fill:hover {
     fill: var(--color-two-text-accent);
 }

@@ -44,19 +44,19 @@ a.link--button:link.link--selected {
     border: solid 1px var(--color-default-light);
 }
 
-#js-one {
+#js_one {
     border-radius: calc(var(--padding) * 2) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5);
 }
 
-#js-two {
+#js_two {
     border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 2) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5);
 }
 
-#js-light {
+#js_light {
     border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 2);
 }
 
-#js-dark {
+#js_dark {
     border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 2) calc(var(--padding) * 0.5);
 }
 
@@ -89,7 +89,7 @@ h4 {
     width: 80px;
 }
 
-#c-effects-container {
+#c-effects-overlay {
     background-color: transparent;
     height: 0;
     overflow: hidden;
@@ -100,7 +100,7 @@ h4 {
     z-index: 0;
 }
 
-#c-transition-shim {
+#c-effects-overlay__shim {
     /* background-color: black; */
     border-left: 4px solid #963446;
     background-image: linear-gradient(to right, #63222D, #63222D 0.24%, rgba(0,0,0,1) 0.25%, rgba(0,0,0,1) 100%);
@@ -130,19 +130,19 @@ h4 {
 }
 
 @media only screen and (max-width: 840px) {
-    #js-one {
+    #js_one {
         border-radius: calc(var(--padding) * 2) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 2);
     }
     
-    #js-two {
+    #js_two {
         border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5);
     }
     
-    #js-light {
+    #js_light {
         border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5) calc(var(--padding) * 0.5);
     }
     
-    #js-dark {
+    #js_dark {
         border-radius: calc(var(--padding) * 0.5) calc(var(--padding) * 2) calc(var(--padding) * 2) calc(var(--padding) * 0.5);
     }
 

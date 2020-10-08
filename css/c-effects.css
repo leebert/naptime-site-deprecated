@@ -1,4 +1,4 @@
-#c-effects-container {
+#c-effects-overlay {
     background-color: #efefef;
     font-size: 1em;
     height: 100%;
@@ -6,7 +6,7 @@
     width: 100%;
 }
 
-#c-effects-close {
+#c-effects-close-container {
     opacity: 0;
     pointer-events: none;
     position: absolute;
@@ -16,7 +16,7 @@
     z-index: 52;
 }
 
-#c-effects-close a {
+#c-effects-close-container a {
     color: var(--color-default-light);
 }
 
@@ -33,6 +33,19 @@
     z-index: 51;
 }
 
+.c-grid-canvas__item {
+    background-color: black;
+    left: 0;
+    position: absolute;
+    top: 0; 
+    transform: scale(0.8,0.8);
+    transition: background-color 0.1s, transform 0.3s;
+    transition-delay: 1s;
+    transform-origin: 50% 50%;
+    transition-timing-function: ease-in;
+    z-index: 0;
+}
+
 .c-zdog-canvas {
     animation: pulsate 0.5s;
     animation-direction: alternate;
@@ -47,19 +60,6 @@
     top: 0;
     transition: opacity 0.25s;
     z-index: 50;
-}
-
-.c-grid-item {
-    background-color: black;
-    left: 0;
-    position: absolute;
-    top: 0; 
-    transform: scale(0.8,0.8);
-    transition: background-color 0.1s, transform 0.3s;
-    transition-delay: 1s;
-    transform-origin: 50% 50%;
-    transition-timing-function: ease-in;
-    z-index: 0;
 }
 
 path {

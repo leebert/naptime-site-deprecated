@@ -34,10 +34,10 @@ html, body {
     font-weight: var(--font-weight-bold);
 }
 
-.c-cs-bigpicture_outcome__hero-number {
+.c-cs-bigpicture__outcome__hero-number {
     font-weight: var(--font-weight-bold);
 }
 
-.c-cs-bigpicture_outcome__title {
+.c-cs-bigpicture__outcome__title {
     font-weight: var(--font-weight-bold);
 }

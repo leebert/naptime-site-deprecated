@@ -18,7 +18,7 @@ function js_cs_handleResize(event) {
     if (window.innerWidth <= 670) {
         j_cs_spacer.style.height = "0px";
         document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-nav")[0]);
-        document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-article-header")[0]);
+        document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-article__header")[0]);
         document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-bigpicture")[0]);
         document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-article")[0]);
         document.getElementsByTagName("MAIN")[0].appendChild(document.getElementsByClassName("c-cs-footer")[0]);

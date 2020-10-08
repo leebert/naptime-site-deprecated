@@ -4,6 +4,10 @@ Lee's portfolio and exploratory playground.
 ## Naming Conventions 
 I'm loosely following the [BEM Methodology](https://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403).
 
+- `-` is just a word separator
+- `__` is an element indicator
+- `--` is a modifier/state indicator 
+
 **Filename Prefixes**
 - `c-` Component
 - `h-` Helper
