@@ -12,14 +12,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/h-normalize.css">
         <link rel="stylesheet" href="css/h-tokens.css">
-        <link rel="stylesheet" href="css/l-case-studies.css">
         <link rel="stylesheet" href="css/h-case-studies.css">
+        <link rel="stylesheet" href="css/b-case-studies.css">
+        <link rel="stylesheet" href="css/m-case-studies.css">
         <script> 
+            // explicitly loading here to prevent screen flash 
             var head = document.getElementsByTagName('HEAD')[0];
             var link = document.createElement('link');
             link.rel = 'stylesheet';  
             link.type = 'text/css'; 
-            link.href = 'css/s-case-studies-' + localStorage.getItem("layout") + '.css';  
+            link.href = 'css/t-case-studies-' + localStorage.getItem("layout") + '.css';  
             head.appendChild(link);  
         </script> 
         <script type="text/javascript" src="js/js-case-studies.js" ></script>
@@ -29,7 +31,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div id="c-case-study-transition-shim"></div>
+        <div id="js_c-cs-transition-shim"></div>
         <main>
             <nav class="c-cs-nav">
                 <a href="index.html">

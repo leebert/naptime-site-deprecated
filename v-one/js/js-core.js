@@ -54,13 +54,13 @@ function js_c_handleArticleClick(event) {
     description.style.opacity = "0";
     event.target.style.opacity = 0;
     if (localStorage.getItem("layout") == "one") { 
-        document.getElementById("c-effects-overlay__shim").style.right = "-50%";
-        document.getElementById("c-effects-overlay__shim").style.transform = "skewX(0deg)";
+        document.getElementById("js_c-effects-overlay__shim").style.right = "-50%";
+        document.getElementById("js_c-effects-overlay__shim").style.transform = "skewX(0deg)";
     }
     else {
         document.getElementById("c-ui-controls").style.opacity = "0";
-        document.getElementById("c-effects-overlay__shim").style.opacity = "1";
-        document.getElementById("c-effects-overlay__shim").style.height = "100%";
+        document.getElementById("js_c-effects-overlay__shim").style.opacity = "1";
+        document.getElementById("js_c-effects-overlay__shim").style.height = "100%";
     }
     document.getElementById("js_description-one").style.opacity = "0";
     document.getElementById("js_description-two").style.opacity = "0";
@@ -71,10 +71,10 @@ function js_c_handleArticleClick(event) {
 function js_c_handleResize(event) {
     clearInterval(js_c_resizeInterval);
     var tallest = Math.max(window.innerHeight, document.getElementsByTagName("BODY")[0].getBoundingClientRect().height);
-    document.getElementById("c-effects-overlay").style.height = tallest + "px";
+    document.getElementById("js_c-effects-overlay").style.height = tallest + "px";
     if (localStorage.getItem("layout") == "one") { 
-        document.getElementById("c-effects-overlay__shim").style.height = tallest + "px";
-        document.getElementById("c-effects-overlay__shim").style.right = "-150%";
+        document.getElementById("js_c-effects-overlay__shim").style.height = tallest + "px";
+        document.getElementById("js_c-effects-overlay__shim").style.right = "-150%";
     }
     document.getElementsByTagName("BODY")[0].style.height = tallest + "px";
     if (document.body.clientWidth <= js_c_smallBreakPoint) {
@@ -153,9 +153,10 @@ function js_c_initUI() {
 }
 
 function js_c_updateStyleSheets() {
-    document.getElementById("layout-css").href = "css/l-" + localStorage.getItem("layout") + ".css";
-    document.getElementById("styling-css").href = "css/s-" + localStorage.getItem("layout") + "-" + localStorage.getItem("styling") + ".css";
-    document.getElementById("basics-css").href = "css/h-" + localStorage.getItem("layout") + ".css";
+    document.getElementById("js_helpers-css").href = "css/h-" + localStorage.getItem("layout") + ".css";
+    document.getElementById("js_basics-css").href = "css/b-" + localStorage.getItem("layout") + ".css";
+    document.getElementById("js_media-css").href = "css/m-" + localStorage.getItem("layout") + ".css";
+    document.getElementById("js_theming-css").href = "css/t-" + localStorage.getItem("layout") + "-" + localStorage.getItem("styling") + ".css";
 }
 
 function js_c_handleLogo(event) {
@@ -168,7 +169,7 @@ function js_c_handleArticleEnter(event) {
     if (document.body.clientWidth <= js_c_smallBreakPoint) { return; }
     if (localStorage.getItem("layout") == "one") {
         document.getElementById("c-ui-controls").style.opacity = "0";
-        var shim = document.getElementById("c-effects-overlay__shim");
+        var shim = document.getElementById("js_c-effects-overlay__shim");
         var offsetAmount = -105;
         var skewAmount = -24;
         if (event.target.id.includes("two")) {
@@ -224,7 +225,7 @@ function js_c_ArticleLeaveHandler() {
     js_c_setTitleText(false);
     if (localStorage.getItem("layout") == "one") {
         document.getElementById("c-ui-controls").style.opacity = "1";
-        var shim = document.getElementById("c-effects-overlay__shim");
+        var shim = document.getElementById("js_c-effects-overlay__shim");
         shim.style.right = "-150%";
         shim.style.transform = "skewX(0deg)";
     }

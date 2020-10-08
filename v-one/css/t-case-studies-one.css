@@ -17,7 +17,7 @@ html, body {
     filter: saturate(250%);
 }
 
-#c-case-study-transition-shim {
+#js_c-cs-transition-shim {
     background-color: black;
 }
 

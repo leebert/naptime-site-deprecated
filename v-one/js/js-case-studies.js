@@ -6,7 +6,7 @@ var j_cs_footer;
 window.addEventListener('load', js_cs_load);
 
 function js_cs_load() {
-    document.getElementById("c-case-study-transition-shim").style.opacity = 0;
+    document.getElementById("js_c-cs-transition-shim").style.opacity = 0;
     j_cs_bigpicture = document.getElementsByClassName("c-cs-bigpicture")[0];
     j_cs_spacer = document.getElementsByClassName("c-cs-asidespacer")[0];
     j_cs_footer = document.getElementsByClassName("c-cs-footer")[0];
