@@ -20,7 +20,6 @@ I'm loosely following [BEM Methodology](https://webdesign.tutsplus.com/articles/
 **Javascript Conventions**
 - In Javascript files I prefix everything with `js_[x]_` where `[x]` is the first one or two letters of the filename. I do this so that if I reference a variable or function in a different file I know who is responsible for it.
 - In HMTL files I prefix things that are modified by Javascript with a `js_`. 
-- In CSS and HTML files I  prefix things with a `c-` to indicate components. 
 
 **Other Notes**
 - I'm using [Design Tokenizer](https://www.figma.com/community/plugin/767048666042724266/Design-Tokenizer) (a plugin I created for [Figma](http://figma.com/)) to *almost* directly integrate Figma content into my code base.

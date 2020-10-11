@@ -1,0 +1,103 @@
+@media only screen and (max-width: 1024 px) {
+    main {
+        margin-left: calc(var(--padding) * 5);
+        margin-right: calc(var(--padding) * 42);
+    }
+
+    section {
+        margin-right: calc(var(--padding) * 5);
+    }
+    
+    .c-cs-article {
+        margin-top: calc(var(--padding) * 1);
+    }
+
+    .c-cs-article__header {
+        flex-direction: column;
+    }
+
+    .c-cs-article__header a:first-child {
+        margin-left: 0;
+    }
+
+    .c-cs-learn-more {
+        margin-left: 0;
+        transform: translateY(calc(var(--padding) * 0.5));
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    main {
+        margin-bottom: calc(var(--padding) * 5);
+        margin-left: calc(var(--padding) * 5);
+        margin-right: calc(var(--padding) * 5);
+    }
+
+    section {
+        pointer-events: none;
+    }
+
+    .c-cs-article {
+        margin-top: 0;
+    }
+
+    .c-cs-bigpicture {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-top: calc(var(--padding) * 8);
+        height: 100%;
+    }
+
+    .c-cs-bigpicture__outcome {
+        margin-bottom: 0;
+        padding-right: calc(var(--padding) * 4);
+    }
+
+    .h-has-pull-quote__right:before {
+        content: attr(data-pullquote);
+        display: block;
+        float: none;
+        padding-bottom: calc(var(--padding) * 4);
+        padding-left: 0;
+        position: relative;
+        width: 100%;
+    }
+    
+    .h-has-pull-quote__left:before {
+        content: attr(data-pullquote);
+        display: block;
+        float: none;
+        padding-bottom: calc(var(--padding) * 4);
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .c-cs-article {
+        margin-top: calc(var(--padding) * -4);
+    }
+
+    .c-cs-learn-more {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .c-cs-learn-more a {
+        margin-bottom: var(--padding);
+        margin-left: 0;
+    }
+
+    .c-cs-bigpicture {
+        display: flex;
+        flex-direction: column;
+        margin-top: calc(var(--padding) * 14);
+        height: 100%;
+    }
+
+    .c-cs-bigpicture__outcome {
+        margin-bottom: calc(var(--padding) * 4);
+    }
+}
