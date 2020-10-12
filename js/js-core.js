@@ -1,15 +1,15 @@
 // structure is: link title, resource type, resource url, design, code, words, year
 var js_c_data = [
-    {title: "A Scouting App for Directors & Cinematographers", type: "", url: "", design: true, code: true, words: true, year: 2020},
+    {title: "A Scouting App for Directors & Cinematographers", type: "", url: "", design: true, code: true, words: false, year: 2020},
     {title: "A SaaS Product for Data Scientists", type: "", url: "", design: true, code: false, words: true, year: 2020},
-    {title: "A Video Annotation Tool for Data Labelers", type: "", url: "", design: true, code: false, words: true, year: 2020},
-    {title: "Interaction Prototypes", type: "", url: "", design: true, code: true, words: false, year: 2020},
-    {title: "Website Content for Branding & Marketing", type: "", url: "", design: true, code: true, words: true, year: 2020},
+    {title: "A Video Annotation Tool for Data Labelers", type: "", url: "", design: true, code: false, words: false, year: 2020},
+    {title: "A Video Timeline Prototype", type: "", url: "", design: false, code: true, words: false, year: 2020},
+    {title: "Lots Branding & Marketing Content", type: "", url: "", design: true, code: true, words: true, year: 2020},
     {title: "A Case Study for Data Labeling", type: "", url: "", design: false, code: false, words: true, year: 2020},
-    {title: "A Content Review Portal for Data Scientists", type: "", url: "", design: true, code: false, words: true, year: 2019},
+    {title: "A Content Review Portal for Data Scientists", type: "", url: "", design: true, code: false, words: false, year: 2019},
     {title: "A Design Token Plugin for Figma", type: "", url: "", design: true, code: true, words: true, year: 2019},
     {title: "An Interactive Art Experiment Using AR", type: "", url: "", design: true, code: true, words: false, year: 2019},
-    {title: "A Machine Learning Behavioral Tool for Cybersecurity Analysts", type: "", url: "", design: true, code: false, words: true, year: 2019},
+    {title: "A Machine Learning Behavioral Tool for Cybersecurity Analysts", type: "", url: "", design: true, code: false, words: false, year: 2019},
     {title: "An Introducton to Computer Science Course for UT Austin", type: "", url: "", design: false, code: false, words: true, year: 2018},
     {title: "A Building Maintenance App Using AR", type: "", url: "", design: true, code: true, words: false, year: 2018},
     {title: "A Thermostat Upgrade Assistant App Using AR", type: "", url: "", design: true, code: false, words: true, year: 2018},
@@ -24,6 +24,7 @@ var js_c_ContentHolder;
 var js_c_Filter = 0; //0 == none, 1 == design, 2 == code, 3 == words
 var js_c_StartYear = 2020;
 var js_c_EndYear = 2011;
+var js_c_LastButton;
 
 window.addEventListener('load', js_c_load);
 
@@ -36,8 +37,30 @@ function js_c_load() {
 }
 
 function js_c_HandleFilter(event) {
-    js_c_Filter = js_c_Filter == Number(event.target.id.charAt(event.target.id.length - 1)) ? 0 : Number(event.target.id.charAt(event.target.id.length - 1));
+    var n = Number(event.target.id.charAt(event.target.id.length - 1));
+    js_c_Filter = js_c_Filter == n ? 0 : n ;
+    js_c_CycleButtonStyle(js_c_LastButton);
+    if (!js_c_LastButton || (js_c_LastButton.id != event.target.id)) { 
+        js_c_CycleButtonStyle(event.target); 
+        js_c_LastButton = event.target;
+    }
+    else {
+        js_c_LastButton = null;
+    }
     js_c_loadContent()
+}
+
+function js_c_CycleButtonStyle(button) {
+    if (!button) { return; }
+    var n = Number(button.id.charAt(button.id.length - 1));
+    var mod = "design";
+    if (n == 2) {
+        mod = "code";
+    }
+    else if (n == 3) {
+        mod = "words";
+    }
+    button.classList.toggle("selected--" + mod);
 }
 
 function js_c_loadContent() {
@@ -60,10 +83,12 @@ function js_c_loadContent() {
         group.appendChild(linkList);
         for (link of links) {
             var container = document.createElement("div");
-            var item = document.createElement('a');
+            container.classList.add("content__link");
+            container.appendChild(js_c_GetTypes(link.design, link.code, link.words));
+            var item = document.createElement("a");
             item.href = "#";
             item.textContent = link.title;
-            container.append(item)
+            container.appendChild(item);
             linkList.appendChild(container);
         }
         js_c_ContentHolder.appendChild(group);
@@ -86,4 +111,22 @@ function js_c_GetLinks(year) {
         return js_c_data.filter(link => link.year == year && link.words == true);
     }
     return js_c_data.filter(link => link.year == year);
+}
+
+function js_c_GetTypes(design, code, words) {
+    var container = document.createElement("div");
+    container.classList.add("content__types");
+    var d = document.createElement("div");
+    d.classList.add("type");
+    d.classList.add("type__" + (design ? "" : "no-") + "design");
+    container.appendChild(d);
+    var c = document.createElement("div");
+    c.classList.add("type");
+    c.classList.add("type__" + (code ? "" : "no-") + "code");
+    container.appendChild(c);
+    var w = document.createElement("div");
+    w.classList.add("type");
+    w.classList.add("type__" + (words ? "" : "no-") + "words");
+    container.appendChild(w);
+    return container;
 }

@@ -2,8 +2,12 @@
     --color-accent-one: #FF6A85;
     --color-accent-two: #9948FF;
     --color-accent-three: #46C127;
+    --color-accent-one-t: #FF6A8533;
+    --color-accent-two-t: #9948FF33;
+    --color-accent-three-t: #46C12733;
     --color-dark: #3C4D5B;
     --color-gray: #D8DBDE;
+    --color-link: #0085FF;
 
     --font-weight-thin: 300;
     --font-weight-regular: 400;
@@ -18,7 +22,7 @@
     --text-font-name-secondary: "Nunito";
 
     --text-size-button: 1.4rem;
-    --text-size-header: 3.8rem;
+    --text-size-header: 4.0rem;
     --text-size-subheader: 1.9rem;
     --text-size-link: 1.2rem;
 }
