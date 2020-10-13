@@ -21,7 +21,7 @@ a.button, a.button:visited {
     border-radius: var(--padding-large);
     display: flex;
     font-size: var(--text-size-link);
-    padding: var(--padding);
+    padding: var(--padding) calc(var(--padding) * 1.5);
     text-decoration: none;
     margin-left: var(--padding-medium);
 }
@@ -91,8 +91,7 @@ header {
 
 main {
     padding-bottom: var(--padding-xlarge);
-    margin-left: calc(var(--padding) * 14);
-    margin-top: var(--padding-large);
+    margin: var(--padding-large) var(--padding-large) 0 calc(var(--padding) * 14);
 }
 
 /* content section */
@@ -113,6 +112,7 @@ main {
 .content__link {
     align-items: flex-start;
     display:flex;
+    margin-left: var(--padding-xlarge);
     padding-bottom: var(--padding-medium);
 }
 
@@ -124,7 +124,6 @@ main {
 .content__types {
     align-items: center;
     display:flex;
-    margin-left: var(--padding-xlarge);
     padding-right: var(--padding);
 }
 
@@ -153,8 +152,11 @@ main {
     width: calc(var(--padding) * 1.5);
     background-size: 100% 100%;
     margin-right: calc(var(--padding) / 2);
-    margin-top: 3px;
     pointer-events: none;
+}
+
+.content__types, .type {
+    margin-top: 2px;
 }
 
 .type__design {
