@@ -33,7 +33,25 @@ function js_c_load() {
     document.getElementById("js_filter_1").addEventListener("click", js_c_HandleFilter);
     document.getElementById("js_filter_2").addEventListener("click", js_c_HandleFilter);
     document.getElementById("js_filter_3").addEventListener("click", js_c_HandleFilter);
-    js_c_loadContent()
+    document.addEventListener("scroll", js_c_HandleScroll);
+    js_c_loadContent();
+    js_c_HandleScroll();
+}
+
+function js_c_HandleScroll(){
+    var w = window.innerHeight;
+    var h = document.getElementsByTagName("body")[0].scrollHeight;
+    var t = document.getElementsByTagName("body")[0].scrollTop;
+    if (w + t < h) {
+        if (!document.getElementsByTagName("footer")[0].classList.contains("scroll-indicator")) {
+            console.log("adding");
+            document.getElementsByTagName("footer")[0].classList.add("scroll-indicator");
+        }
+    }
+    else {
+        console.log("removing");
+        document.getElementsByTagName("footer")[0].classList.remove("scroll-indicator");
+    }
 }
 
 function js_c_HandleFilter(event) {
@@ -75,9 +93,11 @@ function js_c_loadContent() {
         timeline.classList.add("content__timeline");
         timeline.innerHTML = i;
         group.appendChild(timeline);
-        var line =  document.createElement("div");
-        line.classList.add("content__timeline-line");
-        timeline.appendChild(line);
+        if (i != js_c_EndYear) {
+            var line =  document.createElement("div");
+            line.classList.add("content__timeline-line");
+            timeline.appendChild(line);
+        }
         var linkList = document.createElement("div");
         linkList.classList.add("content__links");
         group.appendChild(linkList);

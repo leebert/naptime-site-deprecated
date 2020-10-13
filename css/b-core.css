@@ -57,7 +57,6 @@ body {
     color: var(--color-dark);
     font-family: var(--text-font-name-primary), sans-serif;
     font-size: 62.5%;
-    margin: var(--padding-medium) var(--padding-large) 0 var(--padding-large);
 }
 
 footer {
@@ -65,7 +64,7 @@ footer {
     background-color: white;
     bottom: 0;
     display: flex;
-    font-size: var(--text-size-link);
+    font-size: var(--text-size-small);
     font-weight: var(--text-size-regular);
     justify-content: center;
     height: var(--padding-xlarge);
@@ -77,17 +76,22 @@ footer a {
     padding-left: var(--padding);
 }
 
+footer.scroll-indicator {
+   border-top: solid 1px var(--color-gray);
+}
+
 header {
     align-items: center;
     display: flex;
     font-size: var(--text-size-header);
     font-weight: var(--font-weight-thin);
     justify-content: space-between;
+    margin: var(--padding-medium) var(--padding-large) 0 var(--padding-large);
 }
 
 main {
     padding-bottom: var(--padding-xlarge);
-    margin-left: calc(var(--padding) * 10);
+    margin-left: calc(var(--padding) * 14);
     margin-top: var(--padding-large);
 }
 
@@ -107,11 +111,12 @@ main {
 }
 
 .content__link {
+    align-items: flex-start;
     display:flex;
     padding-bottom: var(--padding-medium);
 }
 
-.content__padder {
+.content__padder {  
     height: calc(var(--padding) * 6);
     width: 1px;;
 }
@@ -130,7 +135,7 @@ main {
 
 .content__timeline-line {
     background-color: var(--color-gray);
-    /* height: 100%; */
+    flex-grow: 1;
     margin: var(--padding) 0 var(--padding) var(--padding);
     width: 1px;
 }
@@ -148,6 +153,8 @@ main {
     width: calc(var(--padding) * 1.5);
     background-size: 100% 100%;
     margin-right: calc(var(--padding) / 2);
+    margin-top: 3px;
+    pointer-events: none;
 }
 
 .type__design {
