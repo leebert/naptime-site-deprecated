@@ -55,6 +55,7 @@ function js_c_HandleFilter(event) {
         js_c_LastButton = null;
     }
     js_c_loadContent()
+    js_cmn_HandleScroll();
 }
 
 function js_c_CycleButtonStyle(button) {
