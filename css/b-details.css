@@ -5,8 +5,14 @@ h1 {
 }
 
 body {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: calc(var(--padding) * 12) auto calc(var(--padding) * 64);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". nav ."
+    ". header ."
+    ". article ."
+    "footer footer footer";
 }
 
 img {
@@ -19,24 +25,20 @@ p {
     margin: 0;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    margin: calc(var(--padding) * 5) calc(var(--padding) * 65) calc(var(--padding) * 6) calc(var(--padding) * 12); 
-}
-
 article {
     display: flex;
     flex-direction: column;
     font-family: var(--text-font-name-secondary), sans-serif;
     font-size: var(--text-size-standard);
-    padding-bottom: calc(var(--padding) * 5);
+    grid-area: article;
+    padding-bottom: calc(var(--padding-xlarge) * 2);
 }
 
 header {
     display: flex;
     flex-direction: column;
     font-size: var(--text-size-header);
+    grid-area: header;
 }
 
 .header__learn-more {
@@ -55,7 +57,9 @@ header {
 nav {
     display: flex;
     flex-direction: row;
+    grid-area: nav;
     height: calc(var(--padding) * 5);
+    margin-top: calc(var(--padding) * 5);
 }
 
 nav a, nav a:active, nav a:hover, nav a:visited {
@@ -74,11 +78,10 @@ aside {
     display: flex;
     flex-direction: column;
     font-family: var(--text-font-name-secondary), sans-serif;
-    margin-right: calc(var(--padding) * 12);
-    margin-top: calc(var(--padding) * 12);
+    grid-area: aside;
     position: fixed;
-    right: 0;
-    top: 0;
+    right: calc(var(--padding) * 12);
+    top: calc(var(--padding-xlarge) + var(--padding-large));
     width: calc(var(--padding-xlarge) * 4);
 }
 
