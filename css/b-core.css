@@ -10,7 +10,7 @@ a.button, a.button:visited {
     font-size: var(--text-size-standard);
     padding: var(--padding) calc(var(--padding) * 1.5);
     text-decoration: none;
-    margin-left: var(--padding-medium);
+    margin-left: var(--padding);
 }
 
 a.button--design {
@@ -26,6 +26,10 @@ a.button--code {
 a.button--words {
     color: var(--color-accent-three) !important;
     border-color: var(--color-accent-three) !important;
+}
+
+a.selected--all {
+    background-color: var(--color-link-t);
 }
 
 a.selected--design {
@@ -46,7 +50,8 @@ header {
     font-size: var(--text-size-header);
     font-weight: var(--font-weight-thin);
     justify-content: space-between;
-    margin: var(--padding-medium) var(--padding-large) 0 var(--padding-large);
+    margin: var(--padding-large) var(--padding-large) 0 var(--padding-large);
+    white-space: nowrap;
 }
 
 main {

@@ -30,6 +30,9 @@ window.addEventListener('load', js_c_load);
 
 function js_c_load() {
     js_c_ContentHolder = document.getElementById("js_main");
+    js_c_LastButton = document.getElementById("js_filter_0");
+    js_c_LastButton.addEventListener("click", js_c_HandleFilter);
+    js_c_LastButton.classList.toggle("selected--all");
     document.getElementById("js_filter_1").addEventListener("click", js_c_HandleFilter);
     document.getElementById("js_filter_2").addEventListener("click", js_c_HandleFilter);
     document.getElementById("js_filter_3").addEventListener("click", js_c_HandleFilter);
@@ -40,7 +43,9 @@ function js_c_load() {
 
 function js_c_HandleFilter(event) {
     var n = Number(event.target.id.charAt(event.target.id.length - 1));
-    js_c_Filter = js_c_Filter == n ? 0 : n ;
+    var l = Number(js_c_LastButton.id.charAt(event.target.id.length - 1));
+    if (n == l) { return; }
+    js_c_Filter = n;
     js_c_CycleButtonStyle(js_c_LastButton);
     if (!js_c_LastButton || (js_c_LastButton.id != event.target.id)) { 
         js_c_CycleButtonStyle(event.target); 
@@ -55,8 +60,11 @@ function js_c_HandleFilter(event) {
 function js_c_CycleButtonStyle(button) {
     if (!button) { return; }
     var n = Number(button.id.charAt(button.id.length - 1));
-    var mod = "design";
-    if (n == 2) {
+    var mod = "all";
+    if (n == 1) {
+        mod = "design";
+    }
+    else if (n == 2) {
         mod = "code";
     }
     else if (n == 3) {
