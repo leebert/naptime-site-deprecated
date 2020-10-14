@@ -1,6 +1,6 @@
 // structure is: link title, resource type, resource url, design, code, words, year
 var js_c_data = [
-    {title: "A Scouting App for Directors & Cinematographers", type: "", url: "", design: true, code: true, words: false, year: 2020},
+    {title: "A Scouting App for Directors & Cinematographers", type: "page", url: "details-cinescope.html", design: true, code: true, words: false, year: 2020},
     {title: "A SaaS Product for Data Scientists", type: "", url: "", design: true, code: false, words: true, year: 2020},
     {title: "A Video Annotation Tool for Data Labelers", type: "", url: "", design: true, code: false, words: false, year: 2020},
     {title: "A Video Timeline Prototype", type: "", url: "", design: false, code: true, words: false, year: 2020},
@@ -33,25 +33,9 @@ function js_c_load() {
     document.getElementById("js_filter_1").addEventListener("click", js_c_HandleFilter);
     document.getElementById("js_filter_2").addEventListener("click", js_c_HandleFilter);
     document.getElementById("js_filter_3").addEventListener("click", js_c_HandleFilter);
-    document.addEventListener("scroll", js_c_HandleScroll);
+    document.addEventListener("scroll", js_cmn_HandleScroll);
     js_c_loadContent();
-    js_c_HandleScroll();
-}
-
-function js_c_HandleScroll(){
-    var w = window.innerHeight;
-    var h = document.getElementsByTagName("body")[0].scrollHeight;
-    var t = document.getElementsByTagName("body")[0].scrollTop;
-    if (w + t < h) {
-        if (!document.getElementsByTagName("footer")[0].classList.contains("scroll-indicator")) {
-            console.log("adding");
-            document.getElementsByTagName("footer")[0].classList.add("scroll-indicator");
-        }
-    }
-    else {
-        console.log("removing");
-        document.getElementsByTagName("footer")[0].classList.remove("scroll-indicator");
-    }
+    js_cmn_HandleScroll();
 }
 
 function js_c_HandleFilter(event) {
@@ -106,7 +90,12 @@ function js_c_loadContent() {
             container.classList.add("content__link");
             container.appendChild(js_c_GetTypes(link.design, link.code, link.words));
             var item = document.createElement("a");
-            item.href = "#";
+            if (link.type == "page") {
+                item.href = link.url;
+            }
+            else {
+                item.href = "#";
+            }
             item.textContent = link.title;
             container.appendChild(item);
             linkList.appendChild(container);

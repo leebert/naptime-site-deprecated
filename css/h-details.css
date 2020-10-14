@@ -1,17 +1,20 @@
+/* article layout stuff */
+
 .h-first-p {
     padding-top: calc(var(--padding) * 6);
 }
 
 .h-first-p::first-letter {
     font-size: 225%;
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-semibold);
 }
 
 /* Source: https://miekd.com/articles/pull-quotes-with-html5-and-css/ */
 .h-has-pull-quote__right:before {
 	content: attr(data-pullquote);
     float: right;
-    font-size: var(--text-two-article-pull-quote);
+    font-size: var(--text-size-subheader);
+    font-weight: var(--font-weight-semibold);
     padding-bottom: calc(var(--padding) * 2);
 	padding-left: calc(var(--padding) * 6);
 	position: relative;
@@ -21,15 +24,10 @@
 .h-has-pull-quote__left:before {
 	content: attr(data-pullquote);
     float: left;
-    font-size: var(--text-two-article-pull-quote);
+    font-size: var(--text-size-subheader);
+    font-weight: var(--font-weight-semibold);
     padding-bottom: calc(var(--padding) * 2);
     padding-right: calc(var(--padding) * 6);
 	position: relative;
     width: 50%;
-}
-
-.h-logo {
-    fill: var(--color-default-dark);
-    height: 32px;
-    width: 32px;
 }

@@ -1,16 +1,3 @@
-/* basics */
-a, a:visited {
-    color: var(--color-link);
-}
-
-a:hover {
-    filter: brightness(70%);
-}
-
-a:active {
-    filter: brightness(120%);
-}
-
 aside {
     display: flex;
 }
@@ -20,7 +7,7 @@ a.button, a.button:visited {
     border: solid 1px;
     border-radius: var(--padding-large);
     display: flex;
-    font-size: var(--text-size-link);
+    font-size: var(--text-size-standard);
     padding: var(--padding) calc(var(--padding) * 1.5);
     text-decoration: none;
     margin-left: var(--padding-medium);
@@ -53,33 +40,6 @@ a.selected--words {
     background-color: var(--color-accent-three-t);
 }
 
-body {
-    color: var(--color-dark);
-    font-family: var(--text-font-name-primary), sans-serif;
-    font-size: 62.5%;
-}
-
-footer {
-    align-items: center;
-    background-color: white;
-    bottom: 0;
-    display: flex;
-    font-size: var(--text-size-small);
-    font-weight: var(--text-size-regular);
-    justify-content: center;
-    height: var(--padding-xlarge);
-    position: fixed;
-    width: 100%;
-}
-
-footer a {
-    padding-left: var(--padding);
-}
-
-footer.scroll-indicator {
-   border-top: solid 1px var(--color-gray);
-}
-
 header {
     align-items: center;
     display: flex;
@@ -90,7 +50,7 @@ header {
 }
 
 main {
-    padding-bottom: var(--padding-xlarge);
+    padding-bottom: calc(var(--padding-xlarge) + var(--padding-large));
     margin: var(--padding-large) var(--padding-large) 0 calc(var(--padding) * 14);
 }
 
@@ -105,7 +65,7 @@ main {
 .content__links {
     display:flex;
     flex-direction: column;
-    font-size: var(--text-size-link);
+    font-size: var(--text-size-standard);
     font-weight: var(--text-size-regular);
 }
 
@@ -139,14 +99,7 @@ main {
     width: 1px;
 }
 
-/* icons and stuff */
-.logo {
-    cursor: pointer;
-    fill: var(--color-dark);
-    height: auto;
-    width: 60px;
-}
-
+/* work types */
 .type {
     height: calc(var(--padding) * 1.5);
     width: calc(var(--padding) * 1.5);

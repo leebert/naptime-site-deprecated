@@ -2,7 +2,7 @@
 This is Lee's living portfolio and exploratory playground.
 
 ## Naming Conventions 
-I'm loosely following [BEM Methodology](https://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403).
+I'm *loosely* following [BEM Methodology](https://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403).
 
 - `-` is just a word separator
 - `__` is an element indicator
@@ -11,8 +11,9 @@ I'm loosely following [BEM Methodology](https://webdesign.tutsplus.com/articles/
 
 **Folder/Filename Prefixes**
 - `b-` Basic Styles
+- `c-` Common Styles
 - `h-` Helper Styles
-- `js-` Javascript **(redundant, but reinforces the convention)**
+- `js-` Javascript *(redundant, but reinforces the convention)*
 - `m-` Media Query Style Overrides
 - `t-` Theme Style Overrides
 - `v-` Design Exploration Version
