@@ -7,14 +7,15 @@ var js_c_data = [
     {title: "Lots Branding & Marketing Content", type: "", url: "", design: true, code: true, words: true, year: 2020},
     {title: "A Case Study for Data Labeling", type: "", url: "", design: false, code: false, words: true, year: 2020},
     {title: "A Content Review Portal for Data Scientists", type: "", url: "", design: true, code: false, words: false, year: 2019},
-    {title: "A Design Token Plugin for Figma", type: "", url: "", design: true, code: true, words: true, year: 2019},
-    {title: "An Interactive Art Experiment Using AR", type: "", url: "", design: true, code: true, words: false, year: 2019},
+    {title: "A Design Token Plugin for Figma", type: "external", url: "https://www.figma.com/community/plugin/767048666042724266/Design-Tokenizer", design: true, code: true, words: true, year: 2019},
+    {title: "An Interactive Art Experiment Using AR", type: "external", url: "https://medium.com/@leebert/augmented-art-cards-475689e877bd", design: true, code: true, words: false, year: 2019},
     {title: "A Machine Learning Behavioral Tool for Cybersecurity Analysts", type: "", url: "", design: true, code: false, words: false, year: 2019},
     {title: "An Introducton to Computer Science Course for UT Austin", type: "", url: "", design: false, code: false, words: true, year: 2018},
     {title: "A Building Maintenance App Using AR", type: "", url: "", design: true, code: true, words: false, year: 2018},
     {title: "A Thermostat Upgrade Assistant App Using AR", type: "", url: "", design: true, code: false, words: true, year: 2018},
-    {title: "Two Case Studies on iOS Design & Development", type: "", url: "", design: false, code: false, words: true, year: 2018},
-    {title: "An iOS App for Airline Travelers & Pilots", type: "", url: "", design: true, code: true, words: false, year: 2017},
+    {title: "An iOS Design Case Study", type: "external", url: "https://medium.com/@leebert/designing-cinescope-v2-3e443f93b238", design: false, code: false, words: true, year: 2018},
+    {title: "An iOS Development Case Study", type: "external", url: "https://medium.com/@leebert/developing-cinescope-v2-c6ab1639b727", design: false, code: false, words: true, year: 2018},
+    {title: "An iOS App for Airline Travelers & Pilots", type: "", url: "", design: true, code: true, words: false, year: 2016},
     {title: "An Responsive Design System for a Flight Data Company's Website", type: "", url: "", design: true, code: false, words: false, year: 2017},
     {title: "Austin's First Ride-Sharing Startup", type: "", url: "", design: true, code: true, words: true, year: 2013},
     {title: "A Mobile Design & Development Agency", type: "", url: "", design: true, code: true, words: true, year: 2011},
@@ -99,11 +100,9 @@ function js_c_loadContent() {
             container.classList.add("content__link");
             container.appendChild(js_c_GetTypes(link.design, link.code, link.words));
             var item = document.createElement("a");
-            if (link.type == "page") {
-                item.href = link.url;
-            }
-            else {
-                item.href = "#";
+            item.href = link.url;
+            if (link.type == "external") {
+                item.target = "_blank";
             }
             item.textContent = link.title;
             container.appendChild(item);

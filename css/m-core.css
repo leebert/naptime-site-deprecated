@@ -54,7 +54,7 @@
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 375px) {
     a.button, a.button:visited {
         margin-top: var(--padding);
     }

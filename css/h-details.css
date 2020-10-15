@@ -1,11 +1,7 @@
 /* article layout stuff */
 
-.h-first-p {
-    padding-top: calc(var(--padding) * 6);
-}
-
 .h-first-p::first-letter {
-    font-size: 225%;
+    font-size: 250%;
     font-weight: var(--font-weight-semibold);
 }
 

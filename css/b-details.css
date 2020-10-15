@@ -63,7 +63,7 @@ nav {
 }
 
 nav a, nav a:active, nav a:hover, nav a:visited {
-    font-size: var(--text-size-standard);
+    font-size: calc(var(--text-size-standard) * 1.1);
     text-decoration: none;
     width: 100%;
 }
