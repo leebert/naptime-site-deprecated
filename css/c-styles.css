@@ -23,10 +23,12 @@ footer {
     display: flex;
     font-size: var(--text-size-small);
     font-weight: var(--text-size-regular);
+    flex-wrap: wrap;
     justify-content: center;
     height: var(--padding-xlarge);
     position: fixed;
     width: 100%;
+    white-space: nowrap;
 }
 
 footer a {
@@ -51,4 +53,111 @@ footer.scroll-indicator {
     fill: var(--color-dark);
     height: auto;
     width: 60px;
+}
+
+
+/* About Popup */
+.about {
+    background-color: #00000044;
+    font-family: var(--text-font-name-secondary), sans-serif;
+    font-size: var(--text-size-standard);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.about a {
+    font-size: var(--text-size-small);
+}
+
+.about h1 {
+    font-size: var(--text-size-subheader);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--padding);
+    margin-top: 0;
+}
+
+.about img {
+    border-radius: var(--padding);
+    height: 40%;
+    width: 40%;
+}
+
+.about__modal {
+    align-items: flex-end;
+    background-color: white;
+    border-width: 0;
+    border-radius: var(--padding-medium);
+    box-shadow: var(--effect-default-shadow);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: auto;
+    margin-top: var(--padding-large);
+    padding: var(--padding-xlarge) var(--padding-xlarge) var(--padding-large) var(--padding-xlarge);
+    width: 50%;
+}
+
+.about__content {
+    display: flex;
+    flex-direction: row;
+}
+
+.about__copy {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--padding-large);
+    margin-left: var(--padding-large);
+}
+
+.modal-open {
+    height: 100vh;
+    overflow-y: hidden;
+    padding-right: 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .about__modal {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .about__modal {
+        align-items: center;
+        padding: var(--padding-large);
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .about {
+        background-color: transparent;
+    }
+
+    .about__copy {
+        margin-left: 0;
+        margin-bottom: var(--padding-medium);
+        margin-top: var(--padding-large);
+    }
+
+    .about__modal {
+        align-items: center;
+        height: auto;
+        margin-top: var(--padding-medium);
+        width: 80%;
+    }
+
+    .about__content {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .modal-open {
+        height: auto;
+        overflow-y: auto;
+        padding-right: auto;
+    }
 }

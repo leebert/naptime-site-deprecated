@@ -10,6 +10,8 @@
     --color-link: #0085FF;
     --color-link-t: #0085FF33;
 
+    --effect-default-shadow: 0px 24px 112px rgba(0, 0, 0, 0.46);
+
     --font-weight-thin: 300;
     --font-weight-regular: 400;
     --font-weight-semibold: 500;
