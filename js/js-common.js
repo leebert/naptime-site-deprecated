@@ -52,11 +52,22 @@ async function js_cmn_LoadAbout() {
     var close = document.createElement("a");
     close.innerHTML = "back to the stuff";
     close.href = "#";
-    close.addEventListener("click", js_cmn_closeAbout);
+    close.addEventListener("click", js_cmn_CloseAbout);
     about.appendChild(close);
 }
 
-function js_cmn_closeAbout() {
+function js_cmn_CloseAbout() {
     document.getElementsByTagName("BODY")[0].removeChild(js_cmn_AboutDiv);
     document.getElementsByTagName("BODY")[0].classList.remove("modal-open");
+}
+
+function js_cmn_AssignClick() {
+    const logos = document.getElementsByClassName("logo");
+    for (var i = 0; i < logos.length; i++) {
+        logos[i].addEventListener("click", js_cmn_NavToOld);
+    }
+}
+
+function js_cmn_NavToOld() {
+    window.location.replace("v-one/index.html");
 }

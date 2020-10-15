@@ -55,6 +55,11 @@ footer.scroll-indicator {
     width: 60px;
 }
 
+.size-limit {
+    height: auto;
+    margin: auto;
+    max-width: 250px;
+}
 
 /* About Popup */
 .about {

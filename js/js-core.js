@@ -1,25 +1,25 @@
 // structure is: link title, resource type, resource url, design, code, words, year
 var js_c_data = [
     {title: "A Scouting App for Directors & Cinematographers", type: "page", url: "details-cinescope.html", design: true, code: true, words: false, year: 2020},
-    {title: "A SaaS Product for Data Scientists", type: "", url: "", design: true, code: false, words: true, year: 2020},
-    {title: "A Video Annotation Tool for Data Labelers", type: "", url: "", design: true, code: false, words: false, year: 2020},
-    {title: "A Video Timeline Prototype", type: "", url: "", design: false, code: true, words: false, year: 2020},
-    {title: "Lots Branding & Marketing Content", type: "", url: "", design: true, code: true, words: true, year: 2020},
-    {title: "A Case Study for Data Labeling", type: "", url: "", design: false, code: false, words: true, year: 2020},
-    {title: "A Content Review Portal for Data Scientists", type: "", url: "", design: true, code: false, words: false, year: 2019},
+    {title: "A SaaS Product for Data Scientists", type: "page", url: "alegion-saas.html", design: true, code: false, words: true, year: 2020},
+    {title: "A Video Annotation Tool for Data Labelers", type: "page", url: "alegion-va.html", design: true, code: false, words: false, year: 2020},
+    {title: "A Video Timeline Prototype", type: "page", url: "alegion-proto.html", design: false, code: true, words: false, year: 2020},
+    {title: "Lots Marketing Content", type: "page", url: "alegion-marketing.html", design: true, code: true, words: true, year: 2020},
+    {title: "A Case Study for Data Labeling", type: "page", url: "alegion-case-study.html", design: false, code: false, words: true, year: 2020},
+    {title: "A Content Review Portal for Data Scientists", type: "page", url: "alegion-qc-portal.html", design: true, code: false, words: false, year: 2019},
     {title: "A Design Token Plugin for Figma", type: "external", url: "https://www.figma.com/community/plugin/767048666042724266/Design-Tokenizer", design: true, code: true, words: true, year: 2019},
     {title: "An Interactive Art Experiment Using AR", type: "external", url: "https://medium.com/@leebert/augmented-art-cards-475689e877bd", design: true, code: true, words: false, year: 2019},
-    {title: "A Machine Learning Behavioral Tool for Cybersecurity Analysts", type: "", url: "", design: true, code: false, words: false, year: 2019},
-    {title: "An Introducton to Computer Science Course for UT Austin", type: "", url: "", design: false, code: false, words: true, year: 2018},
-    {title: "A Building Maintenance App Using AR", type: "", url: "", design: true, code: true, words: false, year: 2018},
-    {title: "A Thermostat Upgrade Assistant App Using AR", type: "", url: "", design: true, code: false, words: true, year: 2018},
+    {title: "A Machine Learning Behavioral Tool for Cybersecurity Analysts", type: "page", url: "duo-ueba.html", design: true, code: false, words: false, year: 2019},
+    {title: "An Introducton to Computer Science Course for UT Austin", type: "page", url: "ut-cs.html", design: false, code: false, words: true, year: 2018},
+    {title: "A Building Maintenance App Using AR", type: "page", url: "honeywell-building.html", design: true, code: true, words: false, year: 2018},
+    {title: "A Thermostat Upgrade Assistant App Using AR", type: "page", url: "honeywell-upgrade.html", design: true, code: false, words: true, year: 2018},
     {title: "An iOS Design Case Study", type: "external", url: "https://medium.com/@leebert/designing-cinescope-v2-3e443f93b238", design: false, code: false, words: true, year: 2018},
     {title: "An iOS Development Case Study", type: "external", url: "https://medium.com/@leebert/developing-cinescope-v2-c6ab1639b727", design: false, code: false, words: true, year: 2018},
-    {title: "An iOS App for Airline Travelers & Pilots", type: "", url: "", design: true, code: true, words: false, year: 2016},
-    {title: "An Responsive Design System for a Flight Data Company's Website", type: "", url: "", design: true, code: false, words: false, year: 2017},
-    {title: "Austin's First Ride-Sharing Startup", type: "", url: "", design: true, code: true, words: true, year: 2013},
-    {title: "A Mobile Design & Development Agency", type: "", url: "", design: true, code: true, words: true, year: 2011},
-        ];
+    {title: "A Responsive Design System for a Flight Data Company's Website", type: "page", url: "honeywell-flightaware-site.html", design: true, code: false, words: false, year: 2017},
+    {title: "An iOS App for Airline Travelers & Pilots", type: "page", url: "honeywell-flightaware-app.html", design: true, code: true, words: false, year: 2016},
+    {title: "Austin's First Ride-Sharing Startup", type: "page", url: "heyride.html", design: true, code: true, words: true, year: 2013},
+    {title: "A Mobile Design & Development Agency", type: "page", url: "bbb.html", design: true, code: true, words: true, year: 2011},
+];
 
 var js_c_ContentHolder;
 var js_c_Filter = 0; //0 == none, 1 == design, 2 == code, 3 == words
@@ -40,6 +40,7 @@ function js_c_load() {
     document.addEventListener("scroll", js_cmn_HandleScroll);
     js_c_loadContent();
     js_cmn_HandleScroll();
+    js_cmn_AssignClick();
 }
 
 function js_c_HandleFilter(event) {
