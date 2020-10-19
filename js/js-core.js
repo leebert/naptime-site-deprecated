@@ -12,7 +12,7 @@ var js_c_data = [
     {title: "A Machine Learning Behavioral Tool for Cybersecurity Analysts", type: "page", url: "duo-ueba.html", design: true, code: false, words: false, year: 2019},
     {title: "An Introducton to Computer Science Course for UT Austin", type: "page", url: "ut-cs.html", design: false, code: false, words: true, year: 2018},
     {title: "A Building Maintenance App Using AR", type: "page", url: "honeywell-building.html", design: true, code: true, words: false, year: 2018},
-    {title: "A Thermostat Upgrade Assistant App Using AR", type: "page", url: "honeywell-upgrade.html", design: true, code: false, words: true, year: 2018},
+    // {title: "A Thermostat Upgrade Assistant App Using AR", type: "page", url: "honeywell-upgrade.html", design: true, code: false, words: true, year: 2018},
     {title: "An iOS Design Case Study", type: "external", url: "https://medium.com/@leebert/designing-cinescope-v2-3e443f93b238", design: false, code: false, words: true, year: 2018},
     {title: "An iOS Development Case Study", type: "external", url: "https://medium.com/@leebert/developing-cinescope-v2-c6ab1639b727", design: false, code: false, words: true, year: 2018},
     {title: "A Responsive Design System for a Flight Data Company's Website", type: "page", url: "flightaware-site.html", design: true, code: false, words: false, year: 2017},
