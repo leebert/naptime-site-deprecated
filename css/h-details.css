@@ -2,7 +2,7 @@
 
 .h-first-p::first-letter {
     font-size: 250%;
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-bold);
 }
 
 /* Source: https://miekd.com/articles/pull-quotes-with-html5-and-css/ */
@@ -10,7 +10,7 @@
 	content: attr(data-pullquote);
     float: right;
     font-size: var(--text-size-subheader);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-bold);
     padding-bottom: calc(var(--padding) * 2);
 	padding-left: calc(var(--padding) * 6);
 	position: relative;
@@ -21,7 +21,7 @@
 	content: attr(data-pullquote);
     float: left;
     font-size: var(--text-size-subheader);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-bold);
     padding-bottom: calc(var(--padding) * 2);
     padding-right: calc(var(--padding) * 6);
 	position: relative;
