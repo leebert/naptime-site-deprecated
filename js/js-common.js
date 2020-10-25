@@ -5,6 +5,7 @@ function js_cmn_SetUpCommonStuff() {
     document.addEventListener("scroll", js_cmn_HandleScroll);
     js_cmn_HandleScroll();
     js_cmn_AssignClick();
+    js_cmn_SetupLoad();
 }
 
 function js_cmn_HandleScroll(){
@@ -110,7 +111,11 @@ function js_cmn_HandleNav(event) {
     for (var i = 0; i < children.length; i++) {
         children[i].classList.add(event.target.href.includes("index") ? "navFrom" : "navTo");
         children[i].style.animationDelay = ((offset/500) * i) + "s";
-        console.log(children[i]);
     }
     setTimeout(function() { window.location.replace(event.target.href); }, 250 + (offset * children.length));
+}
+
+function js_cmn_SetupLoad() {
+    document.body.style.opacity = 0;
+    document.body.classList.add("fadeIn");
 }

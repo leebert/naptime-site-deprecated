@@ -13,7 +13,6 @@ body {
     ". header ."
     ". article ."
     "footer footer footer";
-    opacity: 0;
 }
 
 img {
@@ -129,3 +128,10 @@ aside li {
     overflow: hidden;
     width: calc(var(--padding) * 13);
 }
+
+.detailsIn {
+    animation-name: detailsInAnimation;
+    animation-duration: calc(var(--duraton-default) * 1);
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+} 

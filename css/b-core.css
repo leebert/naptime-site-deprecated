@@ -44,10 +44,6 @@ a.selected--words {
     background-color: var(--color-accent-three-t);
 }
 
-body {
-    opacity: 0;
-}
-
 header {
     align-items: center;
     display: flex;

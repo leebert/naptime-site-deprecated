@@ -4,16 +4,16 @@
     animation-fill-mode: forwards;
 }
 
+@keyframes blurInAnimation { 
+    from { filter: blur(0px); } 
+    to { filter: blur(var(--padding-medium)); } 
+} 
+
 .blurOut {
     animation-name: blurOutAnimation;
     animation-duration: var(--duraton-default);
     animation-fill-mode: forwards;
 }
-
-@keyframes blurInAnimation { 
-    from { filter: blur(0px); } 
-    to { filter: blur(var(--padding-medium)); } 
-} 
 
 @keyframes blurOutAnimation { 
     from { filter: blur(var(--padding-medium)); } 
@@ -26,16 +26,16 @@
     animation-fill-mode: forwards;
 }
 
+@keyframes fadeInAnimation { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+} 
+
 .fadeOut {
     animation-name: fadeOutAnimation;
     animation-duration: var(--duraton-default);
     animation-fill-mode: forwards;
 }
-
-@keyframes fadeInAnimation { 
-    from { opacity: 0; } 
-    to { opacity: 1; } 
-} 
 
 @keyframes fadeOutAnimation { 
     from { opacity: 1; } 
