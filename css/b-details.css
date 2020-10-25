@@ -162,3 +162,28 @@ aside li {
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 } 
+
+/* Link block */
+.article__link-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--padding-large);
+    justify-items: stretch;
+    margin-top: var(--padding-large);
+    width: 100%;
+}
+
+.article__link-block-item {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.article__link-block-item a {
+    margin-bottom: var(--padding-medium);
+}
+
+.article__link-block-header {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--padding-medium);
+}

@@ -36,6 +36,13 @@
     article {
         margin-top: calc(var(--padding-large) * -1);
     }
+
+    .article__link-block {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 580px) {

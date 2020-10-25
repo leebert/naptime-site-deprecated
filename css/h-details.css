@@ -8,25 +8,29 @@
 
 /* Source: https://miekd.com/articles/pull-quotes-with-html5-and-css/ */
 .h-has-pull-quote__right:before {
+    border-left: solid 2px var(--color-gray);
 	content: attr(data-pullquote);
     float: right;
     font-size: var(--text-size-subheader);
     font-weight: var(--font-weight-bold);
     line-height: 110%;
+    margin-left: calc(var(--padding) * 6);
     padding-bottom: calc(var(--padding) * 2);
-	padding-left: calc(var(--padding) * 6);
+	padding-left: var(--padding-medium);
 	position: relative;
     width: 50%;
 }
 
 .h-has-pull-quote__left:before {
+    border-right: solid 2px var(--color-gray);
 	content: attr(data-pullquote);
     float: left;
     font-size: var(--text-size-subheader);
     font-weight: var(--font-weight-bold);
     line-height: 110%;
+    margin-right: calc(var(--padding) * 6);
     padding-bottom: calc(var(--padding) * 2);
-    padding-right: calc(var(--padding) * 6);
+    padding-right: var(--padding-medium);
 	position: relative;
     width: 50%;
 }
