@@ -103,4 +103,11 @@
         flex-direction: column;
         justify-content: flex-start;
     }
+
+    .article__double-image {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 }

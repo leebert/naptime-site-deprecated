@@ -93,6 +93,13 @@ nav a, nav a:active, nav a:hover, nav a:visited {
     width: 100%;
 }
 
+.article__double-image {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: var(--padding-large);
+    width: 100%;
+}
+
 /* Right Content - Big Picture */
 aside {
     display: flex;

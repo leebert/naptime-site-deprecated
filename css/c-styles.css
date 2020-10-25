@@ -14,11 +14,13 @@ body {
     color: var(--color-dark);
     font-family: var(--text-font-name-primary), sans-serif;
     font-size: 62.5%;
+    opacity: 0;
 }
 
-h4 {
+h3 {
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--padding);
+    margin-top: var(--padding-xlarge);
 }
 
 ul {
