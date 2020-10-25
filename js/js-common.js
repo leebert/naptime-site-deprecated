@@ -1,6 +1,12 @@
 var js_cmn_AboutDiv;
 var js_cmn_AboutModalDiv;
 
+function js_cmn_SetUpCommonStuff() {
+    document.addEventListener("scroll", js_cmn_HandleScroll);
+    js_cmn_HandleScroll();
+    js_cmn_AssignClick();
+}
+
 function js_cmn_HandleScroll(){
     var w = window.innerHeight;
     var h = document.documentElement.scrollHeight;
@@ -15,9 +21,17 @@ function js_cmn_HandleScroll(){
     }
 }
 
+function js_cmn_AssignClick() {
+    const logos = document.getElementsByClassName("logo");
+    for (var i = 0; i < logos.length; i++) {
+        logos[i].addEventListener("click", js_cmn_NavToOld);
+    }
+}
+
 function js_cmn_applyBlur(parent) {
     var children = parent.children;
     for (var i = 0; i < children.length; i++) {
+        console.log("adding");
         children[i].classList.remove("blurOut");
         children[i].classList.add("blurIn");
     }
@@ -84,13 +98,6 @@ function js_cmn_CloseAbout() {
         document.getElementsByTagName("BODY")[0].removeChild(js_cmn_AboutDiv);
         document.getElementsByTagName("BODY")[0].classList.remove("modal-open");
     }, 300);
-}
-
-function js_cmn_AssignClick() {
-    const logos = document.getElementsByClassName("logo");
-    for (var i = 0; i < logos.length; i++) {
-        logos[i].addEventListener("click", js_cmn_NavToOld);
-    }
 }
 
 function js_cmn_NavToOld() {

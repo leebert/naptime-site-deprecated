@@ -37,10 +37,8 @@ function js_c_load() {
     document.getElementById("js_filter_1").addEventListener("click", js_c_HandleFilter);
     document.getElementById("js_filter_2").addEventListener("click", js_c_HandleFilter);
     document.getElementById("js_filter_3").addEventListener("click", js_c_HandleFilter);
-    document.addEventListener("scroll", js_cmn_HandleScroll);
     js_c_loadContent();
-    js_cmn_HandleScroll();
-    js_cmn_AssignClick();
+    js_cmn_SetUpCommonStuff();
 }
 
 function js_c_HandleFilter(event) {
