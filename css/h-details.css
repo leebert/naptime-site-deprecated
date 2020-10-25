@@ -3,6 +3,7 @@
 .h-first-p::first-letter {
     font-size: 250%;
     font-weight: var(--font-weight-bold);
+    line-height: 90%;
 }
 
 /* Source: https://miekd.com/articles/pull-quotes-with-html5-and-css/ */
@@ -11,6 +12,7 @@
     float: right;
     font-size: var(--text-size-subheader);
     font-weight: var(--font-weight-bold);
+    line-height: 110%;
     padding-bottom: calc(var(--padding) * 2);
 	padding-left: calc(var(--padding) * 6);
 	position: relative;
@@ -22,6 +24,7 @@
     float: left;
     font-size: var(--text-size-subheader);
     font-weight: var(--font-weight-bold);
+    line-height: 110%;
     padding-bottom: calc(var(--padding) * 2);
     padding-right: calc(var(--padding) * 6);
 	position: relative;

@@ -16,13 +16,22 @@ body {
     font-size: 62.5%;
 }
 
+h4 {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--padding);
+}
+
+ul {
+    margin-bottom: 0;
+}
+
 footer {
     align-items: center;
     background-color: white;
     bottom: 0;
     display: flex;
     font-size: var(--text-size-small);
-    font-weight: var(--text-size-regular);
+    font-weight: var(--text-weight-regular);
     flex-wrap: wrap;
     justify-content: center;
     height: var(--padding-xlarge);

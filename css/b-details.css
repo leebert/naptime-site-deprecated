@@ -21,8 +21,14 @@ img {
 }
 
 p {
+    line-height: 125%;
     padding-top: calc(var(--padding) * 4);
     margin: 0;
+}
+
+video {
+    padding-top: calc(var(--padding) * 5);
+    width: 100%;
 }
 
 article {
@@ -71,6 +77,20 @@ nav a, nav a:active, nav a:hover, nav a:visited {
 .logo {
     width: 20px;
     margin-right: var(--padding);
+}
+
+.article__left-image {
+    display: grid;
+    grid-template-columns: auto 50%;
+    gap: var(--padding-large);
+    width: 100%;
+}
+
+.article__right-image {
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: var(--padding-large);
+    width: 100%;
 }
 
 /* Right Content - Big Picture */
