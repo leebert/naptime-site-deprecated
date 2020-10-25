@@ -121,7 +121,6 @@ footer.scroll-indicator {
 .modal-open {
     height: 100vh;
     overflow-y: hidden;
-    padding-right: 15px;
 }
 
 @media only screen and (max-width: 1024px) {
