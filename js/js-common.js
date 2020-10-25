@@ -31,7 +31,6 @@ function js_cmn_AssignClick() {
 function js_cmn_applyBlur(parent) {
     var children = parent.children;
     for (var i = 0; i < children.length; i++) {
-        console.log("adding");
         children[i].classList.remove("blurOut");
         children[i].classList.add("blurIn");
     }
@@ -50,7 +49,7 @@ function js_cmn_removeBlur(parent) {
 }
 
 function js_cmn_LoadAbout() {
-    var body = document.getElementsByTagName("BODY")[0];
+    var body = document.body;
     js_cmn_AboutDiv = document.createElement("div");
     js_cmn_AboutDiv.classList.add("about");
     js_cmn_AboutDiv.classList.add("fadeIn");
@@ -91,15 +90,27 @@ function js_cmn_LoadAbout() {
 }
 
 function js_cmn_CloseAbout() {
-    var body = document.getElementsByTagName("BODY")[0];
+    var body = document.body;
     js_cmn_removeBlur(body);
     js_cmn_AboutDiv.classList.add("fadeOut");
     setTimeout(function() { 
-        document.getElementsByTagName("BODY")[0].removeChild(js_cmn_AboutDiv);
-        document.getElementsByTagName("BODY")[0].classList.remove("modal-open");
+        document.body.removeChild(js_cmn_AboutDiv);
+        document.body.classList.remove("modal-open");
     }, 300);
 }
 
 function js_cmn_NavToOld() {
     window.location.replace("v-one/index.html");
+}
+
+function js_cmn_HandleNav(event) {
+    event.preventDefault();
+    const offset = 50;
+    var children = document.body.children;
+    for (var i = 0; i < children.length; i++) {
+        children[i].classList.add(event.target.href.includes("index") ? "navFrom" : "navTo");
+        children[i].style.animationDelay = ((offset/500) * i) + "s";
+        console.log(children[i]);
+    }
+    setTimeout(function() { window.location.replace(event.target.href); }, 250 + (offset * children.length));
 }

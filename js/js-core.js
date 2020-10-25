@@ -103,6 +103,9 @@ function js_c_loadContent() {
             if (link.type == "external") {
                 item.target = "_blank";
             }
+            else {
+                item.addEventListener("click", js_cmn_HandleNav);
+            }
             item.textContent = link.title;
             container.appendChild(item);
             linkList.appendChild(container);

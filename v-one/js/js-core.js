@@ -70,13 +70,13 @@ function js_c_handleArticleClick(event) {
 
 function js_c_handleResize(event) {
     clearInterval(js_c_resizeInterval);
-    var tallest = Math.max(window.innerHeight, document.getElementsByTagName("BODY")[0].getBoundingClientRect().height);
+    var tallest = Math.max(window.innerHeight, document.body.getBoundingClientRect().height);
     document.getElementById("js_c-effects-overlay").style.height = tallest + "px";
     if (localStorage.getItem("layout") == "one") { 
         document.getElementById("js_c-effects-overlay__shim").style.height = tallest + "px";
         document.getElementById("js_c-effects-overlay__shim").style.right = "-150%";
     }
-    document.getElementsByTagName("BODY")[0].style.height = tallest + "px";
+    document.body.style.height = tallest + "px";
     if (document.body.clientWidth <= js_c_smallBreakPoint) {
         document.getElementById("js_description-one").style.opacity = "1";
         document.getElementById("js_description-two").style.opacity = "1";

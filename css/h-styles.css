@@ -77,3 +77,39 @@
         transform: translateX(250px); 
     } 
 } 
+
+.navTo {
+    animation-name: navToAnimation;
+    animation-duration: calc(var(--duraton-default) * 1);
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes navToAnimation { 
+    from { 
+        opacity: 1;
+        transform: translateX(0); 
+    } 
+    to { 
+        opacity: 0;
+        transform: translateX(-250px); 
+    } 
+} 
+
+.navFrom {
+    animation-name: navFromAnimation;
+    animation-duration: calc(var(--duraton-default) * 1);
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes navFromAnimation { 
+    from { 
+        opacity: 1;
+        transform: translateX(0); 
+    } 
+    to { 
+        opacity: 0;
+        transform: translateX(250px); 
+    } 
+} 

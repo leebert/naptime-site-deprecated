@@ -13,6 +13,7 @@ body {
     ". header ."
     ". article ."
     "footer footer footer";
+    opacity: 0;
 }
 
 img {
