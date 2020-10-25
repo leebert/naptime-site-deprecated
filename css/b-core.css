@@ -6,6 +6,7 @@ a.button, a.button:visited {
     align-items: center;
     border: solid 1px;
     border-radius: var(--padding-large);
+    color: var(--color-link);
     display: flex;
     font-size: var(--text-size-standard);
     padding: var(--padding) calc(var(--padding) * 1.5);
@@ -50,7 +51,7 @@ header {
     font-size: var(--text-size-header);
     font-weight: var(--font-weight-thin);
     justify-content: space-between;
-    margin: var(--padding-large) var(--padding-large) 0 var(--padding-large);
+    margin: var(--padding-large) var(--padding-large) var(--padding-xlarge) var(--padding-large);
     white-space: nowrap;
 }
 
@@ -63,15 +64,14 @@ main {
 .content {
     display:flex;
     font-family: var(--text-font-name-secondary), sans-serif;
-    font-size: var(--text-size-subheader);
-    font-weight: var(--font-weight-semibold);
+    font-size: var(--text-size-standard);
+    font-weight: var(--font-weight-bold);
 }
 
 .content__links {
     display:flex;
     flex-direction: column;
-    font-size: var(--text-size-standard);
-    font-weight: var(--text-size-regular);
+    font-weight: var(--font-weight-regular);
 }
 
 .content__link {
@@ -79,6 +79,10 @@ main {
     display:flex;
     margin-left: var(--padding-xlarge);
     padding-bottom: var(--padding-medium);
+}
+
+.content__link a, a:visited {
+    color: var(--color-dark);
 }
 
 .content__padder {  

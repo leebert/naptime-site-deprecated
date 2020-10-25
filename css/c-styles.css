@@ -32,7 +32,7 @@ footer {
     background-color: white;
     bottom: 0;
     display: flex;
-    font-size: var(--text-size-small);
+    font-size: var(--text-size-footer);
     font-weight: var(--text-weight-regular);
     flex-wrap: wrap;
     justify-content: center;
@@ -86,7 +86,7 @@ footer.scroll-indicator {
 }
 
 .about a {
-    font-size: var(--text-size-small);
+    font-size: var(--text-size-standard);
 }
 
 .about h1 {

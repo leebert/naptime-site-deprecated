@@ -35,7 +35,7 @@ article {
     display: flex;
     flex-direction: column;
     font-family: var(--text-font-name-secondary), sans-serif;
-    font-size: var(--text-size-standard);
+    font-size: var(--text-size-article);
     grid-area: article;
     padding-bottom: calc(var(--padding-xlarge) * 2);
 }
@@ -56,7 +56,7 @@ header {
 
 .header__learn-more a {
     color: var(--color-dark) !important;
-    font-size: var(--text-size-small);
+    font-size: var(--text-size-standard);
     margin-right: var(--padding);
 }
 
@@ -69,7 +69,7 @@ nav {
 }
 
 nav a, nav a:active, nav a:hover, nav a:visited {
-    font-size: calc(var(--text-size-standard) * 1.1);
+    font-size: calc(var(--text-size-button) * 1.1);
     text-decoration: none;
     width: 100%;
 }
@@ -113,7 +113,7 @@ aside {
 }
 
 aside ul {
-    font-size: var(--text-size-small);
+    font-size: var(--text-size-standard);
     list-style-type: none;
     margin: 0;
     padding: var(--padding) 0 0 0;
@@ -145,7 +145,7 @@ aside li {
 }
 
 .aside__description {
-    font-size: var(--text-size-small);
+    font-size: var(--text-size-standard);
     line-height: calc(var(--text-two-link-secondary-size) * 1.4);
     padding-top: var(--padding);
 }
