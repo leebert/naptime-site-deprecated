@@ -61,21 +61,30 @@
             </div>    
         </header>
         <article>
-            <h4>Focus Areas</h4>
+            <!-- <h4>Focus Areas</h4>
             <ul>
                 <li>Mainting UI simplicity</li>
                 <li>Video capture</li>
                 <li>Complex interactions</li>
-            </ul>
-            <img src="assets/details/cs-cine-1.jpg" alt="Screenshot of Cinescope user interface in video capture mode.">
-            <p class="h-first-p">Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p class="h-has-pull-quote__right" data-pullquote="Atqui causae gloriatur ius te, id agam omnis evertitur eum.">Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <img src="assets/details/cs-cine-2.jpg" alt="Screenshot of the new quick menu for Cinescope v2.5.">
-            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p class="h-has-pull-quote__left" data-pullquote="Inciderint efficiantur his ad. Eum no molestiae voluptatibus.">Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-            <p>Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+            </ul> -->
+            <img src="assets/details/cine-1.jpg" alt="Screenshot of Cinescope user interface in video capture mode.">
+            <p class="h-first-p">Rachel Morrison and I have been collaborating on the Cinescope project for five years and I've refined Rachel's vision of a minimalist scouting app several times. It has been a constant balancing act between maintaining simplicity and surfacing complex functionality to directors and cinematographers, a userbase that places the highest demand on accurate visual fidelity.</p>
+            <h3>📷 The Screen is the UI</h3>
+            <div class="article__right-image">
+                <div class="article__content-stack">
+                    <p>A perfect example of the simplicity versus complexity challenge is manual camera controls. We wanted to minimize the addition of UI elements for adjusting focus, brightness, temperature, and tint. After a few failed button interaction-based solutions it dawned on me that we could could suport all of these features through gestures alone.</p>
+                    <p>Based on user feedback we added a value indicator that appears when the setting is being adjusted. Along with a numerical indicator, tick marks show current and previous values.</p>
+                    <img src="assets/details/cine-4.png" alt="Manual control level indicator">
+                    <p>If you want to take a deep-dive into some of the design successes (and failures!) I encountered with Cinescope have a look at <a href="https://medium.com/@leebert/designing-cinescope-v2-3e443f93b238" target="_blank">this article</a>.</p>
+                </div>
+                <img src="assets/details/cine-3.JPG" alt="Whiteboard sketch that maps out how to handle manual camera controls.">
+            </div>
+            <h3>🎥 Sometimes You Can't Google It</h3>
+            <p>The <a href="https://apps.apple.com/us/app/cinescope/id881156035" target="_blank">latest release</a> includes support to capture photos and videos with a pre-applied filter. This allows our users to shoot in black-and-white mode while seeing a live preview of exactly what they are capturing. I also included the ability to pause and resume while recording video.</p>
+            <img src="assets/details/cine-5.png" alt="Cinescope app in black and white mode.">
+            <p class="h-has-pull-quote__right" data-pullquote="Example code only takes you so far. Then it's trial and error.">Displaying a live filter preview while capturing stabilized video at high resoultions and framerates is a resource-intensive task. It requires writing a custom rendering engine using <a href="https://developer.apple.com/documentation/metalkit" target="_blank">MetalKit</a> and <a href="https://developer.apple.com/documentation/coreimage/cifilter" target="_blank">CIFilters</a> to directly manipulate the pixel information in the device's sample buffer. Apple's <a href="https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/avcamfilter_applying_filters_to_a_capture_stream" target="_blank">example project</a> is a great starting point for learning about complex video rendering scenarios. Beyond that, information is sparse and often dated. I went through several versions of my rendering engine, relying on feedback from testers, before landing on something that was performant.</p>
+            <p>I thought something like a pause/resume feature would be relatively easy to implement. 😐🤬☠️ When capturing video you use an <a href="https://developer.apple.com/documentation/avfoundation/avassetwriter" target="_blank">AVAssetWriter</a> to append samples to your file. It's not called out in the documentation but the header file explicitly states that multiple sample-writing sessions aren't supported, therefore I couldn't create this feature by simply alternating between the <code>startSession</code> and <code>endSession</code> methods. My solution was to extract the sample timing info from the sample buffer and offset it based on the amount of time the user had paused their recording. One gotcha is that the audio and video buffers live on separate dispatch queues which means their sample buffers get presented to your delegate at different times, so you need to track pause time independently for each stream.</p>
+            <p>If you want to take a deep-dive into some of the implmentation choices I made (and issues I encountered) while building Cinescope have a look at <a href="https://medium.com/@leebert/developing-cinescope-v2-c6ab1639b727" target="_blank">this article</a>.</p>
         </article>
         <aside>
             <div class="aside__outcome">

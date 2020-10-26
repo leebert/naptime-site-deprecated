@@ -51,6 +51,15 @@ footer.scroll-indicator {
    border-top: solid 1px var(--color-gray);
 }
 
+code {
+    background-color: var(--color-gray);
+    border-radius: calc(var(--padding) * 0.5);
+    color: var(--color-accent-one);
+    font-family: "Courier New" Courier monospace;
+    font-size: var(--text-size-standard);
+    padding: calc(var(--padding) * 0.5);
+}
+
 .chevron {
     cursor: pointer;
     fill: var(--color-link);

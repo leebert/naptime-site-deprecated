@@ -79,6 +79,17 @@ nav a, nav a:active, nav a:hover, nav a:visited {
     margin-right: var(--padding);
 }
 
+.article__content-stack {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.article__content-stack img {
+    margin: auto;
+    width: 50%;
+}
+
 .article__left-image {
     display: grid;
     grid-template-columns: auto 50%;
