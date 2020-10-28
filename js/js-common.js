@@ -78,7 +78,7 @@ function js_cmn_LoadAbout() {
     h.innerHTML = "👋 I'm Lee. I lead teams, direct initiatives, and ship products.";
     copy.appendChild(h);
     var p = document.createElement("p");
-    p.innerHTML = "You are looking at a list of some things I’ve made over the years. What’s important to know is that every single thing on this list exists, or once existed...people have used, paid for, learned from, and added to their life experience with the items on this list.<br><br>These things exist because of thoughtful exploration, hard work, and collaboration with others.";
+    p.innerHTML = "You are looking at a subset of some of my favorite things I've made.<br><br>What’s important to know is that every single thing on this list exists, or once existed...people have used them, learned from them, added to their life experience from them, and even paid for them.<br><br>These things exist because of thoughtful exploration, hard work, and collaboration with others.";
     copy.appendChild(p);
 
     var close = document.createElement("a");

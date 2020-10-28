@@ -80,6 +80,7 @@
     }
     
     .h-has-pull-quote__right:before {
+        border-left: none;
         display: block;
         float: none;
         padding-bottom: calc(var(--padding) * 4);
@@ -89,6 +90,7 @@
     }
     
     .h-has-pull-quote__left:before {
+        border-left: none;
         display: block;
         float: none;
         padding-bottom: calc(var(--padding) * 4);

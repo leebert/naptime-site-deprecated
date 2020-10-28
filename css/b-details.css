@@ -16,18 +16,18 @@ body {
 }
 
 img {
-    padding-top: calc(var(--padding) * 5);
+    padding: var(--padding-medium) 0 var(--padding-medium) 0;
     width: 100%;
 }
 
 p {
     line-height: 125%;
-    padding-top: calc(var(--padding) * 4);
+    padding: var(--padding-medium) 0;
     margin: 0;
 }
 
 video {
-    padding-top: calc(var(--padding) * 5);
+    padding: var(--padding-medium) 0 var(--padding-medium) 0;
     width: 100%;
 }
 
@@ -44,6 +44,7 @@ header {
     display: flex;
     flex-direction: column;
     font-size: var(--text-size-header);
+    margin-bottom: var(--padding-xlarge);
     grid-area: header;
 }
 
@@ -180,7 +181,7 @@ aside li {
     grid-template-columns: 1fr 1fr;
     gap: var(--padding-large);
     justify-items: stretch;
-    margin-top: var(--padding-large);
+    margin: var(--padding-large) 0;
     width: 100%;
 }
 

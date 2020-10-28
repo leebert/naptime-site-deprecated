@@ -30,7 +30,7 @@
     line-height: 110%;
     margin-right: calc(var(--padding) * 6);
     padding-bottom: calc(var(--padding) * 2);
-    padding-right: var(--padding-medium);
+    padding-right: var(--padding);
 	position: relative;
     width: 50%;
 }

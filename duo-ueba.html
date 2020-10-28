@@ -61,19 +61,33 @@
             </div>    
         </header>
         <article>
-            <h2>Coming soon...</h2>
-            <h4>Focus Areas</h4>
-            <ul>
-                <li>"I want all the data all the time" | data rollup | drill-in when I need it</li>
-                <li>Understanding how to use ML and explain that to user, elicit feedback to help train model despite limited time</li>
-                <li>Make complex configuration easy, inspire confidence in choices via preview</li>
-                <li>Event overload and aging</li>
-            </ul>
+            <!-- Focus Areas
+                - "I want all the data all the time" | data rollup | drill-in when I need it
+                - Understanding how to use ML and explain that to user, elicit feedback to help train model despite limited time
+                - Event overload and aging
+                - Live mapping a user journey 
+            -->
+            <img src="assets/details/duo-logo.png" class="size-limit" alt="The Duo logo.">
+            <p class="h-first-p">Machine learning, artificial intelligence, data science...like <i>design thinking</i>, these terms are overwrought because they are used to describe broad concepts that are not well-understood outside a certain area of expertise (<i>and not always agreed upon within</i>). Products that use ML must deliver value, not hype, especially when it comes to the field of cybersecurity.</p>
+            <p>One of the reasons this project was successful is because Duo commits a generous amount of research time to its product development lifecycle. We needed every bit of the three months we were given to understand how Security Analysts, Data Scientists, Engineers, and ourselves as Designers view these concepts.</p>
+            <h3>💯 Give Me All The Data</h3>
+            <p class="h-has-pull-quote__right" data-pullquote="All of the Analysts we interviewed told us they wanted access to as much data as possible at all times.">Security Analysts are like detectives who discover cybersecurity threats by conducting forensic investigations on detailed activity logs. These activity logs consist of thousands of data entries that track network information such as usernames, IP addresses, locations, and device details. This need for massive amounts of data was the most common theme uncovered by our research. But any good Designer knows you can't always take what a user says at face-value...it's all about digging deep and understanding the underlying factors that motivate their stated needs.</p>
+            <p>In follow-up interviews we learned that Analysists need a diluge of information in order to "paint a picture" of what is happening when suspicous activity is afoot. To create meaningful context, they need to see the timeline of events in their network both before and after the event in question. This is a great insight, and we could have stopped here and perhaps designed a pretty decent solution. But this insight doesn't actually get to the core motivator for "wanting all the data."</p>
+            <img src="assets/details/duo-3.png" alt="Data roll-ups and progressive disclosure.">
+            <p class="h-has-pull-quote__left" data-pullquote="What is an Analyst's core motivator? Care.">The design challenge is not about figuring out the best way to display a large amount of data, but about helping Analysts feel certain they are making good decisions. Security Analysts are first-responders who are always short on time; it falls on their shoulders to quickly prevent the loss of sensitive data and income. They are deeply invested in not missing a clue or making a mistake.<br><br>Once we understood this motivator it became clear that no matter how good a new product might be, it wouldn't matter if it didn't instill trust. As the image above shows, we determined the best way to leverage ML was by using it to automatically create context in the form of "data roll-ups". And to install trust, we used progressive disclosure to allow Analysts to drill into log details whenever they required more information.</p>
+            <h3>📍 Live Mapping</h3>
+            <div class="article__right-image">
+                <p>While conducting research we stumbled upon an effective and novel technique we called "live mapping." A typical user interview consists of an interviewer who guides a user through a script and a scribe who captures responses and writes down interesting observations. To this mix, we added a "live mapper" who uses a Mural board to capture the user's journey in real-time, as they describe it. The image to the right depicts an anonymized example of one of our live mapping sessions.<br><br>The benefit of this technique is that everyone has a visual representation of the topic as the discussion unfolds. At the end of the session the user gets an opportunity to make comments and tweak the flow, and your team has an additional artifact to refer to during synthesis! This might sound daunting at first, but with practice it becomes quite fun. Your team most-likely already has a general idea of what the user journey looks like, so you can prepare the Mural board ahead of time with ready-made symbols.</p>
+                <img src="assets/details/duo-2.png" alt="Using Mural to conduct a live-mapping exercise.">
+            </div>
+            <h3>⚙️ How Trust Monitor Works</h3>
+            <p>To make it easier for Duo's customers to adopt the product we took an editorial approach for its landing page. Although they already have access to the product, providing users with a clear and engaging onboarding experience is crucial for engagement.</p>
+            <img src="assets/details/duo-1.png" alt="Screenshot of product landing page with explanation of features.">
         </article>
         <aside>
             <div class="aside__outcome">
                 <div class="aside__hero-number">🤖</div>
-                <div class="aside__hero-descriptor">Uses machine learning</div>
+                <div class="aside__hero-descriptor">Uses Machine Learning</div>
             </div>
             <div class="aside__outcome">
                 <div class="aside__hero-number">🆕</div>
@@ -82,7 +96,7 @@
             <div class="aside__outcome">
                 <div class="aside__title">What it is</div>
                 <div class="aside__description">
-                    A cybersecurity tool that uses machine learning to understand behavior patterns and alert security analyists of suspicious activity. 
+                    A cybersecurity tool that analyses network behavior patterns and alerts security analyists of suspicious activity. 
                 </div>
             </div>
             <div class="aside__outcome">

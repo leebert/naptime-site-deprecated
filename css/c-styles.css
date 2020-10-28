@@ -78,6 +78,7 @@ code {
 .size-limit {
     height: auto;
     margin: auto;
+    padding-top: 0;
     max-width: 250px;
 }
 
