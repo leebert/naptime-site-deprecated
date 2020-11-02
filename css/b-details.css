@@ -16,8 +16,12 @@ body {
 }
 
 img {
-    padding: var(--padding-medium) 0 var(--padding-medium) 0;
+    padding: var(--padding-medium) 0;
     width: 100%;
+}
+
+li {
+    margin-bottom: var(--padding);
 }
 
 p {

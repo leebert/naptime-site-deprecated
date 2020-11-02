@@ -1,3 +1,8 @@
+.h-green {
+    color: var(--color-accent-three);
+    font-size: calc(var(--text-size-header) * 0.85);
+}
+
 .blurIn {
     animation-name: blurInAnimation;
     animation-duration: var(--duraton-default);
