@@ -74,7 +74,10 @@
                 <div class="article__content-stack">
                     <p>A perfect example of the simplicity versus complexity challenge is manual camera controls. We wanted to minimize the addition of UI elements for adjusting focus, brightness, temperature, and tint. After a few failed button interaction-based solutions it dawned on me that we could could support all of these features directly on the surface of the device through gestures alone.</p>
                     <p>Based on additional user feedback we added a UI element that appears when a manual adjustment is being made. It displays a numerical indicator and tick marks to show current and previous values.</p>
-                    <img src="assets/details/cine-4.png" alt="Manual control level indicator">
+                    <video controls loop autoplay>
+                        <source src="assets/details/cine-focus.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     <p>If you want to take a deep-dive into some of the design successes - and failures! - I encountered with Cinescope have a look at <a href="https://medium.com/@leebert/designing-cinescope-v2-3e443f93b238" target="_blank">this article</a>.</p>
                 </div>
                 <img src="assets/details/cine-3.JPG" alt="Whiteboard sketch that maps out how to handle manual camera controls.">
@@ -85,6 +88,12 @@
             <p class="h-has-pull-quote__right" data-pullquote="Example code only takes you so far. Then it's trial and error.">Displaying a live filter preview while capturing stabilized video at high resoultions and framerates is a resource-intensive task. It requires writing a custom rendering engine using <a href="https://developer.apple.com/documentation/metalkit" target="_blank">MetalKit</a> and <a href="https://developer.apple.com/documentation/coreimage/cifilter" target="_blank">CIFilters</a> to directly manipulate the pixel information in the device's sample buffer. Apple's <a href="https://developer.apple.com/documentation/avfoundation/cameras_and_media_capture/avcamfilter_applying_filters_to_a_capture_stream" target="_blank">example project</a> is a great starting point for learning about complex video rendering scenarios. Beyond that, information is sparse and often dated. I went through several versions of my rendering engine, relying on feedback from testers, before landing on something that was performant.</p>
             <p>I thought something like a pause/resume feature would be relatively easy to implement. 😐🤬☠️ When capturing video you use an <a href="https://developer.apple.com/documentation/avfoundation/avassetwriter" target="_blank">AVAssetWriter</a> to append samples to your file. It's not called out in the documentation but the header file explicitly states that multiple sample-writing sessions aren't supported, therefore I couldn't create this feature by simply alternating between the <code>startSession</code> and <code>endSession</code> methods. My solution was to extract the sample timing info from the sample buffer and offset it based on the amount of time the user had paused their recording. One gotcha is that the audio and video buffers live on separate dispatch queues which means their sample buffers get presented to your delegate at different times, so you need to track pause time independently for each stream.</p>
             <p>If you want to take a deep-dive into some of the implmentation choices I made - and challenges I encountered - while building Cinescope have a look at <a href="https://medium.com/@leebert/developing-cinescope-v2-c6ab1639b727" target="_blank">this article</a>.</p>
+            <h3>🎛 Refining the UX</h3>
+            <p>When I released version 2 of the app I unintentionally complicated the UX for changing camera modes, and it has bugged me since. I decided to revisit the flow while working on version 2.5 because I also wanted to provide a way for a user to quickly toggle the live fitler on and off. I created a new UI component I call a "quick menu." The quick menu allows a user to change modes and toggle the currently selected filter from directly on the view surface. I'm happy with this solution because not only does it make it easier for a user to change camera functions, it also embodies the spirit of mechanical camera controls...the inspiration for Cinescope's interface.</p>    
+            <video controls loop autoplay>
+                <source src="assets/details/cine-quickmenu.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </article>
         <aside>
             <div class="aside__outcome">
