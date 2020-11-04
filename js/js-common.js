@@ -112,7 +112,11 @@ function js_cmn_HandleNav(event) {
         children[i].classList.add(event.target.href.includes("index") ? "navFrom" : "navTo");
         children[i].style.animationDelay = ((offset/500) * i) + "s";
     }
-    setTimeout(function() { window.location.replace(event.target.href); }, 250 + (offset * children.length));
+    setTimeout(function() { 
+        var fileName = location.href.split("/").slice(-1)[0]; 
+        history.pushState(null, null, fileName);
+        window.location.replace(event.target.href); 
+    }, 250 + (offset * children.length));
 }
 
 function js_cmn_SetupLoad() {
