@@ -83,6 +83,7 @@
         border-left: none;
         display: block;
         float: none;
+        margin-left: 0;
         padding-bottom: calc(var(--padding) * 4);
         padding-left: 0;
         position: relative;
@@ -93,6 +94,7 @@
         border-left: none;
         display: block;
         float: none;
+        margin-right: 0;
         padding-bottom: calc(var(--padding) * 4);
         padding-right: 0;
         position: relative;

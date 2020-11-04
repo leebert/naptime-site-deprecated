@@ -17,6 +17,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+    a.button, a.button:visited {
+        font-weight: var(--font-weight-regular);
+    }
+
     .content {
         flex-direction: column;
     }
