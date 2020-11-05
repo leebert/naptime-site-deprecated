@@ -3,12 +3,21 @@ var js_cmn_AboutModalDiv;
 
 function js_cmn_SetUpCommonStuff() {
     document.addEventListener("scroll", js_cmn_HandleScroll);
+    window.addEventListener("resize", js_cmn_HandleResize);
     js_cmn_HandleScroll();
     js_cmn_AssignClick();
     js_cmn_SetupLoad();
 }
 
-function js_cmn_HandleScroll(){
+function js_cmn_HandleScroll() {
+    js_cmn_HandleScrollIndicatorDisplay();
+}
+
+function js_cmn_HandleResize() {
+    js_cmn_HandleScrollIndicatorDisplay();
+}
+
+function js_cmn_HandleScrollIndicatorDisplay() {
     var w = window.innerHeight;
     var h = document.documentElement.scrollHeight;
     var t = document.documentElement.scrollTop;
