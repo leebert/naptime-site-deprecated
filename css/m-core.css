@@ -36,17 +36,18 @@
 
 @media only screen and (max-width: 500px) {
     aside {
-        margin: var(--padding-medium) 0 var(--padding) calc(var(--padding) * -2);
+        margin: var(--padding-medium) 0 var(--padding-large) calc(var(--padding) * -1.5);
     }
 
     header {
         align-items: flex-start;
         font-size: var(--text-size-header-small);
+        margin-bottom: 0;
         margin-left: var(--padding-large);
     }
 
     main {
-        margin: var(--padding-large) var(--padding-large) 0 var(--padding-large);
+        margin: var(--padding) var(--padding-large) 0 var(--padding-large);
     }
 
     .content__link {
@@ -65,10 +66,5 @@
 
     aside {
         flex-direction: column;
-        margin-bottom: var(--padding);
-    }
-
-    main {
-        margin-top: var(--padding-medium);
     }
 }

@@ -22,7 +22,7 @@ img {
 
 li {
     list-style-type: none;
-    margin-bottom: var(--padding);
+    margin-bottom: calc(var(--padding) * 0.25);
 }
 
 p {
