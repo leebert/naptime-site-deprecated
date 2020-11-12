@@ -82,6 +82,12 @@ code {
     max-width: 250px;
 }
 
+.reminder {
+    color: var(--color-accent-one);
+    font-size: var(--text-size-subheader);
+    font-weight: var(--font-weight-bold);
+}
+
 /* About Popup */
 .about {
     background-color: #00000044;

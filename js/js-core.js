@@ -1,7 +1,7 @@
 // structure is: link title, resource type, resource url, design, code, words, year
 var js_c_data = [
     {title: "A Scouting App for Directors & Cinematographers", type: "page", url: "cinescope.html", design: true, code: true, words: false, year: 2020},
-    {title: "A SaaS Product for Data Scientists", type: "page", url: "alegion-saas.html", design: true, code: false, words: true, year: 2020},
+    {title: "A SaaS Platform for Data Scientists", type: "page", url: "alegion-saas.html", design: true, code: false, words: true, year: 2020},
     {title: "A Video Annotation Tool for Data Labelers", type: "page", url: "alegion-va.html", design: true, code: false, words: false, year: 2020},
     // {title: "A Video Timeline Prototype", type: "page", url: "alegion-proto.html", design: false, code: true, words: false, year: 2020},
     // {title: "Lots Marketing Content", type: "page", url: "alegion-marketing.html", design: true, code: true, words: true, year: 2020},

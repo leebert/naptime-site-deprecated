@@ -6,8 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Alegion Video Annotation Platform</title>
-        <meta name="description" content="Lee Brenner | Portfolio | Case Study | Video Annotation Platform">
+        <title>Alegion Video Annotation Tool</title>
+        <meta name="description" content="Lee Brenner | Portfolio | Case Study | Video Annotation Tool">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600&family=Work+Sans:wght@200;400;500&display=swap" rel="stylesheet">
         
@@ -51,26 +51,52 @@
                 <svg class="chevron" viewBox="0 0 8 18" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.52999 0.152136C7.99832 0.444846 8.1407 1.0618 7.84799 1.53013L3.17924 9.00013L7.84799 16.4701C8.1407 16.9385 7.99832 17.5554 7.52999 17.8481C7.06165 18.1408 6.4447 17.9985 6.15199 17.5301L0.82074 9.00013L6.15199 0.470135C6.4447 0.00179839 7.06165 -0.140575 7.52999 0.152136Z"/>
                 </svg> 
-                An Product I Shipped
+                A Product I Shipped
             </a>
         </nav>
         <header>
             <h1>Video Annotation</h1>
             <div class="header__learn-more">
-                <a href="http://www.alegion.com/" target="_blank">Website</a>
+                <a href="http://www.alegion.com/" target="_blank">Company Website</a>
+                <a href="http://www.alegion.com/video-annotation" target="_blank">About Video Annotation</a>
             </div>    
         </header>
         <article>
-            <h2>Coming soon...</h2>
+            <!-- <div class="reminder">[DASHCAM LOCALIZATION GIF]</div> -->
+            <img src="assets/details/av-timeline.png" alt="Screenshot of the video annotation tool's timeline editor.">
+            <p class="h-first-p ">Here's the big secret about Artificial Intelligence and Machine Learning: these seemingly magical technologies require lots and lots of data to work, and all that data is created by hundreds of thousands of people around the world.</p>
+            <p>For example, a self-driving car is controlled by a Machine Learning model that has been given lots of dashboard camera videos to learn from. Before the model training can happen, an annotator must first label the points of interest in those videos so that the ML model knows what to pay attention to when it "watches" them. These points of interest are called <b>data labels</b> and they can range from “a person crossing the street” to “a car is changing lanes” to anything else you might encounter when driving a car.</p>
+            <p class="h-has-pull-quote__right" data-pullquote="Bad UX leads to labeling mistakes, which introduces errors in the model training process, and results in increased costs and project failure.">Labeling a three minute video that runs at thirty frames per second translates to a person identifying and tracking information across 5400 individual images. This is both time-consuming and mentally taxing work, especially if the data labeling software is poorly designed. Over the past few months we have been researching, desiging, and building a completely new video annotation tool with the goals of improving labeling accuracy and decreasing project costs for our customers.</p>
+            <p>Our research showed us that cognitive load was the most important problem to address, and I'll highlight two innovative ways we met the challenge in this case-study. If you who would like to learn more, this article describes our design process in detail.</p>
+            <h3>🕒 The Timeline</h3>
+            <p>Data labeling tasks are analogous with activities many people in the tech and creative industries are familiar with. When an annotator draws a bounding box around a person crossing the street in a dashcam video they are using a similar set of tools and repeating a similar workflow to that of a designer creating a new UI in Figma. Similarly, when an annotator changes the shape and position of the bounding box to follow the person's movement throughout the duration of the video they are repeating a workflow an artist uses when creating an animation in Blender. All of these tasks deal with data that is inherently visual.</p>
+            <p>To-date, data labeling tools haven't provided an easy way to manage lots of information that is visual in nature. Even the prior version of our data labeling software displayed everyting in a tabular format. I hypothesized that we could decrease cognitive load by presenting <i>visual</i> information in a more <i>visual</i> manner, thus making it easier to track over time. A timeline similar to those found in a video editor or animation software seemed like a viable solution.</p>
+            <!-- <div class="reminder">[TIMELINE INTERACTION GIF]</div> -->
+            <p class="h-has-pull-quote__left" data-pullquote="Prototyping gave us the confidence we needed to proceed with building the feature.">Investing time and resources to build a complex control like a timeline is risky, and I first needed to validate what relevant features and gaps a traditional timeline has when applied to the use case of video annotation. Although design tools like Figma have sophisticated protoyping capabilities, they were not robust enought to explore complex interactions like video navigation and keyframe manipulation. To achieve the interaction fidelity we required, I built a timeline prototype using HTML, CSS, and Javascript. This was a huge time-saver because I could explore ideas with stakeholders and engineers directly in the medium in which those ideas would be implemented.</p>
+            <h3>🎚 Surface Actions</h3>
+            <p>Reducing mouse movement and repetitive actions is critical for long-running tasks like labeling points of interest in a video. Even something as seemingly innocuous as moving the mouse a hundred pixels to the left to click a button becomes infuriating when you have to do it thousands of times. The physcial strain increases exponentially if this movement is one of several behaviors that compose a compound interaction.</p>
+            <p class="h-has-pull-quote__right" data-pullquote="To minimize the impact of context-switching we introduced the concept of 'Surface Actions'.">When an annotator tracks a state-change for a point of interest they must make a context-switch from watching the video to manipulating a UI control. For example, they might be required to note when a player in a basketball video has control of the ball. When the annotator sees a player catch the ball in the video they will stop and click a checkbox or interact with a dropdown in some other area of the UI to track the update. Rather than forcing an annotator to move focus to update the state change, we make all of those options directly available on the object itself via context menu.</p>
+            <video controls loop autoplay>
+                <source src="assets/details/av-surface-actions.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Through   research we also discovered that hot-key accelerators were important for reducing certain repetitive actions. Almost all video data labeling tasks require annotators to track when an object enters or leaves the frame. By introducing a hot-key to toggle this visibility change we eliminated thousands of mouse movements that our workers previously had to perform for each video they labeled.</p>
+            <h3>📏 Measuring Success</h3>
+            <p class="h-has-pull-quote__right" data-pullquote="Addressing your failures is the true measure of success.">Our new tool got some things right. Head-to-head testing with other software revealed effeciency gains of up to 30%. We also discovered that brand new annotators were able to jump in and label data at roughly the same pace as our experienced annotators. But usability studies and user feedback showed us that we sometimes missed the mark as well.</p>
+            <p>For instance, we were unable to implement a commenting system in the initial release, and this hindered the communication loop between annotation teams, managers, and customers. In a follow-up we'll add support for commenting on data labels, linked to specific points in time. Comments between users and teams will be synchronized to the communication tab in the software's dedicated Information Panel.</p>
+            <video controls loop autoplay>
+                <source src="assets/details/av-comments.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </article>
         <aside>
             <div class="aside__outcome">
-                <div class="aside__hero-number">6</div>
-                <div class="aside__hero-descriptor">months to launch</div>
-            </div>
-            <div class="aside__outcome">
                 <div class="aside__hero-number"><span class="h-green">↑</span>30%</div>
                 <div class="aside__hero-descriptor">effeciency gains</div>
+            </div>
+            <div class="aside__outcome">
+                <div class="aside__hero-number">5</div>
+                <div class="aside__hero-descriptor">months to launch</div>
             </div>
             <div class="aside__outcome">
                 <div class="aside__title">What it is</div>
