@@ -141,10 +141,14 @@ nav a, nav a:active, nav a:hover, nav a:visited {
 
 /* Right Content - Big Picture */
 aside {
+    background-color: #f7f7f7;
+    border-radius: var(--padding-medium);
     display: flex;
     flex-direction: column;
     font-family: var(--text-font-name-secondary), sans-serif;
     grid-area: aside;
+    height: auto;
+    padding: var(--padding-medium) var(--padding-medium) 0 var(--padding-medium);
     position: fixed;
     right: calc(var(--padding) * 12);
     top: calc(var(--padding-xlarge) + var(--padding-large));
@@ -164,6 +168,10 @@ aside li {
 
 .aside__outcome {
     margin-bottom: calc(var(--padding) * 4);
+}
+
+.aside__outcome:last-child {
+    margin-bottom: calc(var(--padding) * 2);
 }
 
 .aside__hero-number {

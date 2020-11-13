@@ -65,21 +65,23 @@
             <p class="h-first-p ">Launching a data labeling SaaS product from scratch is no easy feat. And if you are going from "nothing" to "customer-ready" in five months it is all the more challenging. It requires rapid discovery, rapid design, rapid implementation, rapid <i>everything</i>. Our initial release did not include all the features we wanted and it was rough around the edges, but here's the bottom line:</p>
             <p>Prior to launch it wasn't even possible for our users to create a project without assistance, much less generate their own training data. With the release of Control, someone who knows nothing about data labeling can create a project, create an ontology, annotate a video, and get their training completely on their own. For me, this is big a win. </p>
             <h3>🖼 Concept Art for Product Design</h3>
-            <p class="h-has-pull-quote__right" data-pullquote="Although a final film or video game does not look like its concept art, that initial vision embues the project with its spirit.">"Software as a Service" is broad in meaning. Alegion needed to understand what it meant for us, a company focused on data labeling services, so I found myself faced with the challenge of figuring out how to quickly and succinctly convey that meaning. My answer came in the form of concept art. <a href="https://www.starwars.com/news/ralph-mcquarries-most-memorable-masterpieces" target="_blank">Ralph McQuarrie</a> and <a href="https://www.yoshitakaamano.com/work#/final-fantasy" target="_blank">Yoshitaka Amano</a> are two of my favorite concept arists. I'm fascinated by the dreamlike, protean nature of their work, and how it influences the final production. It dawned on me that there might be a parallel in what I was trying to do, so I attempted to apply that same idea to product design. But why concept art?</p> 
+            <p class="h-has-pull-quote__right" data-pullquote="Although a final film or video game does not look like its concept art, that initial vision imbues the project with its spirit.">"Software as a Service" is broad in meaning. Alegion needed to understand what it meant for us, a company focused on data labeling services, so I found myself faced with the challenge of figuring out how to quickly and succinctly convey that meaning. My answer came in the form of concept art. <a href="https://www.starwars.com/news/ralph-mcquarries-most-memorable-masterpieces" target="_blank">Ralph McQuarrie</a> and <a href="https://www.yoshitakaamano.com/work#/final-fantasy" target="_blank">Yoshitaka Amano</a> are two of my favorite concept artists. I'm fascinated by the dreamlike, protean nature of their work, and how it influences the final production. It dawned on me that there might be a parallel in what I was trying to do, so I attempted to apply that same idea to product design. But why concept art?</p> 
             <img src="assets/details/ac-conceptart.png" alt="Photo of Ralph McQuarrie's Star Wars art book.">
-            <p>As a designer, it's important to view your colleagues using the same empathetic eye with which you seek to view your users...your colleagues are also your users! Understanding what internal teams respond to is foundational to effective communication within an organizaton. I think my approach worked because I had learned that our organization responds better to rich visuals rather than conceptual descriptions.</p>
+            <p>As a designer, it's important to view your colleagues using the same empathetic eye with which you seek to view your users...your colleagues are also your users! Understanding what internal teams respond to is foundational to effective communication within an organization. I think my approach worked because I had learned that our organization responds better to rich visuals rather than conceptual descriptions.</p>
             <div class="article__double-image">
                 <img src="assets/details/ac-conceptui1.png" alt="Initial 'concept art' for the dashboard.">
                 <img src="assets/details/ac-conceptui2.png" alt="Initial 'concept art' for the project page.">
             </div>
             <p>The SaaS "concept art" gave us an aspirational goal to rally around. This was important because, just like everyone else, we were all dealing with the stress and exhaustion of the pandemic and all the turmoil it caused. With a concrete vision to reference, the Product and Engineering teams were energized to embark on a major new initiative.</p>
             <h3>🛠 A Job to Be Done</h3>
-            <p>At Alegion, the Product team bears most of the responsibility for deciding what to build. I fascilitated a series of workshops that leveraged Clay Christensen's <a href="https://www.christenseninstitute.org/jobs-to-be-done/" target="_blank">Jobs to Be Done</a> theory to help us arrive at a product defintion and to identify a prioritized list of features for the MVP.</p>
+            <p>At Alegion, the Product team bears most of the responsibility for deciding what to build. I facilitated a series of workshops that leveraged Clay Christensen's <a href="https://www.christenseninstitute.org/jobs-to-be-done/" target="_blank">Jobs to Be Done</a> theory to help us arrive at a product definition and to identify a prioritized list of features for the MVP.</p>
+            <h5>JTBD Guidelines</h5>
             <div class="article__double-image">
                 <p class="article__principle principle--one"><b>A Data Science Team's job to be done is...</b><br><br><span class="principle__copy">"Successfully train a model using trustworthy data."</span></p>
                 <p class="article__principle principle--one"><b>We perform a customer's job when...</b><br><br><span class="principle__copy">"We provide an end-to-end solution for a Data Scientist to create trustworthy training data."</span></p>
             </div>
             <p>Our biggest constraint was time: we only had a matter of months to define, design, and build our new offering. This meant we needed a narrow and well-defined scope of work. Alegion has three primary customer personas: Data Science teams, <a href="https://www.investopedia.com/terms/b/business-process-outsourcing.asp" target="_blank">BPOs</a>, and enterprise customers. We strategically chose to focus on Data Science teams whose needs, while complex, don't require the same degree of scale as the needs of our other personas. I established two design principles to guide my choices as I transformed the concept art into a fully specified product offering.</p>
+            <h5>Design Principles</h5>
             <div class="article__double-image">
                 <p class="article__principle principle--two"><b>⒈ Don't Get Into A Busted State</b><br><br><span class="principle__copy">The software should not have dead-ends. It should anticipate complexity and remain in a valid state at all times.</span></p>
                 <p class="article__principle principle--two"><b>⒉ Remember The Future</b><br><br><span class="principle__copy">The product must extend and scale as we learn from our customers and add support for new personas.</span></p>
@@ -93,7 +95,7 @@
             <img src="assets/details/ac-preview.png" alt="The Control ontology live preview screen.">
             <h3>🗣 Responding to Feedback</h3>
             <p>We were able to conduct a scrappy round of feedback before launching. I was grateful for this because it uncovered two areas of significant confusion that we needed to address. First, because we were not able to launch with a dashboard and on-boarding features, people were uncertain how to get started. We solved this by using AppCues to created an optional "Your first project" walk-through.</p>
-            <img src="assets/details/ac-ftue.png" alt="The Control ftue 'Welcome' screen.">
+            <img src="assets/details/ac-ftue.png" alt="The Control FTUE 'Welcome' screen.">
             <p>Second, we had to cut certain ontology features from the initial release. Some of the screens were so similar that it wasn't clear to the user that they had move from one state to the next. We addressed this issue by using CSS animations to provide motion-based visual context.</p>
             <video controls loop autoplay>
                 <source src="assets/details/ac-motion.mp4" type="video/mp4">
@@ -112,14 +114,13 @@
             <div class="aside__outcome">
                 <div class="aside__title">What it is</div>
                 <div class="aside__description">
-                    Control is Alegion's first SaaS offering. Data Science teams use it to create ontologies, annotate video, and generate training data all in one place.
+                    Alegion's SaaS platform for creating machine learning training data.
                 </div>
             </div>
             <div class="aside__outcome">
                 <div class="aside__title">What I did</div>
                 <ul>
                     <li>👨🏻‍🎨 Head of Product Design</li>
-                    <li>✏️ Visual and Interaction Design</li>
                     <li>🔬 Research and Usability Studies</li>
                     <li>🎛 Prototyping</li>
                 </ul>

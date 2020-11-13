@@ -37,6 +37,9 @@ window.addEventListener('load', js_o_load);
 function js_o_load(event) {
     window.addEventListener("resize", js_o_handleResize);
     window.addEventListener("mousemove", js_o_handleMouseMove);
+    window.addEventListener("mousedown", js_o_handleMouseMove);
+    window.addEventListener("touchmove", js_o_handleTouchMove);
+    window.addEventListener("touchdown", js_o_handleTouchMove);
     gridCanvas = document.getElementById("grid-canvas");
     currentX = window.innerWidth/2;
     currentY = window.innerHeight/2;
@@ -46,6 +49,12 @@ function js_o_load(event) {
 function js_o_handleMouseMove(event) {
     currentX = event.clientX;
     currentY = event.clientY;
+    js_o_computeGridUpdates();
+}
+
+function js_o_handleTouchMove(event) {
+    currentX = event.touches[0].clientX;
+    currentY = event.touches[0].clientY;
     js_o_computeGridUpdates();
 }
 
@@ -114,7 +123,8 @@ function js_o_computeGridUpdates() {
             var p = (d + 0.001)/((primaryColor.length-1) + 0.001);
             var s = js_o_lerp( 0, otherItemAngleScale, p);
             var dl = (d * .025);
-            item.style.transition = "background-color 0.3s, transform " + dl + "s";
+            // item.style.transition = "background-color 0.3s, transform " + dl + "s";
+            item.style.transition = "background-color 0.3s, transform 0.75s";
             if (d == 0) { 
                 currentItemId = id; 
                 item.style.zIndex = 10000;

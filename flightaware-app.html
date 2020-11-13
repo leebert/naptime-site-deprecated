@@ -57,7 +57,7 @@
         <header>
             <h1>Flight Tracker</h1>
             <div class="header__learn-more">
-                <a href="https://flightaware.com" target="_blank">Website</a> <a href="https://apps.apple.com/us/app/live-flight-tracker/id316793974" target="_blank">Appstore</a>
+                <a href="https://flightaware.com" target="_blank">Website</a> <a href="https://apps.apple.com/us/app/live-flight-tracker/id316793974" target="_blank">AppStore</a>
             </div>    
         </header>
         <!-- 
@@ -91,13 +91,13 @@
             <h3>③ Increasing Feature Usage</h3>
             <p>FlightAware wanted to increase adoption of their flight alert feature which automatically notifies users of flight status changes. Research showed that only 2% of FlightAware’s iOS users were making use of alerts. I didn't know if this was because the feature was hard to use, if users weren’t interested in it, or if there was another factor at play. </p>
             <p class="h-has-pull-quote__right" data-pullquote="Thankfully, FlightAware was willing to devote project time for usability studies.">With limited time and resources, I chose to focus on the hypothesis that the feature was hard to use. I picked this direction because personal testing and anecdotal evidence showed that it was indeed difficult to create an alert within the app. And I assumed that by improving the workflow we could increase adoption by marketing the feature. I set up a usability study with Validately (now part of UserZoom) to test out different workflows. </p>
-            <img src="assets/details/fa-usabilitytest.png" alt="Screenshot of alert creation testplan.">
+            <img src="assets/details/fa-usabilitytest.png" alt="Screenshot of alert creation test plan.">
             <div class="article__left-image">
                 <img src="assets/details/fa-app-3.png" alt="The flight alert summary screen.">
                 <p>The alert creation workflow was improved by introducing a summary screen that emphasized the “when,” “where,” and “what” of a notification. We also implemented a drill-in/drill-out workflow to make it easier to create and edit details. Feature adoption increased, but since I no longer consult with the company I can't provide an exact percentage.</p>
             </div>
             <h3>④ From Obj-C to Swift</h3>
-            <p>Rewriting the project in Swift resulted in several benefits. I reduced view controller bloat by separating out business logic and API calls into dedicated service objects. Each service object encapsulated code for the functional area it was responsible for, and it became much easier to debug issues becuase you knew exactly where to look. Additionally, I introduced a collection of UI styling and data transformer objects that made it easier to ensure consistency in the app’s presentation layer.</p>
+            <p>Rewriting the project in Swift resulted in several benefits. I reduced view controller bloat by separating out business logic and API calls into dedicated service objects. Each service object encapsulated code for the functional area it was responsible for, and it became much easier to debug issues because you knew exactly where to look. Additionally, I introduced a collection of UI styling and data transformer objects that made it easier to ensure consistency in the app’s presentation layer.</p>
             <p class="h-has-pull-quote__right" data-pullquote="After I released a large update with a bug that prevented many users from opening the app I realized we needed a change in process.">FlightAware did not have a dedicated mobile or QA team so dealing with production bugs was tricky. I was hurting my client by taking on too many responsibilities and becoming a bottleneck, so I proposed that we move from a monolithic release schedule to a something closer to a continuous release cycle. I also stood up a light-weight QA and bug-tracking plan. The goal was to create something manageable by a small team and provide them with just enough coverage to feel safe when releasing a new version into the wild.</p>
         </article>
         <aside>
@@ -112,14 +112,13 @@
             <div class="aside__outcome">
                 <div class="aside__title">What it is</div>
                 <div class="aside__description">
-                    An app that lets travelers, pilots, and entheusiasts receive flight notifications, plan routes, and track flights around the world in real time.
+                    An iOS app for airline travelers, pilots, and flight enthusiasts.
                 </div>
             </div>
             <div class="aside__outcome">
                 <div class="aside__title">What I did</div>
                 <ul>
-                    <li>🗺 Led Initiative</li>
-                    <li>✏️ Design</li>
+                    <li>✏️ Interaction and Visual Design</li>
                     <li>🔬 Research and Usability Studies</li>
                     <li>📱 iOS Development</li>
                 </ul>

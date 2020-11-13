@@ -5,7 +5,7 @@ function js_cmn_SetUpCommonStuff() {
     document.addEventListener("scroll", js_cmn_HandleScroll);
     window.addEventListener("resize", js_cmn_HandleResize);
     js_cmn_HandleScroll();
-    js_cmn_AssignClick();
+    // js_cmn_AssignClick();
     js_cmn_SetupLoad();
 }
 

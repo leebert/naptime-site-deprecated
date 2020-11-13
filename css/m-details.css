@@ -21,12 +21,14 @@
     }
 
     aside {
+        /* background-color: transparent;
+        border-radius: 0; */
         column-gap: var(--padding-xlarge);
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
-        margin-bottom: var(--padding-medium);
-        margin-top: var(--padding-large);
+        margin-bottom: var(--padding-large);
+        margin-top: var(--padding-medium);
         position: relative !important;
         right: 0;
         row-gap: var(--padding-medium);
