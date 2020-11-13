@@ -32,7 +32,7 @@ p {
 }
 
 video {
-    padding: var(--padding-medium) 0 var(--padding-medium) 0;
+    padding: var(--padding-large) 0;
     width: 100%;
 }
 
