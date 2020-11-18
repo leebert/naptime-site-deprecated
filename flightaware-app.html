@@ -71,18 +71,19 @@
         <article>
             <img src="assets/details/fa-logo.png" class="size-limit" alt="The FlightAware Flight Tracker logo.">
             <p class="h-first-p h-has-pull-quote__right" data-pullquote="Ratings have gone from two to almost five stars since the redesign.">FlightAware is at the forefront of <a href="https://flightaware.com/adsb/" target="_blank">flight tracking technology</a>. They provide real-time, worldwide flight data for airlines, governments, pilots, and air travelers. FlightAware has millions of daily users and provides critical infrastructure to a massive industry. As an independent consultant, I jumped at the opportunity to work with them to redesign and rebuild their iOS app.</p>
-            <p>The project began with a discovery phase. It consisted of stakeholder interviews, a competitive analysis, and a review of the app’s analytics. The research uncovered four key success factors for the project:</p>
-            <ul>
-                <li>① Improve the app's usability</li>
-                <li>② Better-account for the needs of FlightAware’s different personas</li>
-                <li>③ Increase usage of the flight alert feature</li>
-                <li>④ Improve codebase maintainability and extensibility</li>
-            </ul>
+            <p>The project began with a discovery phase. It consisted of stakeholder interviews, a competitive analysis, and a review of the app’s analytics. The research uncovered four key success factors for the project.</p>
+            <br><b>Success factors</b><br>
+            <div class="article__principle principle--one">
+                <span class="principle__copy">① Improve the app's usability.</span><br><br>
+                <span class="principle__copy">② Better-account for the needs of FlightAware’s different personas.</span><br><br>
+                <span class="principle__copy">③ Increase usage of the flight alert feature.</span><br><br>
+                <span class="principle__copy">④ Improve codebase maintainability and extensibility.</span>
+            </div>
             <h3>① Improving the UX</h3>
             <p>Usability was the easiest success factor to address. The existing version of the app relied on an unconventional modal navigation pattern that led to users getting lost in navigation loops. I restructured the application’s information architecture to group related functionality and to tie functional areas together with a drill-in/drill-out navigation stack typical with most iOS applications.</p>
             <img src="assets/details/fa-ia.png" alt="Information architecture for the new FlightAware app.">
             <h3>② Addressing User Needs</h3>
-            <p>FlightAware has four personas for its mobile apps: commercial travelers, private pilots, professional airline employees, and flight enthusiasts. These personas have wildly varying needs. For example, commercial travelers are interested in succinct and timely information about their trip. They are looking for a streamlined experience. Pilots and enthusiasts are both have high-density data needs, but even their use cases diverge beyond that one commonality: Pilots want detailed information about their plane, flight history, and route details. Enthusiasts are interested in everything that is happening in the skies around them in real-time.</p>
+            <p>FlightAware has four personas for its mobile apps: commercial travelers, private pilots, professional airline employees, and flight enthusiasts. These personas have very different needs. For example, commercial travelers are interested in succinct and timely information about their trip. They are looking for a streamlined experience. Pilots and enthusiasts are both have high-density data needs, but even their use cases diverge beyond that one commonality: Pilots want detailed information about their plane, flight history, and route details. Enthusiasts are interested in everything that is happening in the skies around them in real-time.</p>
             <div class="article__double-image">
                 <img src="assets/details/fa-app-1.png" alt="App screenshot: flight detail">
                 <img src="assets/details/fa-app-2.png" alt="App screenshot: airport detail">
