@@ -14,6 +14,11 @@ a.button, a.button:visited {
     margin-left: var(--padding);
 }
 
+a.button--all {
+    padding-left: calc(var(--padding-medium) * 1.5);
+    padding-right: calc(var(--padding-medium) * 1.5);
+}
+
 a.button--design {
     color: var(--color-accent-one) !important;
     border-color: var(--color-accent-one) !important;
