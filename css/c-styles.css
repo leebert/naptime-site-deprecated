@@ -88,9 +88,26 @@ code {
     font-weight: var(--font-weight-bold);
 }
 
+.lightbox {
+    background-color: #FFFFFFAA;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+.lightbox__image {
+    background-color: white;
+    box-shadow: 0px 8px 16px 4px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    position: absolute;
+    pointer-events: none;
+}
+
 /* About Popup */
 .about {
-    background-color: #00000044;
+    background-color: #FFFFFFAA;
     font-family: var(--text-font-name-secondary), sans-serif;
     font-size: var(--text-size-standard);
     height: 100%;

@@ -16,7 +16,8 @@ body {
 }
 
 img {
-    padding: var(--padding-medium) 0;
+    cursor: pointer;
+    margin: var(--padding-medium) 0;
     width: 100%;
 }
 
@@ -32,7 +33,7 @@ p {
 }
 
 video {
-    padding: var(--padding-large) 0;
+    margin: var(--padding-large) 0;
     width: 100%;
 }
 
@@ -205,7 +206,7 @@ aside li {
 
 .detailsIn {
     animation-name: detailsInAnimation;
-    animation-duration: calc(var(--duraton-default) * 1);
+    animation-duration: calc(var(--duration-default) * 1);
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 } 

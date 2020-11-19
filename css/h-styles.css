@@ -5,7 +5,7 @@
 
 .blurIn {
     animation-name: blurInAnimation;
-    animation-duration: var(--duraton-default);
+    animation-duration: var(--duration-default);
     animation-fill-mode: forwards;
 }
 
@@ -16,7 +16,7 @@
 
 .blurOut {
     animation-name: blurOutAnimation;
-    animation-duration: var(--duraton-default);
+    animation-duration: var(--duration-default);
     animation-fill-mode: forwards;
 }
 
@@ -27,7 +27,7 @@
 
 .fadeIn {
     animation-name: fadeInAnimation;
-    animation-duration: var(--duraton-default);
+    animation-duration: var(--duration-default);
     animation-fill-mode: forwards;
 }
 
@@ -38,7 +38,7 @@
 
 .fadeOut {
     animation-name: fadeOutAnimation;
-    animation-duration: var(--duraton-default);
+    animation-duration: var(--duration-default);
     animation-fill-mode: forwards;
 }
 
@@ -49,7 +49,7 @@
 
 .slideIn {
     animation-name: slideInAnimation;
-    animation-duration: calc(var(--duraton-default) * 1.5);
+    animation-duration: calc(var(--duration-default) * 1.5);
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
@@ -67,7 +67,7 @@
 
 .slideOut {
     animation-name: slideOutAnimation;
-    animation-duration: calc(var(--duraton-default) * 1);
+    animation-duration: calc(var(--duration-default) * 1);
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
@@ -85,7 +85,7 @@
 
 .navTo {
     animation-name: navToAnimation;
-    animation-duration: calc(var(--duraton-default) * 1);
+    animation-duration: calc(var(--duration-default) * 1);
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
@@ -103,7 +103,7 @@
 
 .navFrom {
     animation-name: navFromAnimation;
-    animation-duration: calc(var(--duraton-default) * 1);
+    animation-duration: calc(var(--duration-default) * 1);
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
