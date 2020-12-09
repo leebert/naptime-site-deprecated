@@ -50,8 +50,8 @@ header {
     display: flex;
     flex-direction: column;
     font-size: var(--text-size-header);
-    margin-bottom: var(--padding-xlarge);
     grid-area: header;
+    margin-bottom: var(--padding-xlarge);
 }
 
 .header__learn-more {
@@ -142,14 +142,13 @@ nav a, nav a:active, nav a:hover, nav a:visited {
 
 /* Right Content - Big Picture */
 aside {
-    background-color: #f7f7f7;
-    border-radius: var(--padding-medium);
+    border-left: solid 1px #f0f0f0;
     display: flex;
     flex-direction: column;
     font-family: var(--text-font-name-secondary), sans-serif;
     grid-area: aside;
     height: auto;
-    padding: var(--padding-medium) var(--padding-medium) 0 var(--padding-medium);
+    padding: var(--padding-medium) var(--padding-medium) 0 var(--padding-xlarge);
     position: fixed;
     right: calc(var(--padding) * 12);
     top: calc(var(--padding-xlarge) + var(--padding-large));
@@ -201,7 +200,7 @@ aside li {
 .clipper {
     margin-right: var(--padding);
     overflow: hidden;
-    width: calc(var(--padding) * 13);
+    width: calc(var(--padding) * 11);
 }
 
 .detailsIn {

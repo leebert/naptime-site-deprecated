@@ -13,8 +13,9 @@
     float: right;
     font-size: var(--text-size-subheader);
     font-weight: var(--font-weight-bold);
-    line-height: 110%;
-    margin-left: calc(var(--padding) * 6);
+    line-height: 120%;
+    margin-bottom: var(--padding-medium);
+    margin-left: calc(var(--padding) * 5);
     padding-bottom: calc(var(--padding) * 2);
 	padding-left: var(--padding-medium);
 	position: relative;
@@ -27,10 +28,11 @@
     float: left;
     font-size: var(--text-size-subheader);
     font-weight: var(--font-weight-bold);
-    line-height: 110%;
-    margin-right: calc(var(--padding) * 6);
+    line-height: 120%;
+    margin-bottom: var(--padding-medium);
+    margin-right: calc(var(--padding) * 5);
     padding-bottom: calc(var(--padding) * 2);
-    padding-right: var(--padding);
+    padding-right: var(--padding-medium);
 	position: relative;
     width: 50%;
 }
