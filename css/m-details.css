@@ -28,7 +28,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
-        margin-bottom: var(--padding-large) !important;
         margin-top: var(--padding-medium);
         padding: var(--padding-large);
         position: relative !important;
@@ -39,7 +38,7 @@
     }
 
     article {
-        margin-top: calc(var(--padding-large) * -1);
+        margin-top: var(--padding-medium);
     }
 
     header {
@@ -105,7 +104,6 @@
     aside {
         display: flex;
         flex-direction: column;
-        margin-bottom: var(--padding-xlarge) !important;
     }
 
     footer {
