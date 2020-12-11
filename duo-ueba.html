@@ -31,6 +31,19 @@
         <meta name="msapplication-TileImage" content="assets/favicon/favicon-144.png">
         <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
         
+        <style>
+            body {
+                opacity: 0;
+                animation-name: fI;
+                animation-duration: 0.3s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes fI { 
+                from { opacity: 0; } 
+                to { opacity: 1; } 
+            } 
+        </style>
+
         <link rel="stylesheet" href="css/h-normalize.css">
         <link rel="stylesheet" href="css/h-tokens.css">
         <link rel="stylesheet" href="css/c-styles.css">
@@ -41,7 +54,7 @@
         <script type="text/javascript" src="js/js-common.js" ></script>
         <script type="text/javascript" src="js/js-details.js" ></script>
     </head>
-    <body><body>
+    <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

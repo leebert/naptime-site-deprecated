@@ -32,6 +32,19 @@
         <meta name="msapplication-TileImage" content="assets/favicon/favicon-144.png">
         <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
         
+        <style>
+            body {
+                opacity: 0;
+                animation-name: fI;
+                animation-duration: 0.3s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes fI { 
+                from { opacity: 0; } 
+                to { opacity: 1; } 
+            } 
+        </style>
+
         <link rel="stylesheet" href="css/h-normalize.css">
         <link rel="stylesheet" href="css/h-tokens.css">
         <link rel="stylesheet" href="css/c-styles.css">
@@ -42,7 +55,7 @@
         <script type="text/javascript" src="js/js-common.js" ></script>
         <script type="text/javascript" src="js/js-details.js" ></script>
     </head>
-    <body><body>
+    <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -101,7 +114,7 @@
             <h3>🗣 Responding to Feedback</h3>
             <p>We were able to conduct a scrappy round of feedback before launching. I was grateful for this because it uncovered two areas of significant confusion that we needed to address. First, because we were not able to launch with a dashboard and on-boarding features, people were uncertain how to get started. We solved this by using AppCues to created an optional "Your first project" walk-through.</p>
             <img src="assets/details/ac-ftue.png" alt="The Control FTUE 'Welcome' screen.">
-            <p>Second, we had to cut certain ontology features from the initial release. Some of the screens were so similar that it wasn't clear to the user that they had move from one state to the next. We addressed this issue by using CSS animations to provide motion-based visual context.</p>
+            <p>Second, we had to cut certain ontology features from the initial release. Some of the screens were so similar that it wasn't clear to the user that they had moved from one state to the next. We addressed this issue by using CSS animations to provide motion-based visual context.</p>
             <video controls loop autoplay>
                 <source src="assets/details/ac-motion.mp4" type="video/mp4">
                 Your browser does not support the video tag.

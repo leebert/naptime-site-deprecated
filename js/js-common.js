@@ -7,7 +7,6 @@ function js_cmn_SetUpCommonStuff() {
     document.addEventListener("scroll", js_cmn_HandleScroll);
     window.addEventListener("resize", js_cmn_HandleResize);
     js_cmn_HandleScroll();
-    js_cmn_SetupLoad();
 }
 
 function js_cmn_SetUpLightBox() {
@@ -180,9 +179,4 @@ function js_cmn_HandleNav(event) {
         history.pushState(null, null, fileName);
         window.location.replace(event.target.href); 
     }, 250 + (offset * children.length));
-}
-
-function js_cmn_SetupLoad() {
-    document.body.style.opacity = 0;
-    document.body.classList.add("fadeIn");
 }

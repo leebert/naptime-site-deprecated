@@ -32,6 +32,19 @@
         <meta name="msapplication-TileImage" content="assets/favicon/favicon-144.png">
         <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
         
+        <style>
+            body {
+                opacity: 0;
+                animation-name: fI;
+                animation-duration: 0.3s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes fI { 
+                from { opacity: 0; } 
+                to { opacity: 1; } 
+            } 
+        </style>
+
         <link rel="stylesheet" href="css/h-normalize.css">
         <link rel="stylesheet" href="css/h-tokens.css">
         <link rel="stylesheet" href="css/c-styles.css">
@@ -42,7 +55,7 @@
         <script type="text/javascript" src="js/js-common.js" ></script>
         <script type="text/javascript" src="js/js-details.js" ></script>
     </head>
-    <body><body>
+    <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -74,11 +87,11 @@
             <h3>🕒 The Timeline</h3>
             <p>Data labeling tasks are analogous with activities common to the tech and creative industries. These tasks are inherently visual in nature. When an annotator draws a bounding box around a person crossing the street in a dashcam video they are using a similar set of tools a designer uses when creating a new UI in Figma. To-date, data labeling tools haven't provided an easy way to manage lots of visual information. Even the prior version of our data labeling software displayed everything in a tabular format. I hypothesized that we could decrease cognitive load by presenting <i>visual</i> information in a more <i>visual</i> manner, thus making it easier to track over time. A timeline similar to those found in a video editor or animation software seemed like a viable solution.</p>
             <p class="h-has-pull-quote__left" data-pullquote="Prototyping gave us the confidence we needed to proceed with building the feature.">But investing time and resources to build a complex control like a timeline is risky. I needed to validate what relevant features and gaps a traditional timeline has when applied to the use case of video annotation. Although design tools like Figma have sophisticated prototyping capabilities, they were not able to achieve the interaction fidelity our team required. I built a timeline prototype using HTML, CSS, and Javascript.</p>
-            <p>The video below shows the prototype being used to explore how we might incorporate machine learning to automatically track an object of interest over time. This feature alleviates the need for an annotator to make manual adjustments on every frame, but it's a complex interaction with a lot of stuff happening behind the scenes. The prototype is a huge time-saver because I can explore ideas with stakeholders and engineers directly in the medium in which those ideas will be implemented.</p>
             <video controls loop autoplay  poster="assets/details/av-timeline.png">
                 <source src="assets/details/av-timeline.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <p>This video shows the prototype being used to explore how we might incorporate machine learning to automatically track an object of interest over time. This feature alleviates the need for an annotator to make manual adjustments on every frame, but it's a complex interaction with a lot of stuff happening behind the scenes. The prototype is a huge time-saver because I can explore ideas with stakeholders and engineers directly in the medium in which those ideas will be implemented.</p>
             <h3>🎚 Surface Actions</h3>
             <p>Reducing mouse movement and repetitive actions is critical for long-running tasks like labeling points of interest in a video. Even something as seemingly innocuous as moving the mouse a hundred pixels to the left to click a button becomes infuriating when you have to do it thousands of times. The physical strain increases exponentially if this movement is one of several behaviors that compose a compound interaction.</p>
             <p class="h-has-pull-quote__right" data-pullquote="To minimize the impact of context-switching we introduced the concept of 'Surface Actions'.">When an annotator tracks a state-change for a point of interest they must make a context-switch from watching the video to manipulating a UI control. For example, they might be required to note when a shopper picks up and scans an item during self-checkout. When the annotator sees the shopper pick up an item in the video they will stop and click a checkbox or interact with a dropdown in some other area of the UI to track the update. Rather than forcing an annotator to move focus to update the state change, we make all of those options directly available on the object itself via context menu.</p>

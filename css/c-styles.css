@@ -14,7 +14,6 @@ body {
     color: var(--color-dark);
     font-family: var(--text-font-name-primary), sans-serif;
     font-size: 62.5%;
-    opacity: 0;
 }
 
 h3 {

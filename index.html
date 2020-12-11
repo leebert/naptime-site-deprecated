@@ -33,6 +33,20 @@
         <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
         
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600&family=Work+Sans:wght@200;400;500&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                opacity: 0;
+                animation-name: fI;
+                animation-duration: 0.3s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes fI { 
+                from { opacity: 0; } 
+                to { opacity: 1; } 
+            } 
+        </style>
+
         <link rel="stylesheet" href="css/h-normalize.css">
         <link rel="stylesheet" href="css/h-tokens.css">
         <link rel="stylesheet" href="css/c-styles.css">
