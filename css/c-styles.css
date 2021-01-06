@@ -68,7 +68,7 @@ code {
 }
 
 .logo {
-    /* cursor: pointer; */
+    cursor: pointer;
     fill: var(--color-dark);
     height: auto;
     width: 60px;
