@@ -1,3 +1,7 @@
+.h-no-line {
+    text-decoration: none;
+}
+
 .h-green {
     color: var(--color-accent-three);
     font-size: calc(var(--text-size-header) * 0.85);
