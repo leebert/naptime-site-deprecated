@@ -1,5 +1,7 @@
 // structure is: link title, resource type, resource url, design, code, words, year
 var js_c_data = [
+    {title: "An augmented reality game", type: "page", url: "stackimalsar.html", design: true, code: true, words: false, year: 2021},
+    {title: "A sound visualizer", type: "page", url: "funsize/vibes.html", design: true, code: true, words: false, year: 2021},
     {title: "An iOS Scouting App for Directors & Cinematographers", type: "page", url: "cinescope.html", design: true, code: true, words: false, year: 2020},
     {title: "A SaaS Platform for Data Scientists", type: "page", url: "alegion-saas.html", design: true, code: false, words: true, year: 2020},
     {title: "A Video Annotation Tool for Data Labelers", type: "page", url: "alegion-va.html", design: true, code: false, words: false, year: 2020},
@@ -23,7 +25,7 @@ var js_c_data = [
 
 var js_c_ContentHolder;
 var js_c_Filter = 0; //0 == none, 1 == design, 2 == code, 3 == words
-var js_c_StartYear = 2020;
+var js_c_StartYear = 2021;
 var js_c_EndYear = 2011;
 var js_c_LastButton;
 

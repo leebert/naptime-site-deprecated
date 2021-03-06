@@ -37,6 +37,11 @@ video {
     width: 100%;
 }
 
+.video--narrow {
+    margin: auto;
+    width: 50%;
+}
+
 article {
     display: flex;
     flex-direction: column;
@@ -138,6 +143,10 @@ nav a, nav a:active, nav a:hover, nav a:visited {
 
 .principle__copy {
     font-size: calc(var(--text-size-button) * 1.2);
+}
+
+.pp {
+    margin-top: var(--padding-xlarge);
 }
 
 /* Right Content - Big Picture */
