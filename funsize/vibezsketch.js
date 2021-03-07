@@ -125,10 +125,12 @@ function drawFunsizeImage() {
 function drawOverlayFlash() {
     if (level > overlayMinThreshold) {
         if (isChill) {
+          if (random() < 0.75) {
             var newColor = color(random(0,255), random(0,255), random(0,255), 64);
             fill(newColor);
             rect(0, 0, windowWidth, windowHeight);
             fill(fillColor);
+          }
         }
         else {
             var flash = random(0,2);
@@ -253,7 +255,7 @@ function onBeat() {
     backgroundColor = randomWithAlpha();
     shouldRotate = random() < 0.4 ;
     imageToDraw = (random() < 0.75 ? img1 : img2);
-    if (firstHit || random() > 0.8) {
+    if (firstHit || random() > 0.6) {
         updateWaves();
         firstHit = false;
         beatThreshold = 0.175;

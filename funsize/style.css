@@ -9,6 +9,7 @@ canvas {
 }
 
 h2 {
+  color: palevioletred;
   margin-top: 0;
 }
 
@@ -21,12 +22,12 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-  color: hotpink;
+  color: palevioletred;
 }
 
 .chooser {
   background-color: white;
-  border-radius: 8px;
+  border: solid 4px palevioletred;
   height: auto;
   margin: 64px auto auto auto;
   padding: 32px 32px 40px 32px;
