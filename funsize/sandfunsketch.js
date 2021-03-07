@@ -80,7 +80,7 @@ function draw() {
 
   var level = amplitude.getLevel();
   detectBeat(level);
-  var distortScale = map(level, 0, 1, 1, 4);
+  var distortScale = map(level, 0, 1, 1, 3.5);
   if (shouldRotate) {
     rotation = random(-5, 5);
   } else {

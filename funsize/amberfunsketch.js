@@ -1,5 +1,5 @@
-//This code is a modified version of @therewasaguy's music viz example:
-//https://github.com/therewasaguy/p5-music-viz/blob/gh-pages/demos/01d_beat_detect_amplitude/sketch.js
+// This code is a modified version of @therewasaguy's music viz example:
+// https://github.com/therewasaguy/p5-music-viz/blob/gh-pages/demos/01d_beat_detect_amplitude/sketch.js
 
 var img1;
 var img2;
@@ -11,19 +11,20 @@ var soundFile;
 var amplitude;
 
 var backgroundColor;
-var gridColor;
-var gridShadowColor;
-var shouldDrawGrid = false;
-var shouldRotateGrid = false;
-var gridRotateDirection = 1;
-var gridRotateSpeed = 0.1;
-var drawGridShadow = false;
+var fillColor;
+var waveTimer = 0;
+var waveSpeed;
+var waveSize;
+var waveSpacing;
+var waveVariance;
+var waveX;
+var waveY;
+var firstHit = true;
 
 var shouldRotate = false;
 var rotation = 0;
 
-var overlayMinThreshold = 0.15;
-var overlayMaxThreshold = 0.5;
+var overlayMinThreshold = 0.4;
 
 // :: Beat Detect Variables
 // how many draw loop frames before the beatCutoff starts to decay
@@ -34,7 +35,7 @@ var overlayMaxThreshold = 0.5;
 var beatHoldFrames = 30;
 
 // what amplitude level can trigger a beat?
-var beatThreshold = 0.11; 
+var beatThreshold = 0.27; 
 
 // When we have a beat, beatCutoff will be reset to 1.1*beatThreshold, and then decay
 // Level must be greater than beatThreshold and beatCutoff before the next beat can trigger.
@@ -53,9 +54,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   setImageSize();
 
-  backgroundColor = color(random(0,255), random(0,255), random(0,255));
-  gridColor = color(random(0,255), random(0,255), random(0,255));
-  gridShadowColor = color(random(0,255), random(0,255), random(0,255));
+  backgroundColor = randomWithAlpha();
+  fillColor = randomWithAlpha();
+  fill(randomNoAlpha());
+  updateWaves();
 
   amplitude = new p5.Amplitude();
 
@@ -64,21 +66,19 @@ function setup() {
   amplitude.setInput(soundFile);
   amplitude.smooth(0.9);
   
-  angleMode(DEGREES);
+  noStroke();
 }
 
 function draw() {
   background(backgroundColor);
 
-  if (shouldDrawGrid) {
-    drawGrid();
-  }
+  drawWaves()
 
   var level = amplitude.getLevel();
   detectBeat(level);
-  var distortScale = map(level, 0, 1, 1, 4);
+  var distortScale = map(level, 0, 1, 1, 2);
   if (shouldRotate) {
-    rotation = random(-3, 3);
+    rotation = random(radians(-3), radians(3));
   } else {
     rotation = 0;
   }
@@ -89,56 +89,45 @@ function draw() {
     rotate(rotation);
     image(imageToDraw, -imgW/2, -imgH/2, imgW, imgH);
   pop();
-
+  
   if (level > overlayMinThreshold) {
-    var alphaScale = map(level, overlayMinThreshold, overlayMaxThreshold, 50, 255);
-    var newColor = color(random(0,255), random(0,255), random(0,255));
-    var show = random(0, 2);
-    if (show <= 1) {
-      newColor.setAlpha(alphaScale);
-      fill(newColor);
-      rect(0, 0, windowWidth, windowHeight);
-    }
+    var newColor = color(random(0,255), random(0,255), random(0,255), 64);
+    fill(newColor);
+    rect(0, 0, windowWidth, windowHeight);
+    fill(fillColor);
   }
 }
 
-function drawGrid() {
-  var numCols = 6;
-  var numRows = 4;
-  var padding = 20;
-  var squareW = (windowWidth - (padding * (numCols + 1)))/numCols;
-  var squareH = (windowHeight - (padding * (numRows + 1)))/numRows;
-  noStroke();
-  for (i = 0; i < numCols; i++){
-    for (j = 0; j < numRows; j++){
-      if (shouldRotateGrid) {
-        if (drawGridShadow) {
-          push();
-          rectMode(CENTER);
-          translate((padding * numCols) + ((padding + squareW) * i) - (padding * 1), (padding * (numRows + 1)) + ((padding + squareH) * j) + (padding * 1));
-          rotate(gridRotateDirection * frameCount * gridRotateSpeed);
-          fill(gridShadowColor);
-          rect(0, 0, squareW, squareH);
-          pop();
-        }
-        push();
-        rectMode(CENTER);
-        translate((padding * numCols) + ((padding + squareW) * i), (padding * (numRows + 1)) + ((padding + squareH) * j));
-        rotate(gridRotateDirection * frameCount * gridRotateSpeed);
-        fill(gridColor);
-        rect(0, 0, squareW, squareH);
-        pop();
-      }
-      else {
-        if (drawGridShadow) {
-          fill(gridShadowColor);
-          rect((padding + ((padding + squareW) * i)) - (padding * 1), (padding + ((padding + squareH) * j), squareW, squareH) + (padding * 1));
-        }
-        fill(gridColor);
-        rect(padding + ((padding + squareW) * i), padding + ((padding + squareH) * j), squareW, squareH);
-      }
-    } 
+function drawWaves() {
+  // make a x and y grid of ellipses
+  for (let x = 0; x <= windowWidth; x = x + waveSize + waveSpacing) {
+    for (let y = 0; y <= windowHeight; y = y + waveSize + waveSpacing) {
+      // starting point of each circle depends on mouse position
+      const xAngle = map(waveX, 0, windowWidth, -waveVariance * PI, waveVariance * PI, true);
+      const yAngle = map(waveY, 0, windowHeight, -waveVariance * PI, waveVariance * PI, true);
+      // and also varies based on the particle's location
+      const angle = xAngle * (x / windowWidth) + yAngle * (y / windowHeight);
+
+      // each particle moves in a circle
+      const myX = x + waveSpacing * cos(2 * PI * waveTimer + angle);
+      const myY = y + waveSpacing * sin(2 * PI * waveTimer + angle);
+
+      ellipse(myX, myY, waveSize); // draw particle
+    }
   }
+
+  waveTimer = waveTimer + waveSpeed;
+}
+
+function updateWaves() {
+  fillColor = randomNoAlpha();
+  fill(fillColor);
+  waveX = random(0, windowWidth);
+  waveY = random(0, windowHeight);
+  waveSpeed = random(0.005, 0.01);
+  waveSize = random(10, 40);
+  waveSpacing = waveSize*2;
+  waveVariance = map(waveSize, 10, 40, 2, 8);
 }
 
 function detectBeat(level) {
@@ -158,27 +147,28 @@ function detectBeat(level) {
 }
 
 function onBeat() {
-  backgroundColor = color( random(0,255), random(0,255), random(0,255) );
-  gridColor = color(random(0,255), random(0,255), random(0,255));
-  gridShadowColor = color(random(0,255), random(0,255), random(0,255));
-  shouldRotate = !shouldRotate;
-  if (shouldRotate) {
-    imageToDraw = (random() < 0.75 ? img1 : img2);
+  backgroundColor = randomWithAlpha();
+  shouldRotate = random() < 0.4 ;
+  imageToDraw = (random() < 0.75 ? img1 : img2);
+  if (firstHit || random() > 0.75) {
+    updateWaves();
+    firstHit = false;
   }
-  else {
-    imageToDraw = (random() < 0.75 ? img2 : img1);
-  }
-  shouldDrawGrid = random() > 0.4;
-  shouldRotateGrid = random() > 0.2;
-  gridRotateDirection = (random(0, 2) <= 1 ? -1 : 1);
-  gridRotateSpeed = random(0.5, 2.5);
-  drawGridShadow = (random(0, 2) <= 1 ? true : false);
+}
+
+function randomWithAlpha() {
+  return color(random(0,255), random(0,255), random(0,255), random(5,15));
+}
+
+function randomNoAlpha() {
+  return color(random(0,255), random(0,255), random(0,255));
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   setImageSize()
   background(0);
+  updateWaves();
 }
 
 function mousePressed() {
