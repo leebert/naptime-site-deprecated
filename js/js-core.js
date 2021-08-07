@@ -1,5 +1,6 @@
 // structure is: link title, resource type, resource url, design, code, words, year
 var js_c_data = [
+    // {title: "An Funsize branding exploration using AR", type: "page", url: "funsize-ar.html", design: true, code: true, words: false, year: 2021},
     {title: "A real-time sound visualizer", type: "page", url: "sound-viz.html", design: true, code: true, words: false, year: 2021},
     {title: "An augmented reality game", type: "page", url: "stackimalsar.html", design: true, code: true, words: false, year: 2021},
     {title: "An iOS Scouting App for Directors & Cinematographers", type: "page", url: "cinescope.html", design: true, code: true, words: false, year: 2020},

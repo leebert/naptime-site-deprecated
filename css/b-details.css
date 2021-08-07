@@ -189,6 +189,11 @@ aside li {
     padding-bottom: calc(var(--padding) * 0.5);
 }
 
+.aside__hero-image {
+    width: 150px;
+    padding-bottom: calc(var(--padding) * 0.5);
+}
+
 .aside__hero-descriptor {
     display: flex;
     font-size: var(--text-size-standard);
