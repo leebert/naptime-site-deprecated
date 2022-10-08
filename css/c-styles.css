@@ -10,10 +10,14 @@ a:active {
     filter: brightness(120%);
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     color: var(--color-dark);
     font-family: var(--text-font-name-primary), sans-serif;
-    font-size: 62.5%;
+    font-size: 1.6rem;
 }
 
 h3 {
